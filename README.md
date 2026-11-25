@@ -1,15 +1,43 @@
 # A Practical Primer in Human Complex Genetics
 
-_A Practical Primer in Human Complex Genetics_ was originally written for the the **Genetic Epidemiology** course organized by the [Master Epidemiology](https://epidemiology-education.nl) of Utrecht University, but can be used as a practical guide and companion to learning and doing a genome-wide association study (GWAS).
+_A Practical Primer in Human Complex Genetics_ was originally written for the **Genetic Epidemiology** course organized by the [Master Epidemiology](https://epidemiology-education.nl) of Utrecht University, but can be used as a practical guide and companion to learning and doing a genome-wide association study (GWAS).
 
-It is available as [GitBook](https://swvanderlaan.github.io//A_Practical_Primer_in_Human_Complex_Genetics/) and HTML. A PDF and EPUB version is forthcoming.
+It is available as an online book at [swvanderlaan.github.io/A_Practical_Primer_in_Human_Complex_Genetics_CoCalc](https://swvanderlaan.github.io/A_Practical_Primer_in_Human_Complex_Genetics_CoCalc/). A PDF and EPUB version is forthcoming.
 
 This book was made possible by the kind help of Caspar J. van Lissa who wrote an excellent instruction through an example GitBook https://cjvanlissa.github.io/gitbook-demo/.
 
+## Building the book
+
+From version 3.0.0 the book is built with [Quarto](https://quarto.org/docs/books/) instead of `bookdown`. The `quarto` branch holds this version; `master` still holds the `bookdown` version that is currently online.
+
+There are two editions, built from the same chapters with Quarto _profiles_:
+
+| Profile      | Edition                                   | Chapters listed in        |
+|--------------|-------------------------------------------|---------------------------|
+| `cocalc`     | CoCalc course version (default)           | `_quarto-cocalc.yml`      |
+| `standalone` | Own laptop or server                      | `_quarto-standalone.yml`  |
+
+```bash
+# preview while writing (re-renders on save)
+quarto preview --profile cocalc
+
+# full build into _book/
+quarto render --profile cocalc
+quarto render --profile standalone
+```
+
+Requirements: [Quarto](https://quarto.org/docs/get-started/) (>= 1.5), `R` with the packages in `scripts/packages.R`, and the course data in `data/` (not in the repository).
+
+**Freezing.** Code results are cached in `_freeze/` (`execute: freeze: auto`). A chapter is only re-executed when its source changes. Commit `_freeze/` together with the chapter, so that the GitHub Action can build the book without `R` or the data.
+
+**Code blocks.** Code to run in the Terminal is labelled _Terminal_, code to run in `R`/RStudio is labelled _R_, and program output is labelled _Output_.
+
+**Publishing.** `.github/workflows/quarto-book.yml` renders the book on every push to `quarto` and uploads the HTML as a build artifact. Publishing to GitHub Pages is switched off until the Quarto version replaces the `bookdown` version; see the comments in the workflow.
+
 #### Changes log
     
-    _Version:_      v2.2.6</br>
-    _Last update:_  2024-04-15</br>
+    _Version:_      v3.0.0</br>
+    _Last update:_  2026-11-24</br>
     _Written by:_   Sander W. van der Laan (s.w.vanderlaan-2[at]umcutrecht.nl).
     
     **MoSCoW To-Do List**
@@ -36,7 +64,11 @@ This book was made possible by the kind help of Caspar J. van Lissa who wrote an
     - [] `M` fix issue with EPUB creation
     - [] `M` fix issue with EPUB creation and images
     - [] `M` get ISBN number
-    - [] `M` Upgrade to Quatro - seems to work better in many respects; also adds interactivity https://quarto.org/docs/books/. This will probably fix the PDF and EPUB creation issues, as well as the image display issues.
+    - [x] `M` Upgrade to Quarto https://quarto.org/docs/books/ (v3.0.0, `quarto` branch)
+    - [] `M` regenerate QC figures so the threshold lines match the thresholds applied in PLINK
+    - [] `M` re-render all figures with the corrected code and commit `_freeze/`
+    - [] `M` update the LocusZoom section to my.locuszoom.org (hg18/HapMap 2 is no longer available)
+    - [] `S` give each step its own output folder to make it easier to keep track of files
      
     _S_
     - [] `S` meta-analysis with dummy data
@@ -66,6 +98,7 @@ This book was made possible by the kind help of Caspar J. van Lissa who wrote an
       - https://iconifier.net
 
     **Changes log**
+    * v3.0.0 Moved from `bookdown` to Quarto (one source, two profiles: CoCalc and Standalone). Fixed broken figure, table and chapter cross-references. Code blocks are now labelled Terminal, R or Output. Two-Sample MR: added OpenGWAS token (JWT) set-up, required since May 2024. Fixed heterozygosity plot code, added PC sign orientation before the PCA threshold, PLINK 2 relatedness (`--make-king-table`), explanation of ALL/AFF/UNAFF in the HWE output, tab-delimited LocusZoom input, removed hard-coded paths, removed unnecessary `make` for EIGENSOFT, added PLINK installation via Homebrew/conda, typo fixes. Addresses the feedback of the 2026 course.
     * v2.2.5 Name change in preparation of the Standalone version.
     * v2.2.4 Version fix on the main page. Fixed error on display of questions for TwoSample MR in Answer-chapter. Fixed command in WTCCC1 association chapter.
     * v2.2.4 Removed code block in FUMA-chapter. Added quick-and-dirty fix for MRBase. Added Answers to questions.
@@ -86,4 +119,4 @@ This book was made possible by the kind help of Caspar J. van Lissa who wrote an
 
 --------------
 ------
-<sup>Copyright 1979-2024. All rights reserved. Sander W. van der Laan | s.w.vanderlaan [at] gmail.com | [https://vanderlaanand.science](https://vanderlaanand.science){target="_blank"}. Published with [`bookdown`](https://bookdown.org/yihui/bookdown/){target="_blank"}.</sup>
+<sup>Copyright 1979-2026. All rights reserved. Sander W. van der Laan | s.w.vanderlaan [at] gmail.com | [vanderlaanand.science](https://vanderlaanand.science). Published with [Quarto](https://quarto.org).</sup>

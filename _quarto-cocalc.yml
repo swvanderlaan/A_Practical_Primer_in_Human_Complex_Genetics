@@ -1,0 +1,35 @@
+# CoCalc course version
+book:
+  title: "A Practical Primer in Human Complex Genetics for CoCalc"
+  chapters:
+    - index.qmd
+    - 02_1_somebackgroundreading.qmd
+    - 02_2_gettingstarted.qmd
+    - 02_3_gettingstarted_programs_cocalc.qmd
+    - 02_4_gettingstarted_cocalc.qmd
+    - part: "GWAS basics"
+      chapters:
+        - 03_1_gwas_basics_cocalc.qmd
+        - 03_2_gwas_basics_sample_qc_cocalc.qmd
+        - 03_3_gwas_basics_snp_qc_cocalc.qmd
+        - 03_4_gwas_basics_association_testing_cocalc.qmd
+        - 03_5_gwas_basics_results_visualization_cocalc.qmd
+        - 03_6_gwas_basics_results_regional_plot_cocalc.qmd
+    - part: "WTCCC1: coronary artery disease"
+      chapters:
+        - 04_1_wtccc1_intro.qmd
+        - 04_2_wtccc1_cocalc.qmd
+        - 04_3_wtccc1_assoc_cocalc.qmd
+    - part: "Post-GWAS"
+      chapters:
+        - 05_1_post_gwas.qmd
+        - 05_4_fuma.qmd
+        - 05_5_phewas.qmd
+        - 05_6_mendelian_randomization_mr_base.qmd
+        - 05_7_mendelian_randomization_twosamplemr.qmd
+    - 07_epilogue.qmd
+    - references.qmd
+  appendices:
+    - 09_Answers_to_questions.qmd
+    - 11_licenses.qmd
+    - 12_colophon.qmd

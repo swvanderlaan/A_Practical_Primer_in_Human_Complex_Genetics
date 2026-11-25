@@ -11,7 +11,7 @@
 # install.packages("remotes")
 # remotes::install_github(c('rstudio/rmarkdown', 'rstudio/bookdown'))
 library(rmarkdown)
-library(bookdown)
+# library(bookdown) # not needed with Quarto (v3.0.0)
 
 # install flextable
 # install.packages("flextable")

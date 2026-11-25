@@ -66,3 +66,15 @@ A Practical Primer in Human Complex Genetics.rds
 ieugwasr_oauth
 temp.Rmd
 temp.nb.html
+# Quarto
+!.github/
+/.quarto/
+/_book/
+# keep _freeze/ under version control (cached results for CI)
+# Local assistant files
+.claude/
+claude/
+# Test extracts of student code
+*_annotated.sh
+*_annotated.R
+*_extract_student_code.log

@@ -1,0 +1,62 @@
+# A Practical Primer in Human Complex Genetics -- Quarto book configuration
+# Build:   quarto render --profile cocalc       (default; CoCalc course version)
+#          quarto render --profile standalone   (own laptop/server version)
+# Preview: quarto preview --profile cocalc
+project:
+  type: book
+  output-dir: _book
+
+profile:
+  default: cocalc
+  group: [cocalc, standalone]
+
+book:
+  subtitle: "with a use-case in cardiovascular disease"
+  author:
+    - name: "Sander W. van der Laan"
+      url: https://vanderlaanand.science
+      email: s.w.vanderlaan@gmail.com
+  date: today
+  date-format: "D MMMM YYYY"
+  cover-image: img/cover/cover_2024.png
+  favicon: img/cover/iconified/favicon.ico
+  site-url: https://swvanderlaan.github.io/A_Practical_Primer_in_Human_Complex_Genetics_CoCalc/
+  repo-url: https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics_CoCalc
+  repo-branch: quarto
+  repo-actions: [issue, source]
+  page-navigation: true
+  search: true
+  page-footer:
+    left: "&copy; 1979-2026. [Sander W. van der Laan](https://vanderlaanand.science). Version 3.0.0"
+    right: "Built with [Quarto](https://quarto.org)"
+
+bibliography:
+  - bibliography/book.bib
+  - bibliography/packages.bib
+link-citations: true
+
+execute:
+  # Only re-run chapters whose source changed; results are stored in _freeze/ and
+  # committed, so GitHub Actions can publish without the 18 GB course data.
+  freeze: auto
+  warning: false
+  message: false
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: [style.css, quarto.css]
+    code-copy: true
+    code-overflow: wrap
+    code-link: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    fig-align: center
+    out-width: "85%"
+    link-external-newwindow: true
+
+crossref:
+  chapters: true
