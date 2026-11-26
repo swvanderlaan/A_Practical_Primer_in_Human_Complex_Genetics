@@ -1,0 +1,5 @@
+/* Quarto-specific tweaks for the Practical Primer */
+.chapter-banner img, img.chapter-banner { width: 100%; max-height: 220px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem; }
+/* make the Terminal / R code-block headers stand out */
+.code-with-filename .code-with-filename-file { font-weight: 600; }
+.code-with-filename .code-with-filename-file pre { margin: 0; }
