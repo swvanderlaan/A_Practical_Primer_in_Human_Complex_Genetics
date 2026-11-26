@@ -30,6 +30,11 @@ How it works
    relatives, samples of non-European ancestry, samples and SNPs with high
    missingness, and SNPs out of Hardy-Weinberg equilibrium, so the QC chapters
    have something to find.
+6. Spurious associations (unless --no-qc-issues): SNPs that are genome-wide
+   significant before QC only because of an artefact, each removed by a standard
+   QC step: differential missingness between cases and controls (--geno,
+   --test-missing), a genotyping batch error in controls (--hwe in controls), and
+   rare variants carried almost only by cases (--maf 0.01).
 
 Output (all with the same basename)
 -----------------------------------
@@ -72,7 +77,7 @@ SOFTWARE.
 """
 
 VERSION_NAME = "simulate_dummy_gwas"
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 VERSION_DATE = "2026-11-26"
 
 import argparse
@@ -125,7 +130,7 @@ def parse_args():
                    help="Output prefix (default: <input dir>/<date>_<input name>_annotated).")
     p.add_argument("--n-cases", type=int, default=500, help="Number of cases.")
     p.add_argument("--n-controls", type=int, default=1500, help="Number of controls.")
-    p.add_argument("--n-snps", type=int, default=2_500_000,
+    p.add_argument("--n-snps", type=int, default=2_000_000,
                    help="Number of SNPs on chromosomes 1-22, X and XY (all usable Y and MT SNPs come on top).")
     p.add_argument("--maf", type=float, default=0.01, help="Minimum MAF in EUR for chromosomes 1-22 and X.")
     p.add_argument("--n-hits", type=int, default=5, help="Number of causal SNPs, each on its own autosome.")
@@ -136,6 +141,8 @@ def parse_args():
     p.add_argument("--prevalence", type=float, default=0.10, help="Disease prevalence in the population.")
     p.add_argument("--segment-mb", type=float, default=4.0,
                    help="Mean length (Mb) of the genome segments copied from one donor.")
+    p.add_argument("--n-spurious", type=int, default=4,
+                   help="Number of spurious associations per artefact type (3 types).")
     p.add_argument("--no-qc-issues", action="store_true",
                    help="Do not plant QC issues (sex mismatches, relatives, outliers, missingness, HWE).")
     p.add_argument("--seed", type=int, default=2026, help="Random seed (same seed = same dataset).")
@@ -287,6 +294,12 @@ def allelic_p(g_case, g_ctrl):
         return 1.0
     chi2 = n * (a * d - b * c) ** 2 / den
     return math.erfc(math.sqrt(chi2 / 2.0))
+
+
+def allelic_p_status(g, status):
+    """Allelic test P for one SNP (A1 counts, -1 missing) given status (2 = case, 1 = control)."""
+    ok = g >= 0
+    return allelic_p(g[ok & (status == 2)], g[ok & (status == 1)])
 
 
 def logistic(x):
@@ -508,9 +521,23 @@ def main():
             truth.append(("high_missingness_sample", iid[i], f"missing rate {miss_sample[i]:.3f}"))
     hwe_snps = set()
     miss_snp = rng.beta(1, 500, len(snps["row"]))
+    spurious = {}       # SNP index -> artefact type
+    if not args.no_qc_issues and args.n_spurious > 0:
+        ok = np.isin(snps["chr"], list(AUTOSOMES))
+        for c, lo, hi in EXCLUDED_FOR_HITS:
+            ok &= ~((snps["chr"] == c) & (snps["bp"] >= lo) & (snps["bp"] <= hi))
+        for h in hit_idx:   # keep clear of the real hits
+            ok &= ~((snps["chr"] == snps["chr"][h]) & (np.abs(snps["bp"] - snps["bp"][h]) < 5_000_000))
+        common = np.where(ok & (maf >= 0.20))[0]
+        anyfreq = np.where(ok)[0]
+        for kind, pool in (("differential_missingness", common), ("batch_error_controls", common),
+                           ("rare_variant", anyfreq)):
+            pool = np.setdiff1d(pool, list(spurious))
+            for s_ in rng.choice(pool, min(args.n_spurious, len(pool)), replace=False):
+                spurious[int(s_)] = kind
     if not args.no_qc_issues:
         auto_idx = np.where(np.isin(snps["chr"], list(AUTOSOMES)))[0]
-        auto_idx = np.setdiff1d(auto_idx, hit_idx)
+        auto_idx = np.setdiff1d(auto_idx, list(hit_idx) + list(spurious))
         for s in rng.choice(auto_idx, min(200, len(auto_idx)), replace=False):
             hwe_snps.add(int(s))
             truth.append(("hwe_violation", snps["id"][s], "excess heterozygotes"))
@@ -588,6 +615,42 @@ def main():
                     hom = np.where((G[s_local] == 0) | (G[s_local] == 2))[0]
                     flip = rng.choice(hom, int(0.3 * len(hom)), replace=False) if len(hom) else []
                     G[s_local, flip] = 1
+            for s_local, s_global in enumerate(sel):            # spurious associations
+                kind = spurious.get(int(s_global))
+                if kind is None:
+                    continue
+                g = G[s_local]
+                ctrl, case = np.where(status == 1)[0], np.where(status == 2)[0]
+                if kind == "rare_variant":
+                    # nearly monomorphic; minor-allele carriers are almost all cases (MAF < 1%)
+                    major = 2 if np.mean(g[g >= 0]) >= 1 else 0
+                    g[g >= 0] = major
+                    carriers = np.concatenate([rng.choice(case, 24, replace=False), rng.choice(ctrl, 2, replace=False)])
+                    g[carriers] = 1
+                else:
+                    minor_hom = 0 if np.mean(g[g >= 0]) >= 1 else 2
+                    for strength in np.linspace(0.3, 1.0, 15):
+                        t = g.copy()
+                        if kind == "differential_missingness":
+                            # in controls, minor homozygotes (and some hets) fail to be called
+                            mh = ctrl[t[ctrl] == minor_hom]; ht = ctrl[t[ctrl] == 1]
+                            t[mh[rng.random(len(mh)) < strength]] = -1
+                            t[ht[rng.random(len(ht)) < 0.25 * strength]] = -1
+                            t[ctrl[rng.random(len(ctrl)) < 0.04]] = -1
+                        else:
+                            # in controls, heterozygotes are called as major homozygotes
+                            ht = ctrl[t[ctrl] == 1]
+                            t[ht[rng.random(len(ht)) < strength]] = 2 - minor_hom
+                        if allelic_p_status(t, status) < 1e-9:
+                            break
+                    g[:] = t
+                p_sp = allelic_p_status(g, status)
+                if p_sp > 5e-8:
+                    log.warning("Spurious SNP %s (%s) only reaches P %.1e", snps["id"][s_global], kind, p_sp)
+                truth.append(("spurious_" + kind, snps["id"][s_global],
+                              f"chr{c}:{snps['bp'][s_global]}; allelic P before QC {p_sp:.1e}"))
+                log.info("Spurious association (%s): %s chr%d:%d, P %.1e", kind, snps["id"][s_global], c,
+                         snps["bp"][s_global], p_sp)
             # missingness: per sample and per SNP (in blocks, to limit memory)
             for b0_ in range(0, len(sel), 5000):
                 ms = miss_snp[sel[b0_:b0_ + 5000]][:, None]
