@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>10&nbsp; GWAS visualisation – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -60,6 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -82,9 +86,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,11 +115,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-<script src="site_libs/tabwid-1.1.3/tabwid.js"></script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -288,7 +298,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -299,9 +311,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -317,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -352,8 +368,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -390,14 +406,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -416,14 +432,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -454,7 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -472,8 +488,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -492,24 +508,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#qq-plots" id="toc-qq-plots" class="nav-link active" data-scroll-target="#qq-plots"><span class="header-section-number">10.0.1</span> QQ plots</a></li>
+  <li><a href="#qq-plots" id="toc-qq-plots" class="nav-link active" data-scroll-target="#qq-plots"><span class="header-section-number">10.0.1</span> QQ plots</a></li>
   <li><a href="#manhattan-plots" id="toc-manhattan-plots" class="nav-link" data-scroll-target="#manhattan-plots"><span class="header-section-number">10.1</span> Manhattan plots</a></li>
   <li><a href="#other-plots" id="toc-other-plots" class="nav-link" data-scroll-target="#other-plots"><span class="header-section-number">10.2</span> Other plots</a></li>
   <li><a href="#interactive-plots" id="toc-interactive-plots" class="nav-link" data-scroll-target="#interactive-plots"><span class="header-section-number">10.3</span> Interactive plots</a></li>
   <li><a href="#getting-up-close" id="toc-getting-up-close" class="nav-link" data-scroll-target="#getting-up-close"><span class="header-section-number">10.4</span> Getting up close</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_5_gwas_basics_results_visualization_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_5_gwas_basics_results_visualization_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_5_gwas_basics_results_visualization_cocalc.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GWAS visualisation</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_5_gwas_basics_results_visualization_cocalc.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GWAS visualisation</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-gwas-visuals-cocalc" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GWAS visualisation</span></span></h1>
 </div>
 
@@ -524,9 +547,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><!-- ![](./img/_headers/interactive_plot.png){width=100%} --><p>Data visualization is key, not only for presentation but also to inspect the results.</p>
-<section id="qq-plots" class="level3" data-number="10.0.1"><h3 data-number="10.0.1" class="anchored" data-anchor-id="qq-plots">
-<span class="header-section-number">10.0.1</span> QQ plots</h3>
+</header>
+
+
+<!-- ![](./img/_headers/interactive_plot.png){width=100%} -->
+<p>Data visualization is key, not only for presentation but also to inspect the results.</p>
+<section id="qq-plots" class="level3" data-number="10.0.1">
+<h3 data-number="10.0.1" class="anchored" data-anchor-id="qq-plots"><span class="header-section-number">10.0.1</span> QQ plots</h3>
 <p>We should create <em>quantile-quantile (QQ) plots</em> to compare the observed association test statistics with their expected values under the null hypothesis of no association and so assess the number, magnitude and quality of true associations.</p>
 <p>First, we will add the standard error, call rate, A2, and allele frequencies.</p>
 <div class="cell" data-layout-align="center">
@@ -534,47 +561,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://r-datatable.com">"data.table"</a></span><span class="op">)</span></span>
-<span><span class="va">gwas_FRQ</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"dummy_project/gwas_results/gwa.frq"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">gwas_LMISS</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"dummy_project/gwas_results/gwa.lmiss"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">gwas_assoc</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"dummy_project/gwas_results/data.assoc.logistic"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">gwas_LMISS</span><span class="op">$</span><span class="va">callrate</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">gwas_LMISS</span><span class="op">$</span><span class="va">F_MISS</span></span>
-<span></span>
-<span><span class="va">gwas_assoc_sub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">gwas_assoc</span>, <span class="va">TEST</span> <span class="op">==</span> <span class="st">"ADD"</span><span class="op">)</span></span>
-<span><span class="va">gwas_assoc_sub</span><span class="op">$</span><span class="va">TEST</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
-<span></span>
-<span><span class="va">temp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">gwas_FRQ</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"NCHROBS"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">gwas_assoc_subfrq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">gwas_assoc_sub</span>, <span class="va">temp</span>, by <span class="op">=</span> <span class="st">"SNP"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">temp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">gwas_LMISS</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"callrate"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">gwas_assoc_subfrqlmiss</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">gwas_assoc_subfrq</span>, <span class="va">temp</span>, by <span class="op">=</span> <span class="st">"SNP"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">gwas_assoc_subfrqlmiss</span><span class="op">)</span></span>
-<span><span class="co"># Remember:</span></span>
-<span><span class="co"># - that z = beta/se</span></span>
-<span><span class="co"># - beta = log(OR), because log is the natural log in r</span></span>
-<span></span>
-<span><span class="va">gwas_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">BETA</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">gwas_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">OR</span><span class="op">)</span></span>
-<span><span class="va">gwas_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">SE</span> <span class="op">=</span> <span class="va">gwas_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">BETA</span><span class="op">/</span><span class="va">gwas_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">STAT</span></span>
-<span></span>
-<span></span>
-<span><span class="va">gwas_assoc_subfrqlmiss_tib</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">gwas_assoc_subfrqlmiss</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">col_order</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>,</span>
-<span>               <span class="st">"A1"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"callrate"</span>, <span class="st">"NMISS"</span>, <span class="st">"NCHROBS"</span>,</span>
-<span>               <span class="st">"BETA"</span>, <span class="st">"SE"</span>, <span class="st">"OR"</span>, <span class="st">"STAT"</span>, <span class="st">"P"</span><span class="op">)</span></span>
-<span><span class="va">gwas_assoc_compl</span> <span class="op">&lt;-</span> <span class="va">gwas_assoc_subfrqlmiss_tib</span><span class="op">[</span>, <span class="va">col_order</span><span class="op">]</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fwrite.html">fwrite</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span>, <span class="st">"dummy_project/gwas_results/gwas_assoc_compl.txt"</span>,</span>
-<span>                   sep <span class="op">=</span> <span class="st">"\t"</span>, quote <span class="op">=</span> <span class="cn">FALSE</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"data.table"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gwas_FRQ <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"dummy_project/gwas_results/gwa.frq"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gwas_LMISS <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"dummy_project/gwas_results/gwa.lmiss"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>gwas_assoc <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"dummy_project/gwas_results/data.assoc.logistic"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>gwas_LMISS<span class="sc">$</span>callrate <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> gwas_LMISS<span class="sc">$</span>F_MISS</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>gwas_assoc_sub <span class="ot">&lt;-</span> <span class="fu">subset</span>(gwas_assoc, TEST <span class="sc">==</span> <span class="st">"ADD"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>gwas_assoc_sub<span class="sc">$</span>TEST <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">subset</span>(gwas_FRQ, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"NCHROBS"</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>gwas_assoc_subfrq <span class="ot">&lt;-</span> <span class="fu">merge</span>(gwas_assoc_sub, temp, <span class="at">by =</span> <span class="st">"SNP"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">subset</span>(gwas_LMISS, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"callrate"</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>gwas_assoc_subfrqlmiss <span class="ot">&lt;-</span> <span class="fu">merge</span>(gwas_assoc_subfrq, temp, <span class="at">by =</span> <span class="st">"SNP"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gwas_assoc_subfrqlmiss)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Remember:</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># - that z = beta/se</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># - beta = log(OR), because log is the natural log in r</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>gwas_assoc_subfrqlmiss<span class="sc">$</span>BETA <span class="ot">=</span> <span class="fu">log</span>(gwas_assoc_subfrqlmiss<span class="sc">$</span>OR)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>gwas_assoc_subfrqlmiss<span class="sc">$</span>SE <span class="ot">=</span> gwas_assoc_subfrqlmiss<span class="sc">$</span>BETA<span class="sc">/</span>gwas_assoc_subfrqlmiss<span class="sc">$</span>STAT</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>gwas_assoc_subfrqlmiss_tib <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">as_tibble</span>(gwas_assoc_subfrqlmiss)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>               <span class="st">"A1"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"callrate"</span>, <span class="st">"NMISS"</span>, <span class="st">"NCHROBS"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>               <span class="st">"BETA"</span>, <span class="st">"SE"</span>, <span class="st">"OR"</span>, <span class="st">"STAT"</span>, <span class="st">"P"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>gwas_assoc_compl <span class="ot">&lt;-</span> gwas_assoc_subfrqlmiss_tib[, col_order]</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(gwas_assoc_compl)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gwas_assoc_compl)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>data.table<span class="sc">::</span><span class="fu">fwrite</span>(gwas_assoc_compl, <span class="st">"dummy_project/gwas_results/gwas_assoc_compl.txt"</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Let’s list the number of SNPs per chromosome. This gives a pretty good idea about the per-chromosome coverage. And it’s a sanity check: did the whole analysis run properly (we expect 22 chromosomes)?</p>
@@ -583,115 +610,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span><span class="op">$</span><span class="va">CHR</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">==</span> <span class="st">"Var1"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Chr"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(gwas_assoc_compl<span class="sc">$</span>CHR))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)[<span class="fu">names</span>(df) <span class="sc">==</span> <span class="st">"Var1"</span>] <span class="ot">&lt;-</span> <span class="st">"Chr"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div id="tbl-listsnpsperchr" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-listsnpsperchr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-listsnpsperchr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;10.1: Number of SNPs per chromosome.
-</figcaption><div aria-describedby="tbl-listsnpsperchr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-listsnpsperchr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="tabwid">
-<style>.cl-d8bad469{}.cl-21b8b309{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b8dca18c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.175;background-color:transparent;}.cl-0094a2ec{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.175;background-color:transparent;}.cl-0534c7cd{width:0.431in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cffe7747{width:0.652in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5d9c582{width:0.431in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5b29bc2f{width:0.652in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e366f470{width:0.431in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9b4c8653{width:0.652in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-d8bad469">
-<thead><tr style="overflow-wrap:break-word;">
-<th class="cl-0534c7cd"><p class="cl-b8dca18c"><span class="cl-21b8b309">Chr</span></p></th>
-<th class="cl-cffe7747"><p class="cl-0094a2ec"><span class="cl-21b8b309">Freq</span></p></th>
-</tr></thead>
-<tbody>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">1</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">23,173</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">2</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">25,206</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">3</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">21,402</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">4</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">19,008</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">5</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">19,157</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">6</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">20,672</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">7</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">16,581</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">8</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">18,089</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">9</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">15,709</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">10</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">15,536</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">11</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">14,564</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">12</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">14,889</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">13</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">11,524</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">14</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">9,822</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">15</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">8,838</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">16</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">8,920</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">17</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">8,262</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">18</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">10,356</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">19</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">5,820</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">20</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">7,792</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">21</span></p></td>
-<td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">5,412</span></p></td>
-</tr>
-<tr style="overflow-wrap:break-word;">
-<td class="cl-e366f470"><p class="cl-b8dca18c"><span class="cl-21b8b309">22</span></p></td>
-<td class="cl-9b4c8653"><p class="cl-0094a2ec"><span class="cl-21b8b309">5,370</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="tabwid"><style>.cl-d8bad469{}.cl-21b8b309{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b8dca18c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.175;background-color:transparent;}.cl-0094a2ec{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.175;background-color:transparent;}.cl-0534c7cd{width:0.431in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cffe7747{width:0.652in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5d9c582{width:0.431in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5b29bc2f{width:0.652in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e366f470{width:0.431in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9b4c8653{width:0.652in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-d8bad469"><thead><tr style="overflow-wrap:break-word;"><th class="cl-0534c7cd"><p class="cl-b8dca18c"><span class="cl-21b8b309">Chr</span></p></th><th class="cl-cffe7747"><p class="cl-0094a2ec"><span class="cl-21b8b309">Freq</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">1</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">23,173</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">2</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">25,206</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">3</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">21,402</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">4</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">19,008</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">5</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">19,157</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">6</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">20,672</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">7</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">16,581</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">8</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">18,089</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">9</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">15,709</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">10</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">15,536</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">11</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">14,564</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">12</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">14,889</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">13</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">11,524</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">14</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">9,822</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">15</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">8,838</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">16</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">8,920</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">17</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">8,262</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">18</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">10,356</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">19</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">5,820</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">20</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">7,792</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5d9c582"><p class="cl-b8dca18c"><span class="cl-21b8b309">21</span></p></td><td class="cl-5b29bc2f"><p class="cl-0094a2ec"><span class="cl-21b8b309">5,412</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e366f470"><p class="cl-b8dca18c"><span class="cl-21b8b309">22</span></p></td><td class="cl-9b4c8653"><p class="cl-0094a2ec"><span class="cl-21b8b309">5,370</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </figure>
@@ -710,11 +641,11 @@ Table&nbsp;10.1: Number of SNPs per chromosome.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">uithof_color</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#FBB820"</span>,<span class="st">"#F59D10"</span>,<span class="st">"#E55738"</span>,<span class="st">"#DB003F"</span>,<span class="st">"#E35493"</span>,<span class="st">"#D5267B"</span>,</span>
-<span>                 <span class="st">"#CC0071"</span>,<span class="st">"#A8448A"</span>,<span class="st">"#9A3480"</span>,<span class="st">"#8D5B9A"</span>,<span class="st">"#705296"</span>,<span class="st">"#686AA9"</span>,</span>
-<span>                 <span class="st">"#6173AD"</span>,<span class="st">"#4C81BF"</span>,<span class="st">"#2F8BC9"</span>,<span class="st">"#1290D9"</span>,<span class="st">"#1396D8"</span>,<span class="st">"#15A6C1"</span>,</span>
-<span>                 <span class="st">"#5EB17F"</span>,<span class="st">"#86B833"</span>,<span class="st">"#C5D220"</span>,<span class="st">"#9FC228"</span>,<span class="st">"#78B113"</span>,<span class="st">"#49A01D"</span>,</span>
-<span>                 <span class="st">"#595A5C"</span>,<span class="st">"#A2A3A4"</span>, <span class="st">"#D7D8D7"</span>, <span class="st">"#ECECEC"</span>, <span class="st">"#FFFFFF"</span>, <span class="st">"#000000"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>uithof_color <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"#FBB820"</span>,<span class="st">"#F59D10"</span>,<span class="st">"#E55738"</span>,<span class="st">"#DB003F"</span>,<span class="st">"#E35493"</span>,<span class="st">"#D5267B"</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"#CC0071"</span>,<span class="st">"#A8448A"</span>,<span class="st">"#9A3480"</span>,<span class="st">"#8D5B9A"</span>,<span class="st">"#705296"</span>,<span class="st">"#686AA9"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"#6173AD"</span>,<span class="st">"#4C81BF"</span>,<span class="st">"#2F8BC9"</span>,<span class="st">"#1290D9"</span>,<span class="st">"#1396D8"</span>,<span class="st">"#15A6C1"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"#5EB17F"</span>,<span class="st">"#86B833"</span>,<span class="st">"#C5D220"</span>,<span class="st">"#9FC228"</span>,<span class="st">"#78B113"</span>,<span class="st">"#49A01D"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"#595A5C"</span>,<span class="st">"#A2A3A4"</span>, <span class="st">"#D7D8D7"</span>, <span class="st">"#ECECEC"</span>, <span class="st">"#FFFFFF"</span>, <span class="st">"#000000"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -722,69 +653,75 @@ Table&nbsp;10.1: Number of SNPs per chromosome.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/stephenturner/qqman">"qqman"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">gwas_threshold</span> <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="fl">5e-8</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># you could save the image, or just display it</span></span>
-<span><span class="co"># png("dummy_project/gwas_results/gwas-qq.png")</span></span>
-<span><span class="fu">qqman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/qqman/man/qq.html">qq</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span><span class="op">$</span><span class="va">P</span>, main <span class="op">=</span> <span class="st">"QQ plot of GWAS"</span>,</span>
-<span>          xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">7</span><span class="op">)</span>,</span>
-<span>          ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span><span class="op">)</span>,</span>
-<span>          pch <span class="op">=</span> <span class="fl">20</span>, col <span class="op">=</span> <span class="va">uithof_color</span><span class="op">[</span><span class="fl">16</span><span class="op">]</span>, cex <span class="op">=</span> <span class="fl">1.5</span>, las <span class="op">=</span> <span class="fl">1</span>, bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="va">gwas_threshold</span>,</span>
-<span>       col <span class="op">=</span> <span class="va">uithof_color</span><span class="op">[</span><span class="fl">25</span><span class="op">]</span>, lty <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"qqman"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>gwas_threshold <span class="ot">=</span> <span class="sc">-</span><span class="fu">log10</span>(<span class="fl">5e-8</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># you could save the image, or just display it</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># png("dummy_project/gwas_results/gwas-qq.png")</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>qqman<span class="sc">::</span><span class="fu">qq</span>(gwas_assoc_compl<span class="sc">$</span>P, <span class="at">main =</span> <span class="st">"QQ plot of GWAS"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">7</span>),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">12</span>),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">col =</span> uithof_color[<span class="dv">16</span>], <span class="at">cex =</span> <span class="fl">1.5</span>, <span class="at">las =</span> <span class="dv">1</span>, <span class="at">bty =</span> <span class="st">"n"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> gwas_threshold,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> uithof_color[<span class="dv">25</span>], <span class="at">lty =</span> <span class="st">"dashed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-qq" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-qq.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.1: A QQ plot.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="manhattan-plots" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="manhattan-plots">
-<span class="header-section-number">10.1</span> Manhattan plots</h2>
+</section>
+<section id="manhattan-plots" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="manhattan-plots"><span class="header-section-number">10.1</span> Manhattan plots</h2>
 <p>We also need to create a <em>Manhattan plot</em> to display the association test P-values as a function of chromosomal location and thus provide a visual summary of association test results that draw immediate attention to any regions of significance (<a href="#fig-showmanhattan" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># you could save the image, or just display it</span></span>
-<span><span class="co"># png(paste0(COURSE_loc, "/dummy_project/gwas-manhattan.png"))</span></span>
-<span><span class="fu">qqman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/qqman/man/manhattan.html">manhattan</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span>, main <span class="op">=</span> <span class="st">"Manhattan Plot"</span>,</span>
-<span>                 ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span><span class="op">)</span>,</span>
-<span>                 cex <span class="op">=</span> <span class="fl">0.6</span>, cex.axis <span class="op">=</span> <span class="fl">0.9</span>,</span>
-<span>                 col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">uithof_color</span><span class="op">[</span><span class="fl">16</span><span class="op">]</span>, <span class="va">uithof_color</span><span class="op">[</span><span class="fl">24</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you could save the image, or just display it</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># png(paste0(COURSE_loc, "/dummy_project/gwas-manhattan.png"))</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>qqman<span class="sc">::</span><span class="fu">manhattan</span>(gwas_assoc_compl, <span class="at">main =</span> <span class="st">"Manhattan Plot"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">12</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">cex =</span> <span class="fl">0.6</span>, <span class="at">cex.axis =</span> <span class="fl">0.9</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> <span class="fu">c</span>(uithof_color[<span class="dv">16</span>], uithof_color[<span class="dv">24</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showmanhattan" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showmanhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showmanhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-manhattan.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showmanhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.2: A manhattan plot.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="other-plots" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="other-plots">
-<span class="header-section-number">10.2</span> Other plots</h2>
+</section>
+<section id="other-plots" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="other-plots"><span class="header-section-number">10.2</span> Other plots</h2>
 <p>It is also informative to plot the density per chromosome. We can use the <code>CMplot</code> for that which you can find <a href="https://github.com/YinLiLin/R-CMplot" target="_blank">here</a>. For now we just make these graphs ‘quick-n-dirty’, you can further prettify them, but you easily loose track of time, so maybe carry on.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gwas_assoc_complsub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>, <span class="st">"P"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gwas_assoc_complsub <span class="ot">&lt;-</span> <span class="fu">subset</span>(gwas_assoc_compl, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>, <span class="st">"P"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -792,16 +729,16 @@ Figure&nbsp;10.2: A manhattan plot.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/YinLiLin/CMplot">"CMplot"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/CMplot/man/CMplot-package.html">CMplot</a></span><span class="op">(</span><span class="va">gwas_assoc_complsub</span>,</span>
-<span>       plot.type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"d"</span>, <span class="st">"c"</span>, <span class="st">"m"</span>, <span class="st">"q"</span><span class="op">)</span>, LOG10 <span class="op">=</span> <span class="cn">TRUE</span>, ylim <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>       threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1e-6</span>,<span class="fl">1e-4</span><span class="op">)</span>, threshold.lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, threshold.lwd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, threshold.col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"grey"</span><span class="op">)</span>,</span>
-<span>       amplify <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>       bin.size <span class="op">=</span> <span class="fl">1e6</span>, chr.den.col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"darkgreen"</span>, <span class="st">"yellow"</span>, <span class="st">"red"</span><span class="op">)</span>,</span>
-<span>       signal.col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"green"</span><span class="op">)</span>, signal.cex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, signal.pch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">19</span>,<span class="fl">19</span><span class="op">)</span>,</span>
-<span>       file.output <span class="op">=</span> <span class="cn">FALSE</span>, file <span class="op">=</span> <span class="st">"png"</span>, </span>
-<span>       main <span class="op">=</span> <span class="st">""</span>, dpi <span class="op">=</span> <span class="fl">300</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"CMplot"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">CMplot</span>(gwas_assoc_complsub,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot.type =</span> <span class="fu">c</span>(<span class="st">"d"</span>, <span class="st">"c"</span>, <span class="st">"m"</span>, <span class="st">"q"</span>), <span class="at">LOG10 =</span> <span class="cn">TRUE</span>, <span class="at">ylim =</span> <span class="cn">NULL</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">threshold =</span> <span class="fu">c</span>(<span class="fl">1e-6</span>,<span class="fl">1e-4</span>), <span class="at">threshold.lty =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">threshold.lwd =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">threshold.col =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"grey"</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">amplify =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">bin.size =</span> <span class="fl">1e6</span>, <span class="at">chr.den.col =</span> <span class="fu">c</span>(<span class="st">"darkgreen"</span>, <span class="st">"yellow"</span>, <span class="st">"red"</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">signal.col =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>), <span class="at">signal.cex =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">signal.pch =</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">19</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">file.output =</span> <span class="cn">FALSE</span>, <span class="at">file =</span> <span class="st">"png"</span>, </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">""</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -811,126 +748,139 @@ Figure&nbsp;10.2: A manhattan plot.
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showcmplotalldensity" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showcmplotalldensity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showcmplotalldensity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-cmplot-all-density.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showcmplotalldensity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.3: SNP density of the association results.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showcmplotallqq" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showcmplotallqq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showcmplotallqq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-cmplot-all-qq.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showcmplotallqq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.4: A QQ plot including a 95% confidence interval (blue area) and genome-wide significant hits (red).
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showcmplotallmanhattan" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showcmplotallmanhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showcmplotallmanhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-cmplot-all-manhattan.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showcmplotallmanhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.5: A regular manhattan plot. Colored by chromosome, suggestive hits are green, genome-wide hits are red. The bottom graph shows the per-chromosome SNP density.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-cmplot-all-circular" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-cmplot-all-circular-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-cmplot-all-circular-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-cmplot-all-circular.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-cmplot-all-circular-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10.6: A circular manhattan.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="interactive-plots" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="interactive-plots">
-<span class="header-section-number">10.3</span> Interactive plots</h2>
+</section>
+<section id="interactive-plots" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="interactive-plots"><span class="header-section-number">10.3</span> Interactive plots</h2>
 <p>You can also make an <a href="https://r-graph-gallery.com/101_Manhattan_plot.html" target="_blank">interactive version</a> of the Manhattan - just because you can. The code below shows you how.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="R"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://plotly-r.com">plotly</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Prepare the dataset (as an example we use the data (gwasResults) from the `qqman`-package)</span></span>
-<span><span class="va">don</span> <span class="op">&lt;-</span> <span class="va">gwasResults</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span></span>
-<span>  <span class="co"># Compute chromosome size</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CHR</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>chr_len<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">BP</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span></span>
-<span>  <span class="co"># Calculate cumulative position of each chromosome</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>tot<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cumsum.html">cumsum</a></span><span class="op">(</span><span class="va">chr_len</span><span class="op">)</span><span class="op">-</span><span class="va">chr_len</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">chr_len</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span></span>
-<span>  <span class="co"># Add this info to the initial dataset</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">gwasResults</span>, <span class="va">.</span>, by<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CHR"</span><span class="op">=</span><span class="st">"CHR"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span></span>
-<span>  <span class="co"># Add a cumulative position of each SNP</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">CHR</span>, <span class="va">BP</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span> BPcum<span class="op">=</span><span class="va">BP</span><span class="op">+</span><span class="va">tot</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span></span>
-<span>  <span class="co"># Add highlight and annotation information</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span> is_highlight<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">SNP</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">snpsOfInterest</span>, <span class="st">"yes"</span>, <span class="st">"no"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span></span>
-<span>  <span class="co"># Filter SNP to make the plot lighter</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">P</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">0.5</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Prepare X axis</span></span>
-<span><span class="va">axisdf</span> <span class="op">&lt;-</span> <span class="va">don</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CHR</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>center<span class="op">=</span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">BPcum</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">BPcum</span><span class="op">)</span> <span class="op">)</span> <span class="op">/</span> <span class="fl">2</span> <span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Prepare text description for each SNP:</span></span>
-<span><span class="va">don</span><span class="op">$</span><span class="va">text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"SNP: "</span>, <span class="va">don</span><span class="op">$</span><span class="va">SNP</span>, <span class="st">"\nPosition: "</span>, <span class="va">don</span><span class="op">$</span><span class="va">BP</span>, <span class="st">"\nChromosome: "</span>, <span class="va">don</span><span class="op">$</span><span class="va">CHR</span>, <span class="st">"\nLOD score:"</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">don</span><span class="op">$</span><span class="va">P</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span>, <span class="st">"\nWhat else do you wanna know"</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Make the plot</span></span>
-<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">don</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">BPcum</span>, y<span class="op">=</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">P</span><span class="op">)</span>, text<span class="op">=</span><span class="va">text</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span></span>
-<span>    <span class="co"># Show all points</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">CHR</span><span class="op">)</span><span class="op">)</span>, alpha<span class="op">=</span><span class="fl">0.8</span>, size<span class="op">=</span><span class="fl">1.3</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"grey"</span>, <span class="st">"skyblue"</span><span class="op">)</span>, <span class="fl">22</span> <span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span></span>
-<span>    <span class="co"># custom X axis:</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span> label <span class="op">=</span> <span class="va">axisdf</span><span class="op">$</span><span class="va">CHR</span>, breaks<span class="op">=</span> <span class="va">axisdf</span><span class="op">$</span><span class="va">center</span> <span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>     <span class="co"># remove space between plot area and x axis</span></span>
-<span></span>
-<span>    <span class="co"># Add highlighted points</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">don</span>, <span class="va">is_highlight</span><span class="op">==</span><span class="st">"yes"</span><span class="op">)</span>, color<span class="op">=</span><span class="st">"orange"</span>, size<span class="op">=</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
-<span></span>
-<span>    <span class="co"># Custom the theme:</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
-<span>      legend.position<span class="op">=</span><span class="st">"none"</span>,</span>
-<span>      panel.border <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>      panel.grid.major.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>      panel.grid.minor.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plotly/man/ggplotly.html">ggplotly</a></span><span class="op">(</span><span class="va">p</span>, tooltip<span class="op">=</span><span class="st">"text"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="R"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the dataset (as an example we use the data (gwasResults) from the `qqman`-package)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>don <span class="ot">&lt;-</span> gwasResults <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Compute chromosome size</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CHR) <span class="sc">%&gt;%</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">chr_len=</span><span class="fu">max</span>(BP)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate cumulative position of each chromosome</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tot=</span><span class="fu">cumsum</span>(chr_len)<span class="sc">-</span>chr_len) <span class="sc">%&gt;%</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>chr_len) <span class="sc">%&gt;%</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add this info to the initial dataset</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(gwasResults, ., <span class="at">by=</span><span class="fu">c</span>(<span class="st">"CHR"</span><span class="ot">=</span><span class="st">"CHR"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a cumulative position of each SNP</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(CHR, BP) <span class="sc">%&gt;%</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>( <span class="at">BPcum=</span>BP<span class="sc">+</span>tot) <span class="sc">%&gt;%</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add highlight and annotation information</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>( <span class="at">is_highlight=</span><span class="fu">ifelse</span>(SNP <span class="sc">%in%</span> snpsOfInterest, <span class="st">"yes"</span>, <span class="st">"no"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter SNP to make the plot lighter</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">-</span><span class="fu">log10</span>(P)<span class="sc">&gt;</span><span class="fl">0.5</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare X axis</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>axisdf <span class="ot">&lt;-</span> don <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(CHR) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">center=</span>( <span class="fu">max</span>(BPcum) <span class="sc">+</span> <span class="fu">min</span>(BPcum) ) <span class="sc">/</span> <span class="dv">2</span> )</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare text description for each SNP:</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>don<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"SNP: "</span>, don<span class="sc">$</span>SNP, <span class="st">"</span><span class="sc">\n</span><span class="st">Position: "</span>, don<span class="sc">$</span>BP, <span class="st">"</span><span class="sc">\n</span><span class="st">Chromosome: "</span>, don<span class="sc">$</span>CHR, <span class="st">"</span><span class="sc">\n</span><span class="st">LOD score:"</span>, <span class="sc">-</span><span class="fu">log10</span>(don<span class="sc">$</span>P) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">What else do you wanna know"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the plot</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(don, <span class="fu">aes</span>(<span class="at">x=</span>BPcum, <span class="at">y=</span><span class="sc">-</span><span class="fu">log10</span>(P), <span class="at">text=</span>text)) <span class="sc">+</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Show all points</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>( <span class="fu">aes</span>(<span class="at">color=</span><span class="fu">as.factor</span>(CHR)), <span class="at">alpha=</span><span class="fl">0.8</span>, <span class="at">size=</span><span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"grey"</span>, <span class="st">"skyblue"</span>), <span class="dv">22</span> )) <span class="sc">+</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># custom X axis:</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>( <span class="at">label =</span> axisdf<span class="sc">$</span>CHR, <span class="at">breaks=</span> axisdf<span class="sc">$</span>center ) <span class="sc">+</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span>     <span class="co"># remove space between plot area and x axis</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add highlighted points</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data=</span><span class="fu">subset</span>(don, is_highlight<span class="sc">==</span><span class="st">"yes"</span>), <span class="at">color=</span><span class="st">"orange"</span>, <span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Custom the theme:</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">"none"</span>,</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p, <span class="at">tooltip=</span><span class="st">"text"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>It will produce something like below. In the CoCalc Notebook-window it isn’t smooth, but this way you have an idea how to do it in a real-case scenario.</p>
 <p><img src="img/gwas/interactive_plot.png" class="img-fluid"></p>
 <p>Again, this is an example with dummy data - you can try to do it for our GWAS, but careful with the time. You can also choose to carry on.</p>
 <p>You will encounter the above types of visualizations in any high-quality GWAS paper, because each is so critically informative. Usually, analysts of large-scale meta-analyses of GWAS will also stratify the QQ-plots based on the imputation quality (if your GWAS was imputed), call rate, and allele frequency (although that is rarely shared in publications, not even in supplemental material).</p>
-</section><section id="getting-up-close" class="level2" data-number="10.4"><h2 data-number="10.4" class="anchored" data-anchor-id="getting-up-close">
-<span class="header-section-number">10.4</span> Getting up close</h2>
+</section>
+<section id="getting-up-close" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="getting-up-close"><span class="header-section-number">10.4</span> Getting up close</h2>
 <p>Now that you created a Manhattan and diagnostic QQ plot, it would be nice to see the loci we found a bit more up and close.</p>
 <p>In the next <a href="03_6_gwas_basics_results_regional_plot_cocalc.html" class="quarto-xref"><span>Chapter 11</span></a> we will show you how to create regional plots.</p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1474,9 +1424,12 @@ Figure&nbsp;10.6: A circular manhattan.
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./03_4_gwas_basics_association_testing_cocalc.html" class="pagination-link" aria-label="Genome-Wide Association Study">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Genome-Wide Association Study</span></span>
       </a>          
@@ -1488,7 +1441,8 @@ Figure&nbsp;10.6: A circular manhattan.
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1500,6 +1454,8 @@ Figure&nbsp;10.6: A circular manhattan.
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

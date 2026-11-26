@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>11&nbsp; Regional association plots – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -60,6 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -82,9 +86,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +115,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -287,7 +296,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -298,9 +309,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -316,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -351,8 +366,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -389,14 +404,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -415,14 +430,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -453,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -471,8 +486,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -491,22 +506,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#locuszoom" id="toc-locuszoom" class="nav-link active" data-scroll-target="#locuszoom"><span class="header-section-number">11.1</span> LocusZoom</a></li>
+  <li><a href="#locuszoom" id="toc-locuszoom" class="nav-link active" data-scroll-target="#locuszoom"><span class="header-section-number">11.1</span> LocusZoom</a></li>
   <li><a href="#racer" id="toc-racer" class="nav-link" data-scroll-target="#racer"><span class="header-section-number">11.2</span> RACER</a></li>
   <li><a href="#stop-playing-around" id="toc-stop-playing-around" class="nav-link" data-scroll-target="#stop-playing-around"><span class="header-section-number">11.3</span> Stop playing around</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_6_gwas_basics_results_regional_plot_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_6_gwas_basics_results_regional_plot_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_6_gwas_basics_results_regional_plot_cocalc.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regional association plots</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_6_gwas_basics_results_regional_plot_cocalc.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regional association plots</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-regional-plot-cocalc" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regional association plots</span></span></h1>
 </div>
 
@@ -521,7 +543,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p><img src="img/headers/banner_man_standing_dna.png" class="chapter-banner img-fluid" alt="Statistical finemapping"><!-- ![](img/headers/banner_man_standing_dna.png){width=100%} --></p>
+</header>
+
+
+<p><img src="img/headers/banner_man_standing_dna.png" class="chapter-banner img-fluid" alt="Statistical finemapping"> <!-- ![](img/headers/banner_man_standing_dna.png){width=100%} --></p>
 <p>Now that you have created a cleaned GWAS result, and created a diagnostic QQ plot and a traditional Manhattan, we should want to inspect the top hits a bit more closer. To do this, we needneed to find the independent hits by <em>clumping</em> the results. We will just use the defaults, but please take a note of all the options here <a href="https://www.cog-genomics.org/plink/1.9/postproc#clump" target="_blank">https://www.cog-genomics.org/plink/1.9/postproc#clump</a>.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -612,8 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Question: How many independent hits did you find?</p>
 </blockquote>
 <p>In summary, clumping identifies three loci and now that you know them you can create regional association plots.</p>
-<section id="locuszoom" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="locuszoom">
-<span class="header-section-number">11.1</span> LocusZoom</h2>
+<section id="locuszoom" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="locuszoom"><span class="header-section-number">11.1</span> LocusZoom</h2>
 <p>Now you are ready to visualize regions of interest using a package like <a href="http://locuszoom.org">LocusZoom</a>. Locuszoom is a great and easy tool, you’ll soon discover. It’s the fast and lazy way to get regional association plots.</p>
 <p>First, let’s get what we need (<code>SNP</code> and <code>P</code>) and gzip the results.</p>
 <div class="code-with-filename">
@@ -629,8 +654,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="./img/gwas/CEU.rs6802898.400kb.png" class="img-fluid" style="width:50.0%"></p>
 <p><img src="./img/gwas/CEU.rs7901695.400kb.png" class="img-fluid" style="width:50.0%"></p>
 <p><img src="./img/gwas/CEU.rs8050136.400kb.png" class="img-fluid" style="width:50.0%"></p>
-</section><section id="racer" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="racer">
-<span class="header-section-number">11.2</span> RACER</h2>
+</section>
+<section id="racer" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="racer"><span class="header-section-number">11.2</span> RACER</h2>
 <p>An alternative to create regional association plots for each of these loci is using <a href="https://github.com/oliviasabik/RACER" target="_blank"><strong>RACER</strong></a>. This packages offers substantial flexibility, and quite frankly, code-wise is easier to edit - think colorscheme, background etc. - as it is based on <a href="https://ggplot2.tidyverse.org" target="_blank"><code>ggplot2</code></a>. The creator, Olivia Sabik, also wrote a nice <a href="https://oliviasabik.github.io/RACERweb/index.html" target="_blank">vignette</a> with excellent instructions.</p>
 <p>Using <strong>RACER</strong> is also a step-up to <strong>colocalization</strong> about which you read a bit more in <a href="05_1_post_gwas.html" class="quarto-xref"><span>Chapter 15</span></a>.</p>
 <p>Right, so from the above we identified three independent hits: rs6802898, rs7901695, rs8050136. Let’s put them in a dataset with their chromosome and basepair position and create a list.</p>
@@ -639,12 +665,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rsID</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rs6802898"</span>, <span class="st">"rs7901695"</span>, <span class="st">"rs8050136"</span><span class="op">)</span></span>
-<span><span class="va">CHR</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">10</span>, <span class="fl">16</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">BP</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12366207</span>, <span class="fl">114744078</span>, <span class="fl">52373776</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co"># BPend &lt;- c(12366207 + 500000, 114744078 + 500000, 52373776 + 500000)</span></span>
-<span></span>
-<span><span class="va">variant_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">rsID</span>, <span class="va">CHR</span>, <span class="va">BP</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rsID <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"rs6802898"</span>, <span class="st">"rs7901695"</span>, <span class="st">"rs8050136"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>CHR <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">16</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>BP <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">c</span>(<span class="dv">12366207</span>, <span class="dv">114744078</span>, <span class="dv">52373776</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># BPend &lt;- c(12366207 + 500000, 114744078 + 500000, 52373776 + 500000)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>variant_list <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rsID, CHR, BP)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -652,7 +678,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">variant_list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>variant_list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       rsID CHR        BP
@@ -666,9 +692,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">variants_of_interest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">variant_list</span><span class="op">$</span><span class="va">rsID</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">variants_of_interest</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>variants_of_interest <span class="ot">&lt;-</span> <span class="fu">c</span>(variant_list<span class="sc">$</span>rsID)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>variants_of_interest</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "rs6802898" "rs7901695" "rs8050136"</code></pre>
@@ -718,90 +744,97 @@ Warning
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://oliviasabik.github.io/RACERweb/index.html">RACER</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">RANGE</span><span class="op">=</span><span class="fl">500000</span></span>
-<span></span>
-<span><span class="kw">for</span><span class="op">(</span><span class="va">VARIANT</span> <span class="kw">in</span> <span class="va">variants_of_interest</span><span class="op">)</span><span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Getting data for "</span>, <span class="va">VARIANT</span>,<span class="st">".\n"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span>  <span class="va">tempCHR</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">variant_list</span>, <span class="va">rsID</span> <span class="op">==</span> <span class="va">VARIANT</span><span class="op">)</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span></span>
-<span>  <span class="va">tempSTART</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">variant_list</span>, <span class="va">rsID</span> <span class="op">==</span> <span class="va">VARIANT</span><span class="op">)</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span> <span class="op">-</span> <span class="va">RANGE</span></span>
-<span>  <span class="va">tempEND</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">variant_list</span>, <span class="va">rsID</span> <span class="op">==</span> <span class="va">VARIANT</span><span class="op">)</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span> <span class="op">+</span> <span class="va">RANGE</span></span>
-<span>  <span class="va">tempVARIANTnr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">variant_list</span>, <span class="va">rsID</span> <span class="op">==</span> <span class="va">VARIANT</span><span class="op">)</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span></span>
-<span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\nSubset required data.\n"</span><span class="op">)</span></span>
-<span>  <span class="va">temp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">gwas_assoc_compl</span>, </span>
-<span>                 <span class="va">CHR</span> <span class="op">==</span> <span class="va">tempCHR</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">BP</span> <span class="op">&gt;=</span> <span class="va">tempSTART</span> <span class="op">&amp;</span> <span class="va">BP</span> <span class="op">&lt;=</span> <span class="va">tempEND</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\nFormatting association data.\n"</span><span class="op">)</span></span>
-<span>  <span class="co"># make sure you have the right column numbers here!</span></span>
-<span>  <span class="va">temp_f</span> <span class="op">=</span> <span class="fu">RACER</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RACER/man/formatRACER.html">formatRACER</a></span><span class="op">(</span>assoc_data <span class="op">=</span> <span class="va">temp</span>, chr_col <span class="op">=</span> <span class="fl">2</span>, pos_col <span class="op">=</span> <span class="fl">3</span>, p_col <span class="op">=</span> <span class="fl">14</span><span class="op">)</span></span>
-<span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"\nGetting LD data.\n"</span><span class="op">)</span></span>
-<span>  <span class="co"># LD with the lead variant comes from LDlink (1000G EUR) and needs your LDlink token (see @sec-ldlink-token)</span></span>
-<span>  <span class="va">temp_f_ld</span> <span class="op">=</span> <span class="fu">RACER</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RACER/man/ldRACER.html">ldRACER</a></span><span class="op">(</span>assoc_data <span class="op">=</span> <span class="va">temp_f</span>, rs_col <span class="op">=</span> <span class="fl">1</span>, pops <span class="op">=</span> <span class="st">"EUR"</span>, lead_snp <span class="op">=</span> <span class="va">VARIANT</span>,</span>
-<span>                             token <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"LDLINK_TOKEN"</span><span class="op">)</span>,</span>
-<span>                             window <span class="op">=</span> <span class="fl">500000</span>, genome_build <span class="op">=</span> <span class="st">"grch37"</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"\nPlotting region surrounding "</span>, <span class="va">VARIANT</span>,<span class="st">" on "</span>,<span class="va">tempCHR</span>,<span class="st">":"</span>,<span class="va">tempSTART</span>,<span class="st">"-"</span>,<span class="va">tempEND</span>,<span class="st">".\n"</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="co"># source(paste0(PROJECT_loc, "/scripts/functions.R"))</span></span>
-<span>  <span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/RACER/man/singlePlotRACER.html">singlePlotRACER</a></span><span class="op">(</span>assoc_data <span class="op">=</span> <span class="va">temp_f_ld</span>, </span>
-<span>                               chr <span class="op">=</span> <span class="va">tempCHR</span>, build <span class="op">=</span> <span class="st">"hg19"</span>, </span>
-<span>                               plotby <span class="op">=</span> <span class="st">"snp"</span>, snp_plot <span class="op">=</span> <span class="va">VARIANT</span>,</span>
-<span>                               label_lead <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">p1</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Saving image for "</span>, <span class="va">VARIANT</span>,<span class="st">".\n"</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"dummy_project/gwas_results/"</span>, <span class="va">tempVARIANTnr</span>, <span class="st">"."</span>,<span class="va">VARIANT</span>,<span class="st">".regional_assoc.png"</span><span class="op">)</span>, plot <span class="op">=</span> <span class="va">p1</span>, width <span class="op">=</span> <span class="fl">9</span>, height <span class="op">=</span> <span class="fl">6</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span>
-<span>  <span class="co"># ggplot2::ggsave(filename = paste0("dummy_project/gwas_results/", tempVARIANTnr, ".",VARIANT,".regional_assoc.pdf"), plot = p1)</span></span>
-<span>  <span class="co"># ggplot2::ggsave(filename = paste0("dummy_project/gwas_results/", tempVARIANTnr, ".",VARIANT,".regional_assoc.eps"), plot = p1)</span></span>
-<span>  </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">p1</span>,</span>
-<span>     <span class="va">temp_f</span>, <span class="va">temp_f_ld</span>,</span>
-<span>     <span class="va">tempCHR</span>, <span class="va">tempSTART</span>, <span class="va">tempEND</span>,</span>
-<span>     <span class="va">VARIANT</span>, <span class="va">tempVARIANTnr</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RACER)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>RANGE<span class="ot">=</span><span class="dv">500000</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(VARIANT <span class="cf">in</span> variants_of_interest){</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">"Getting data for "</span>, VARIANT,<span class="st">".</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  tempCHR <span class="ot">&lt;-</span> <span class="fu">subset</span>(variant_list, rsID <span class="sc">==</span> VARIANT)[,<span class="dv">2</span>]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  tempSTART <span class="ot">&lt;-</span> <span class="fu">subset</span>(variant_list, rsID <span class="sc">==</span> VARIANT)[,<span class="dv">3</span>] <span class="sc">-</span> RANGE</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  tempEND <span class="ot">&lt;-</span> <span class="fu">subset</span>(variant_list, rsID <span class="sc">==</span> VARIANT)[,<span class="dv">3</span>] <span class="sc">+</span> RANGE</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  tempVARIANTnr <span class="ot">&lt;-</span> <span class="fu">subset</span>(variant_list, rsID <span class="sc">==</span> VARIANT)[,<span class="dv">1</span>]</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Subset required data.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  temp <span class="ot">&lt;-</span> <span class="fu">subset</span>(gwas_assoc_compl, </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>                 CHR <span class="sc">==</span> tempCHR <span class="sc">&amp;</span> (BP <span class="sc">&gt;=</span> tempSTART <span class="sc">&amp;</span> BP <span class="sc">&lt;=</span> tempEND))</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Formatting association data.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># make sure you have the right column numbers here!</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  temp_f <span class="ot">=</span> RACER<span class="sc">::</span><span class="fu">formatRACER</span>(<span class="at">assoc_data =</span> temp, <span class="at">chr_col =</span> <span class="dv">2</span>, <span class="at">pos_col =</span> <span class="dv">3</span>, <span class="at">p_col =</span> <span class="dv">14</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Getting LD data.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># LD with the lead variant comes from LDlink (1000G EUR) and needs your LDlink token (see @sec-ldlink-token)</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  temp_f_ld <span class="ot">=</span> RACER<span class="sc">::</span><span class="fu">ldRACER</span>(<span class="at">assoc_data =</span> temp_f, <span class="at">rs_col =</span> <span class="dv">1</span>, <span class="at">pops =</span> <span class="st">"EUR"</span>, <span class="at">lead_snp =</span> VARIANT,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>                             <span class="at">token =</span> <span class="fu">Sys.getenv</span>(<span class="st">"LDLINK_TOKEN"</span>),</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>                             <span class="at">window =</span> <span class="dv">500000</span>, <span class="at">genome_build =</span> <span class="st">"grch37"</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Plotting region surrounding "</span>, VARIANT,<span class="st">" on "</span>,tempCHR,<span class="st">":"</span>,tempSTART,<span class="st">"-"</span>,tempEND,<span class="st">".</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># source(paste0(PROJECT_loc, "/scripts/functions.R"))</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  p1 <span class="ot">&lt;-</span> <span class="fu">singlePlotRACER</span>(<span class="at">assoc_data =</span> temp_f_ld, </span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>                               <span class="at">chr =</span> tempCHR, <span class="at">build =</span> <span class="st">"hg19"</span>, </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>                               <span class="at">plotby =</span> <span class="st">"snp"</span>, <span class="at">snp_plot =</span> VARIANT,</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>                               <span class="at">label_lead =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p1)</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">"Saving image for "</span>, VARIANT,<span class="st">".</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="fu">paste0</span>(<span class="st">"dummy_project/gwas_results/"</span>, tempVARIANTnr, <span class="st">"."</span>,VARIANT,<span class="st">".regional_assoc.png"</span>), <span class="at">plot =</span> p1, <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ggplot2::ggsave(filename = paste0("dummy_project/gwas_results/", tempVARIANTnr, ".",VARIANT,".regional_assoc.pdf"), plot = p1)</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ggplot2::ggsave(filename = paste0("dummy_project/gwas_results/", tempVARIANTnr, ".",VARIANT,".regional_assoc.eps"), plot = p1)</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rm</span>(temp, p1,</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>     temp_f, temp_f_ld,</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>     tempCHR, tempSTART, tempEND,</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>     VARIANT, tempVARIANTnr)</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This should produce the figure similar to these below.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-racer-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-racer-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-racer-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/rs6802898.rs6802898.regional_assoc.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-racer-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.1: Regional association plots.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div id="fig-show-racer-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-racer-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-racer-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/rs7901695.rs7901695.regional_assoc.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-racer-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.2: Regional association plots.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div id="fig-show-racer-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-racer-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-racer-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/rs8050136.rs8050136.regional_assoc.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-racer-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11.3: Regional association plots.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
 <p>Please note that we are letting RACER plot the variants on genome build 37 (hg19), but we actually provide hg18-based chromosome and basepair positions. The proper thing to do is to <a href="https://genome.sph.umich.edu/wiki/LiftOver" target="_blank">liftOver</a> our coordinates to match those in hg19. Here we didn’t, because I just wanted to show you the ‘how it’s done’.</p>
 </blockquote>
-</section><section id="stop-playing-around" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="stop-playing-around">
-<span class="header-section-number">11.3</span> Stop playing around</h2>
+</section>
+<section id="stop-playing-around" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="stop-playing-around"><span class="header-section-number">11.3</span> Stop playing around</h2>
 <p>Alright. It’s time to stop playing around and do a quick recap of what you’ve learned.</p>
 <ol type="1">
 <li>You learned how to convert datasets.</li>
@@ -813,7 +846,10 @@ Figure&nbsp;11.3: Regional association plots.
 <p>You should be ready for the real stuff. And if not, the next chapter will help you get ready: <a href="04_1_wtccc1_intro.html" class="quarto-xref"><span>Chapter 12</span></a></p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1357,9 +1393,12 @@ Figure&nbsp;11.3: Regional association plots.
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./03_5_gwas_basics_results_visualization_cocalc.html" class="pagination-link" aria-label="GWAS visualisation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GWAS visualisation</span></span>
       </a>          
@@ -1371,7 +1410,8 @@ Figure&nbsp;11.3: Regional association plots.
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1383,6 +1423,8 @@ Figure&nbsp;11.3: Regional association plots.
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

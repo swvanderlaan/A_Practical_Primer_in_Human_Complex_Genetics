@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>13&nbsp; WTCCC1: quality control – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -60,6 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -82,9 +86,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +115,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -287,7 +296,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -298,9 +309,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -316,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -351,8 +366,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -389,14 +404,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -415,14 +430,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -453,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -471,8 +486,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -491,30 +506,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#quality-control" id="toc-quality-control" class="nav-link active" data-scroll-target="#quality-control"><span class="header-section-number">13.1</span> Quality control</a></li>
-  <li>
-<a href="#ancestral-background" id="toc-ancestral-background" class="nav-link" data-scroll-target="#ancestral-background"><span class="header-section-number">13.2</span> Ancestral background</a>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link active" data-scroll-target="#quality-control"><span class="header-section-number">13.1</span> Quality control</a></li>
+  <li><a href="#ancestral-background" id="toc-ancestral-background" class="nav-link" data-scroll-target="#ancestral-background"><span class="header-section-number">13.2</span> Ancestral background</a>
   <ul class="collapse">
-<li><a href="#preparing-pca" id="toc-preparing-pca" class="nav-link" data-scroll-target="#preparing-pca"><span class="header-section-number">13.2.1</span> Preparing PCA</a></li>
+  <li><a href="#preparing-pca" id="toc-preparing-pca" class="nav-link" data-scroll-target="#preparing-pca"><span class="header-section-number">13.2.1</span> Preparing PCA</a></li>
   <li><a href="#running-pca" id="toc-running-pca" class="nav-link" data-scroll-target="#running-pca"><span class="header-section-number">13.2.2</span> Running PCA</a></li>
   <li><a href="#plotting-pca" id="toc-plotting-pca" class="nav-link" data-scroll-target="#plotting-pca"><span class="header-section-number">13.2.3</span> Plotting PCA</a></li>
   <li><a href="#removing-samples" id="toc-removing-samples" class="nav-link" data-scroll-target="#removing-samples"><span class="header-section-number">13.2.4</span> Removing samples</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">13.3</span> Summary</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/04_2_wtccc1_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/04_2_wtccc1_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_1_wtccc1_intro.html">WTCCC1: coronary artery disease</a></li><li class="breadcrumb-item"><a href="./04_2_wtccc1_cocalc.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WTCCC1: quality control</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_1_wtccc1_intro.html">WTCCC1: coronary artery disease</a></li><li class="breadcrumb-item"><a href="./04_2_wtccc1_cocalc.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WTCCC1: quality control</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-wtccc1-qc-cocalc" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WTCCC1: quality control</span></span></h1>
 </div>
 
@@ -529,7 +549,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><!-- ![](./img/_headers/interactive_plot.png){width=100%} --><p>As usual, we start by exploring the data in hand.</p>
+</header>
+
+
+<!-- ![](./img/_headers/interactive_plot.png){width=100%} -->
+<p>As usual, we start by exploring the data in hand.</p>
 <p>First, let’s make a clean slate and create a working directory for the WTCCC1 data.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -556,16 +580,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://r-datatable.com">"data.table"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">wtccc1_HWE</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1.hwe"</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_FRQ</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1.frq"</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_IMISS</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1.imiss"</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_LMISS</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1.lmiss"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">wtccc1_HWE</span><span class="op">$</span><span class="va">logP</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">wtccc1_HWE</span><span class="op">$</span><span class="va">P</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_LMISS</span><span class="op">$</span><span class="va">callrate</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">wtccc1_LMISS</span><span class="op">$</span><span class="va">F_MISS</span></span>
-<span><span class="va">wtccc1_IMISS</span><span class="op">$</span><span class="va">callrate</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">wtccc1_IMISS</span><span class="op">$</span><span class="va">F_MISS</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"data.table"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>wtccc1_HWE <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1.hwe"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>wtccc1_FRQ <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1.frq"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>wtccc1_IMISS <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1.imiss"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>wtccc1_LMISS <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1.lmiss"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>wtccc1_HWE<span class="sc">$</span>logP <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">log10</span>(wtccc1_HWE<span class="sc">$</span>P)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>wtccc1_LMISS<span class="sc">$</span>callrate <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> wtccc1_LMISS<span class="sc">$</span>F_MISS</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>wtccc1_IMISS<span class="sc">$</span>callrate <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> wtccc1_IMISS<span class="sc">$</span>F_MISS</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Let’s investigate the HWE p-value in the whole cohort, and per stratum (cases and controls) with the code below.</p>
@@ -574,33 +598,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://rpkgs.datanovia.com/ggpubr/">"ggpubr"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">wtccc1_HWE</span>, x <span class="op">=</span> <span class="st">"logP"</span>,</span>
-<span>                    add <span class="op">=</span> <span class="st">"mean"</span>,</span>
-<span>                    add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#595A5C"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
-<span>                    rug <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>                    <span class="co"># color = "#1290D9", fill = "#1290D9",</span></span>
-<span>                    color <span class="op">=</span> <span class="st">"TEST"</span>, fill <span class="op">=</span> <span class="st">"TEST"</span>,</span>
-<span>                    palette <span class="op">=</span> <span class="st">"lancet"</span>,</span>
-<span>                    facet.by <span class="op">=</span> <span class="st">"TEST"</span>,</span>
-<span>                    bins <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                    xlab <span class="op">=</span> <span class="st">"HWE -log10(P)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">5</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1-hwe.png"</span>, plot <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/get_last_plot.html">last_plot</a></span><span class="op">(</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">7</span>, height <span class="op">=</span> <span class="fl">9</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggpubr"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">gghistogram</span>(wtccc1_HWE, <span class="at">x =</span> <span class="st">"logP"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">add =</span> <span class="st">"mean"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#595A5C"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># color = "#1290D9", fill = "#1290D9",</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> <span class="st">"TEST"</span>, <span class="at">fill =</span> <span class="st">"TEST"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">palette =</span> <span class="st">"lancet"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">facet.by =</span> <span class="st">"TEST"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">bins =</span> <span class="dv">50</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xlab =</span> <span class="st">"HWE -log10(P)"</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"wtccc1/wtccc1-hwe.png"</span>, <span class="at">plot =</span> ggplot2<span class="sc">::</span><span class="fu">last_plot</span>(), <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">9</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This will result in <a href="#fig-show-wtccc1-hwe" class="quarto-xref">Figure&nbsp;<span>13.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-hwe" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-hwe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-hwe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1-HWE.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-hwe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;13.1: Stratified HWE p-values.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -610,26 +636,28 @@ Figure&nbsp;13.1: Stratified HWE p-values.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">wtccc1_FRQ</span>, x <span class="op">=</span> <span class="st">"MAF"</span>,</span>
-<span>                    add <span class="op">=</span> <span class="st">"mean"</span>, add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#595A5C"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
-<span>                    rug <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>                    color <span class="op">=</span> <span class="st">"#1290D9"</span>, fill <span class="op">=</span> <span class="st">"#1290D9"</span>,</span>
-<span>                    xlab <span class="op">=</span> <span class="st">"minor allele frequency"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0.05</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1-freq.png"</span>, plot <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/get_last_plot.html">last_plot</a></span><span class="op">(</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">7</span>, height <span class="op">=</span> <span class="fl">5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">gghistogram</span>(wtccc1_FRQ, <span class="at">x =</span> <span class="st">"MAF"</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">add =</span> <span class="st">"mean"</span>, <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#595A5C"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> <span class="st">"#1290D9"</span>, <span class="at">fill =</span> <span class="st">"#1290D9"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xlab =</span> <span class="st">"minor allele frequency"</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.05</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"wtccc1/wtccc1-freq.png"</span>, <span class="at">plot =</span> ggplot2<span class="sc">::</span><span class="fu">last_plot</span>(), <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This will result in <a href="#fig-show-wtccc1-freq" class="quarto-xref">Figure&nbsp;<span>13.2</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-freq" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-freq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-freq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1-FREQ.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-freq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;13.2: Minor allele frequencies.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -639,26 +667,28 @@ Figure&nbsp;13.2: Minor allele frequencies.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">wtccc1_IMISS</span>, x <span class="op">=</span> <span class="st">"callrate"</span>,</span>
-<span>                    add <span class="op">=</span> <span class="st">"mean"</span>, add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#595A5C"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
-<span>                    rug <span class="op">=</span> <span class="cn">TRUE</span>, bins <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                    color <span class="op">=</span> <span class="st">"#1290D9"</span>, fill <span class="op">=</span> <span class="st">"#1290D9"</span>,</span>
-<span>                    xlab <span class="op">=</span> <span class="st">"per sample call rate"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0.95</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1-sample-call-rate.png"</span>, plot <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/get_last_plot.html">last_plot</a></span><span class="op">(</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">7</span>, height <span class="op">=</span> <span class="fl">5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">gghistogram</span>(wtccc1_IMISS, <span class="at">x =</span> <span class="st">"callrate"</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">add =</span> <span class="st">"mean"</span>, <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#595A5C"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">rug =</span> <span class="cn">TRUE</span>, <span class="at">bins =</span> <span class="dv">50</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> <span class="st">"#1290D9"</span>, <span class="at">fill =</span> <span class="st">"#1290D9"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xlab =</span> <span class="st">"per sample call rate"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.95</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"wtccc1/wtccc1-sample-call-rate.png"</span>, <span class="at">plot =</span> ggplot2<span class="sc">::</span><span class="fu">last_plot</span>(), <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This will result in <a href="#fig-show-wtccc1-callratesample" class="quarto-xref">Figure&nbsp;<span>13.3</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-callratesample" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-callratesample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-callratesample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1-callrate-samples.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-callratesample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;13.3: Per sample call rate.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -671,31 +701,33 @@ Figure&nbsp;13.3: Per sample call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">wtccc1_LMISS</span>, x <span class="op">=</span> <span class="st">"callrate"</span>,</span>
-<span>                    add <span class="op">=</span> <span class="st">"mean"</span>, add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#595A5C"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
-<span>                    rug <span class="op">=</span> <span class="cn">TRUE</span>, bins <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                    color <span class="op">=</span> <span class="st">"#1290D9"</span>, fill <span class="op">=</span> <span class="st">"#1290D9"</span>,</span>
-<span>                    xlab <span class="op">=</span> <span class="st">"per SNP call rate"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0.95</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1-snp-call-rate.png"</span>, plot <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/get_last_plot.html">last_plot</a></span><span class="op">(</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">7</span>, height <span class="op">=</span> <span class="fl">5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">gghistogram</span>(wtccc1_LMISS, <span class="at">x =</span> <span class="st">"callrate"</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">add =</span> <span class="st">"mean"</span>, <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#595A5C"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">rug =</span> <span class="cn">TRUE</span>, <span class="at">bins =</span> <span class="dv">50</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> <span class="st">"#1290D9"</span>, <span class="at">fill =</span> <span class="st">"#1290D9"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xlab =</span> <span class="st">"per SNP call rate"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.95</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"wtccc1/wtccc1-snp-call-rate.png"</span>, <span class="at">plot =</span> ggplot2<span class="sc">::</span><span class="fu">last_plot</span>(), <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This will result in <a href="#fig-show-wtccc1-callratesnp" class="quarto-xref">Figure&nbsp;<span>13.4</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-callratesnp" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-callratesnp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-callratesnp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1-callrate-SNPs.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-callratesnp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;13.4: Per SNP call rate.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<section id="quality-control" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="quality-control">
-<span class="header-section-number">13.1</span> Quality control</h2>
+<section id="quality-control" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="quality-control"><span class="header-section-number">13.1</span> Quality control</h2>
 <p>Now that we have handle on the data, we can filter it.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -706,12 +738,13 @@ Figure&nbsp;13.4: Per SNP call rate.
 <blockquote class="blockquote">
 <p>Question: Do you have any thoughts on that? Do you agree with the filters I set below? How would you do it differently and why?</p>
 </blockquote>
-</section><section id="ancestral-background" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="ancestral-background">
-<span class="header-section-number">13.2</span> Ancestral background</h2>
+</section>
+<section id="ancestral-background" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="ancestral-background"><span class="header-section-number">13.2</span> Ancestral background</h2>
 <p>If these individuals are all from the United Kingdom, we are certain there will be admixture from other populations given UK’s history. Let’s project the WTCCC1 data on 1000G phase 1 populations.</p>
 <p>We will face the same issue as before with our dummy dataset with respect to <code>EIGENSOFT</code>. So I created the data for you to skip to the <a href="#plotting-pca">Plotting PCA</a> section immediately. Regardless, in the <a href="#preparing-pca">Preparing PCA</a> and <a href="#running-pca">Running PCA</a> sections I show you how to get there.</p>
-<section id="preparing-pca" class="level3" data-number="13.2.1"><h3 data-number="13.2.1" class="anchored" data-anchor-id="preparing-pca">
-<span class="header-section-number">13.2.1</span> Preparing PCA</h3>
+<section id="preparing-pca" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="preparing-pca"><span class="header-section-number">13.2.1</span> Preparing PCA</h3>
 <p><strong>Filtering WTCCC1</strong></p>
 <p>For PCA we need to perform extreme clean.</p>
 <div class="code-with-filename">
@@ -761,8 +794,9 @@ Figure&nbsp;13.4: Per SNP call rate.
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--bfile</span> wtccc1/wtccc1_extrclean <span class="at">--bmerge</span> wtccc1/1kg_phase1_raw_no_atcg_wtccc1 <span class="at">--maf</span> 0.1 <span class="at">--geno</span> 0.1 <span class="at">--exclude</span> ~/data/shared/support/exclude_problematic_range.txt <span class="at">--make-bed</span> <span class="at">--out</span> wtccc1/wtccc1_extrclean_1kg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="running-pca" class="level3" data-number="13.2.2"><h3 data-number="13.2.2" class="anchored" data-anchor-id="running-pca">
-<span class="header-section-number">13.2.2</span> Running PCA</h3>
+</section>
+<section id="running-pca" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="running-pca"><span class="header-section-number">13.2.2</span> Running PCA</h3>
 <p>Great, we’ve prepared our dummy project data and merged this with 1000G phase 1. Let’s execute the PCA using <code>--pca</code> in <code>PLINK</code>.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -770,8 +804,9 @@ Figure&nbsp;13.4: Per SNP call rate.
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--bfile</span> wtccc1/wtccc1_extrclean_1kg <span class="at">--pca</span> <span class="at">--out</span> wtccc1/wtccc1_extrclean_1kg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="plotting-pca" class="level3" data-number="13.2.3"><h3 data-number="13.2.3" class="anchored" data-anchor-id="plotting-pca">
-<span class="header-section-number">13.2.3</span> Plotting PCA</h3>
+</section>
+<section id="plotting-pca" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="plotting-pca"><span class="header-section-number">13.2.3</span> Plotting PCA</h3>
 <p>If all is peachy, you were able to run the PCA for the WTCCC1 data against 1000G phase 1. Using <code>--pca</code> in <code>plink</code> we have calculated principal components (PCs) and we can now start plotting them. Let’s create a scatter diagram of the first two principal components just like we did with the dummy data.</p>
 <p>And we should visualize the PCA results: are these individuals really all from European (UK) ancestry?</p>
 <div class="cell" data-layout-align="center">
@@ -779,10 +814,10 @@ Figure&nbsp;13.4: Per SNP call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">PCA_eigenval</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1_extrclean_1kg.eigenval"</span><span class="op">)</span></span>
-<span><span class="va">PCA_eigenvec</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1_extrclean_1kg.eigenvec"</span><span class="op">)</span></span>
-<span><span class="va">ref_pop_raw</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"~/data/shared/ref_1kg_phase1_all/1kg_phase1_all.pheno"</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_pop</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1.fam"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>PCA_eigenval <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1_extrclean_1kg.eigenval"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>PCA_eigenvec <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1_extrclean_1kg.eigenvec"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>ref_pop_raw <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"~/data/shared/ref_1kg_phase1_all/1kg_phase1_all.pheno"</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>wtccc1_pop <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1.fam"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -790,42 +825,42 @@ Figure&nbsp;13.4: Per SNP call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Rename some </span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenval</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenval</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V1"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Eigenvalue"</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V1"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"FID"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V2"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"IID"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V3"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC1"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V4"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC2"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V5"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC3"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V6"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC4"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V7"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC5"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V8"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC6"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V9"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC7"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V10"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC8"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V11"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC9"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V12"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC10"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V13"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC11"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V14"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC12"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V15"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC13"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V16"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC14"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V17"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC15"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V18"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC16"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V19"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC17"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V20"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC18"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V21"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC19"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V22"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"PC20"</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V1"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Family_ID"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V2"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Individual_ID"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V5"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Gender"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">wtccc1_pop</span><span class="op">)</span> <span class="op">==</span> <span class="st">"V6"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Phenotype"</span></span>
-<span><span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">V3</span><span class="op">&lt;-</span> <span class="cn">NULL</span></span>
-<span><span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">V4</span><span class="op">&lt;-</span> <span class="cn">NULL</span></span>
-<span></span>
-<span><span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">Population</span> <span class="op">&lt;-</span> <span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">Phenotype</span></span>
-<span><span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">Population</span><span class="op">[</span><span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">Population</span> <span class="op">==</span> <span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Case"</span></span>
-<span><span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">Population</span><span class="op">[</span><span class="va">wtccc1_pop</span><span class="op">$</span><span class="va">Population</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Control"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename some </span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenval)[<span class="fu">names</span>(PCA_eigenval) <span class="sc">==</span> <span class="st">"V1"</span>] <span class="ot">&lt;-</span> <span class="st">"Eigenvalue"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V1"</span>] <span class="ot">&lt;-</span> <span class="st">"FID"</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V2"</span>] <span class="ot">&lt;-</span> <span class="st">"IID"</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V3"</span>] <span class="ot">&lt;-</span> <span class="st">"PC1"</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V4"</span>] <span class="ot">&lt;-</span> <span class="st">"PC2"</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V5"</span>] <span class="ot">&lt;-</span> <span class="st">"PC3"</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V6"</span>] <span class="ot">&lt;-</span> <span class="st">"PC4"</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V7"</span>] <span class="ot">&lt;-</span> <span class="st">"PC5"</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V8"</span>] <span class="ot">&lt;-</span> <span class="st">"PC6"</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V9"</span>] <span class="ot">&lt;-</span> <span class="st">"PC7"</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V10"</span>] <span class="ot">&lt;-</span> <span class="st">"PC8"</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V11"</span>] <span class="ot">&lt;-</span> <span class="st">"PC9"</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V12"</span>] <span class="ot">&lt;-</span> <span class="st">"PC10"</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V13"</span>] <span class="ot">&lt;-</span> <span class="st">"PC11"</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V14"</span>] <span class="ot">&lt;-</span> <span class="st">"PC12"</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V15"</span>] <span class="ot">&lt;-</span> <span class="st">"PC13"</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V16"</span>] <span class="ot">&lt;-</span> <span class="st">"PC14"</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V17"</span>] <span class="ot">&lt;-</span> <span class="st">"PC15"</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V18"</span>] <span class="ot">&lt;-</span> <span class="st">"PC16"</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V19"</span>] <span class="ot">&lt;-</span> <span class="st">"PC17"</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V20"</span>] <span class="ot">&lt;-</span> <span class="st">"PC18"</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V21"</span>] <span class="ot">&lt;-</span> <span class="st">"PC19"</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(PCA_eigenvec)[<span class="fu">names</span>(PCA_eigenvec) <span class="sc">==</span> <span class="st">"V22"</span>] <span class="ot">&lt;-</span> <span class="st">"PC20"</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wtccc1_pop)[<span class="fu">names</span>(wtccc1_pop) <span class="sc">==</span> <span class="st">"V1"</span>] <span class="ot">&lt;-</span> <span class="st">"Family_ID"</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wtccc1_pop)[<span class="fu">names</span>(wtccc1_pop) <span class="sc">==</span> <span class="st">"V2"</span>] <span class="ot">&lt;-</span> <span class="st">"Individual_ID"</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wtccc1_pop)[<span class="fu">names</span>(wtccc1_pop) <span class="sc">==</span> <span class="st">"V5"</span>] <span class="ot">&lt;-</span> <span class="st">"Gender"</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wtccc1_pop)[<span class="fu">names</span>(wtccc1_pop) <span class="sc">==</span> <span class="st">"V6"</span>] <span class="ot">&lt;-</span> <span class="st">"Phenotype"</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>wtccc1_pop<span class="sc">$</span>V3<span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>wtccc1_pop<span class="sc">$</span>V4<span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>wtccc1_pop<span class="sc">$</span>Population <span class="ot">&lt;-</span> wtccc1_pop<span class="sc">$</span>Phenotype</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>wtccc1_pop<span class="sc">$</span>Population[wtccc1_pop<span class="sc">$</span>Population <span class="sc">==</span> <span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"Case"</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>wtccc1_pop<span class="sc">$</span>Population[wtccc1_pop<span class="sc">$</span>Population <span class="sc">==</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"Control"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -833,12 +868,12 @@ Figure&nbsp;13.4: Per SNP call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># we subset the data we need</span></span>
-<span><span class="va">ref_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">ref_pop_raw</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Family_ID"</span>, <span class="st">"Individual_ID"</span>, <span class="st">"Gender"</span>, <span class="st">"Phenotype"</span>, <span class="st">"Population"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">ref_pop_raw</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># we combine the reference and dummy information</span></span>
-<span><span class="va">ref_wtccc1_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">wtccc1_pop</span>, <span class="va">ref_pop</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we subset the data we need</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>ref_pop <span class="ot">&lt;-</span> <span class="fu">subset</span>(ref_pop_raw, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"Family_ID"</span>, <span class="st">"Individual_ID"</span>, <span class="st">"Gender"</span>, <span class="st">"Phenotype"</span>, <span class="st">"Population"</span>))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(ref_pop_raw)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># we combine the reference and dummy information</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>ref_wtccc1_pop <span class="ot">&lt;-</span> <span class="fu">rbind</span>(wtccc1_pop, ref_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -846,12 +881,12 @@ Figure&nbsp;13.4: Per SNP call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">PCA_1kG</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">PCA_eigenvec</span>,</span>
-<span>                 <span class="va">ref_wtccc1_pop</span>,</span>
-<span>                 by.x <span class="op">=</span> <span class="st">"IID"</span>,</span>
-<span>                 by.y <span class="op">=</span> <span class="st">"Individual_ID"</span>,</span>
-<span>                 sort <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                 all.x <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>PCA_1kG <span class="ot">&lt;-</span> <span class="fu">merge</span>(PCA_eigenvec,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                 ref_wtccc1_pop,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">by.x =</span> <span class="st">"IID"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">by.y =</span> <span class="st">"Individual_ID"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sort =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -859,70 +894,73 @@ Figure&nbsp;13.4: Per SNP call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Population    Description Super population    Code    Counts</span></span>
-<span><span class="co"># ASW   African Ancestry in Southwest US                              AFR   4     #49A01D</span></span>
-<span><span class="co"># CEU   Utah residents with Northern and Western European ancestry  EUR 7     #E55738</span></span>
-<span><span class="co"># CHB   Han Chinese in Bejing, China                                  EAS   8     #9A3480</span></span>
-<span><span class="co"># CHS   Southern Han Chinese, China                                 EAS 9     #705296</span></span>
-<span><span class="co"># CLM   Colombian in Medellin, Colombia                             MR  10  #8D5B9A</span></span>
-<span><span class="co"># FIN   Finnish in Finland                                          EUR 12  #2F8BC9</span></span>
-<span><span class="co"># GBR   British in England and Scotland                             EUR 13  #1290D9</span></span>
-<span><span class="co"># IBS   Iberian populations in Spain                                  EUR   16  #1396D8</span></span>
-<span><span class="co"># JPT   Japanese in Tokyo, Japan                                      EAS   18  #D5267B</span></span>
-<span><span class="co"># LWK   Luhya in Webuye, Kenya                                      AFR 20  #78B113</span></span>
-<span><span class="co"># MXL   Mexican Ancestry in Los Angeles, California                 AMR 22  #F59D10</span></span>
-<span><span class="co"># PUR   Puerto Rican in Puerto Rico                                 AMR 25  #FBB820</span></span>
-<span><span class="co"># TSI   Toscani in Italy                                              EUR   27  #4C81BF</span></span>
-<span><span class="co"># YRI   Yoruba in Ibadan, Nigeria                                     AFR   28  #C5D220</span></span>
-<span></span>
-<span><span class="va">PCA_1kGplot</span> <span class="op">&lt;-</span> <span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="va">PCA_1kG</span>, </span>
-<span>                                 x <span class="op">=</span> <span class="st">"PC1"</span>, </span>
-<span>                                 y <span class="op">=</span> <span class="st">"PC2"</span>,</span>
-<span>                                 color <span class="op">=</span> <span class="st">"Population"</span>, </span>
-<span>                                 palette <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#49A01D"</span>, </span>
-<span>                                             <span class="st">"#595A5C"</span>, </span>
-<span>                                             <span class="st">"#E55738"</span>, </span>
-<span>                                             <span class="st">"#9A3480"</span>, </span>
-<span>                                             <span class="st">"#705296"</span>, </span>
-<span>                                             <span class="st">"#8D5B9A"</span>, </span>
-<span>                                             <span class="st">"#A2A3A4"</span>, </span>
-<span>                                             <span class="st">"#2F8BC9"</span>, </span>
-<span>                                             <span class="st">"#1290D9"</span>, </span>
-<span>                                             <span class="st">"#1396D8"</span>, </span>
-<span>                                             <span class="st">"#D5267B"</span>, </span>
-<span>                                             <span class="st">"#78B113"</span>, </span>
-<span>                                             <span class="st">"#F59D10"</span>, </span>
-<span>                                             <span class="st">"#FBB820"</span>, </span>
-<span>                                             <span class="st">"#4C81BF"</span>, </span>
-<span>                                             <span class="st">"#C5D220"</span><span class="op">)</span>,</span>
-<span>                                 xlab <span class="op">=</span> <span class="st">"principal component 1"</span>, ylab <span class="op">=</span> <span class="st">"principal component 2"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0.0023</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">p2</span> <span class="op">&lt;-</span>  <span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpar.html">ggpar</a></span><span class="op">(</span><span class="va">PCA_1kGplot</span>,</span>
-<span>                     title <span class="op">=</span> <span class="st">"Principal Component Analysis"</span>,</span>
-<span>                     subtitle <span class="op">=</span> <span class="st">"Reference population: 1000 G, phase 1"</span>,</span>
-<span>                     legend.title <span class="op">=</span> <span class="st">"Populations"</span>, legend <span class="op">=</span> <span class="st">"right"</span><span class="op">)</span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1-qc-pca-1000g.png"</span>, plot <span class="op">=</span> <span class="va">p2</span>, width <span class="op">=</span> <span class="fl">9</span>, height <span class="op">=</span> <span class="fl">6</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span>
-<span><span class="va">p2</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">p2</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Population    Description Super population    Code    Counts</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ASW   African Ancestry in Southwest US                              AFR   4     #49A01D</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># CEU   Utah residents with Northern and Western European ancestry  EUR 7     #E55738</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># CHB   Han Chinese in Bejing, China                                  EAS   8     #9A3480</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># CHS   Southern Han Chinese, China                                 EAS 9     #705296</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># CLM   Colombian in Medellin, Colombia                             MR  10  #8D5B9A</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># FIN   Finnish in Finland                                          EUR 12  #2F8BC9</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># GBR   British in England and Scotland                             EUR 13  #1290D9</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># IBS   Iberian populations in Spain                                  EUR   16  #1396D8</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># JPT   Japanese in Tokyo, Japan                                      EAS   18  #D5267B</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># LWK   Luhya in Webuye, Kenya                                      AFR 20  #78B113</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># MXL   Mexican Ancestry in Los Angeles, California                 AMR 22  #F59D10</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># PUR   Puerto Rican in Puerto Rico                                 AMR 25  #FBB820</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># TSI   Toscani in Italy                                              EUR   27  #4C81BF</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># YRI   Yoruba in Ibadan, Nigeria                                     AFR   28  #C5D220</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>PCA_1kGplot <span class="ot">&lt;-</span> ggpubr<span class="sc">::</span><span class="fu">ggscatter</span>(PCA_1kG, </span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">x =</span> <span class="st">"PC1"</span>, </span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">y =</span> <span class="st">"PC2"</span>,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">color =</span> <span class="st">"Population"</span>, </span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"#49A01D"</span>, </span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#595A5C"</span>, </span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#E55738"</span>, </span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#9A3480"</span>, </span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#705296"</span>, </span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#8D5B9A"</span>, </span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#A2A3A4"</span>, </span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#2F8BC9"</span>, </span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#1290D9"</span>, </span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#1396D8"</span>, </span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#D5267B"</span>, </span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#78B113"</span>, </span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#F59D10"</span>, </span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#FBB820"</span>, </span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#4C81BF"</span>, </span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>                                             <span class="st">"#C5D220"</span>),</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">xlab =</span> <span class="st">"principal component 1"</span>, <span class="at">ylab =</span> <span class="st">"principal component 2"</span>) <span class="sc">+</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.0023</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span>  ggpubr<span class="sc">::</span><span class="fu">ggpar</span>(PCA_1kGplot,</span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>                     <span class="at">title =</span> <span class="st">"Principal Component Analysis"</span>,</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>                     <span class="at">subtitle =</span> <span class="st">"Reference population: 1000 G, phase 1"</span>,</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>                     <span class="at">legend.title =</span> <span class="st">"Populations"</span>, <span class="at">legend =</span> <span class="st">"right"</span>)</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"wtccc1/wtccc1-qc-pca-1000g.png"</span>, <span class="at">plot =</span> p2, <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>p2</span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(p2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>We expect most individuals from the WTCCC to be 100% British, but a substantial group will have a different ancestral background as shown in the <a href="#fig-showwtccc1pca" class="quarto-xref">Figure&nbsp;<span>13.5</span></a> you just made.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showwtccc1pca" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showwtccc1pca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showwtccc1pca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/wtccc1-qc-pca-1000g.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showwtccc1pca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;13.5: PCA - WTCCC1 vs.&nbsp;1000G
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="removing-samples" class="level3" data-number="13.2.4"><h3 data-number="13.2.4" class="anchored" data-anchor-id="removing-samples">
-<span class="header-section-number">13.2.4</span> Removing samples</h3>
+</section>
+<section id="removing-samples" class="level3" data-number="13.2.4">
+<h3 data-number="13.2.4" class="anchored" data-anchor-id="removing-samples"><span class="header-section-number">13.2.4</span> Removing samples</h3>
 <p>In a similar fashion as in the example <em>gwas</em> and <em>rawdata</em> datasets, you should consider to <strong>remove the samples below the threshold</strong> based on this PCA (<a href="#fig-showwtccc1pca" class="quarto-xref">Figure&nbsp;<span>13.5</span></a>).</p>
 <blockquote class="blockquote">
 <p>Go ahead, try that.</p>
@@ -942,13 +980,18 @@ Figure&nbsp;13.5: PCA - WTCCC1 vs.&nbsp;1000G
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--bfile</span> wtccc1/wtccc1_clean <span class="at">--exclude</span> wtccc1/fail-ancestry-QC.txt <span class="at">--make-bed</span> <span class="at">--out</span> wtccc1/wtccc1_qc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section></section><section id="summary" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="summary">
-<span class="header-section-number">13.3</span> Summary</h2>
+</section>
+</section>
+<section id="summary" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">13.3</span> Summary</h2>
 <p>You have now explored the WTCCC1 genotype data by inspecting call rates, the HWE p-values and frequencies. You have also projected the WTCCC1 data on the 1000G phase 1 reference panel and removed samples that did not match the expected ancestry. This resulted in a fully quality controlled dataset (<code>wtccc1/wtccc1_qc</code>).</p>
 <p>Now you’re ready for the actual GWAS on coronary artery disease that led to <a href="https://doi.org/10.1038/nature05911" target="_blank">this seminal publication</a>. On to <a href="04_3_wtccc1_assoc_cocalc.html" class="quarto-xref"><span>Chapter 14</span></a>.</p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1492,9 +1535,12 @@ Figure&nbsp;13.5: PCA - WTCCC1 vs.&nbsp;1000G
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./04_1_wtccc1_intro.html" class="pagination-link" aria-label="The Welcome Trust Case-Control Consortium">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span>
       </a>          
@@ -1506,7 +1552,8 @@ Figure&nbsp;13.5: PCA - WTCCC1 vs.&nbsp;1000G
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1518,6 +1565,8 @@ Figure&nbsp;13.5: PCA - WTCCC1 vs.&nbsp;1000G
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

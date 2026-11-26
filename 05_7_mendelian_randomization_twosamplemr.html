@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>19&nbsp; Two Sample Mendelian Randomisation – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -79,6 +82,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -101,9 +105,10 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -129,10 +134,14 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -306,7 +315,9 @@ div.csl-indent {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -317,9 +328,13 @@ div.csl-indent {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -335,7 +350,7 @@ div.csl-indent {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -370,8 +385,8 @@ div.csl-indent {
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -408,14 +423,14 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -434,14 +449,14 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -472,7 +487,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -490,8 +505,8 @@ div.csl-indent {
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -510,35 +525,40 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#checking-your-opengwas-token" id="toc-checking-your-opengwas-token" class="nav-link active" data-scroll-target="#checking-your-opengwas-token"><span class="header-section-number">19.1</span> Checking your OpenGWAS token</a></li>
+  <li><a href="#checking-your-opengwas-token" id="toc-checking-your-opengwas-token" class="nav-link active" data-scroll-target="#checking-your-opengwas-token"><span class="header-section-number">19.1</span> Checking your OpenGWAS token</a></li>
   <li><a href="#installing-and-loading-the-packages" id="toc-installing-and-loading-the-packages" class="nav-link" data-scroll-target="#installing-and-loading-the-packages"><span class="header-section-number">19.2</span> Installing and loading the packages</a></li>
   <li><a href="#available-outcome" id="toc-available-outcome" class="nav-link" data-scroll-target="#available-outcome"><span class="header-section-number">19.3</span> Available outcome</a></li>
   <li><a href="#instruments" id="toc-instruments" class="nav-link" data-scroll-target="#instruments"><span class="header-section-number">19.4</span> Instruments</a></li>
   <li><a href="#clumping" id="toc-clumping" class="nav-link" data-scroll-target="#clumping"><span class="header-section-number">19.5</span> Clumping</a></li>
-  <li>
-<a href="#outcomes" id="toc-outcomes" class="nav-link" data-scroll-target="#outcomes"><span class="header-section-number">19.6</span> Outcomes</a>
+  <li><a href="#outcomes" id="toc-outcomes" class="nav-link" data-scroll-target="#outcomes"><span class="header-section-number">19.6</span> Outcomes</a>
   <ul class="collapse">
-<li><a href="#harmonisation" id="toc-harmonisation" class="nav-link" data-scroll-target="#harmonisation"><span class="header-section-number">19.6.1</span> Harmonisation</a></li>
+  <li><a href="#harmonisation" id="toc-harmonisation" class="nav-link" data-scroll-target="#harmonisation"><span class="header-section-number">19.6.1</span> Harmonisation</a></li>
   <li><a href="#mendelian-randomisation" id="toc-mendelian-randomisation" class="nav-link" data-scroll-target="#mendelian-randomisation"><span class="header-section-number">19.6.2</span> Mendelian randomisation</a></li>
   <li><a href="#heterogeneity-pleiotropy" id="toc-heterogeneity-pleiotropy" class="nav-link" data-scroll-target="#heterogeneity-pleiotropy"><span class="header-section-number">19.6.3</span> Heterogeneity &amp; Pleiotropy</a></li>
   <li><a href="#leave-one-out" id="toc-leave-one-out" class="nav-link" data-scroll-target="#leave-one-out"><span class="header-section-number">19.6.4</span> Leave-one-out</a></li>
   <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation"><span class="header-section-number">19.6.5</span> Visualisation</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#the-end" id="toc-the-end" class="nav-link" data-scroll-target="#the-end"><span class="header-section-number">19.7</span> The end?</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/05_7_mendelian_randomization_twosamplemr.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/05_7_mendelian_randomization_twosamplemr.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_1_post_gwas.html">Post-GWAS</a></li><li class="breadcrumb-item"><a href="./05_7_mendelian_randomization_twosamplemr.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Two Sample Mendelian Randomisation</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_1_post_gwas.html">Post-GWAS</a></li><li class="breadcrumb-item"><a href="./05_7_mendelian_randomization_twosamplemr.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Two Sample Mendelian Randomisation</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-mr-twosamplemr" class="quarto-section-identifier"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Two Sample Mendelian Randomisation</span></span></h1>
 </div>
 
@@ -553,30 +573,29 @@ div.csl-indent {
   
 
 
-</header><p><img src="img/headers/banner_man_standing_dna.png" class="chapter-banner img-fluid" alt="TwoSample Mendelian Randomization"><!-- ![](img/headers/banner_man_standing_dna.png){width=100%} --></p>
+</header>
+
+
+<p><img src="img/headers/banner_man_standing_dna.png" class="chapter-banner img-fluid" alt="TwoSample Mendelian Randomization"> <!-- ![](img/headers/banner_man_standing_dna.png){width=100%} --></p>
 <p>We will use the <code>TwoSampleMR</code> package to assess the causal effect of type 2 diabetes on coronary artery disease.</p>
 <p>Briefly, the workflow of a Two-Sample MR is as follows (see also diagram below):</p>
 <ol type="1">
-<li>
-<em>Select instruments</em> for the exposure (perform LD clumping if necessary);</li>
-<li>
-<em>Extract the instruments</em> from the MR Base GWAS database for the outcomes of interest;</li>
-<li>
-<em>Harmonise the effect sizes</em> for the instruments on the exposures and the outcomes to be each for the same reference allele;</li>
-<li>
-<em>Perform MR analysis</em>, sensitivity analyses, create plots, compile reports.</li>
+<li><em>Select instruments</em> for the exposure (perform LD clumping if necessary);</li>
+<li><em>Extract the instruments</em> from the MR Base GWAS database for the outcomes of interest;</li>
+<li><em>Harmonise the effect sizes</em> for the instruments on the exposures and the outcomes to be each for the same reference allele;</li>
+<li><em>Perform MR analysis</em>, sensitivity analyses, create plots, compile reports.</li>
 </ol>
 <p><img src="img/twosamplemr.png" class="img-fluid"></p>
-<section id="checking-your-opengwas-token" class="level2" data-number="19.1"><h2 data-number="19.1" class="anchored" data-anchor-id="checking-your-opengwas-token">
-<span class="header-section-number">19.1</span> Checking your OpenGWAS token</h2>
+<section id="checking-your-opengwas-token" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="checking-your-opengwas-token"><span class="header-section-number">19.1</span> Checking your OpenGWAS token</h2>
 <p><code>TwoSampleMR</code> retrieves instruments, outcome data and LD information from the <a href="https://opengwas.io" target="_blank">IEU OpenGWAS database</a> through the <code>ieugwasr</code> package. Since May 2024 every request must be authenticated with a personal token, and each user has a limited number of queries. You set up your token in <a href="02_4_gettingstarted_cocalc.html#sec-opengwas-token" class="quarto-xref"><span>Section 5.12</span></a>; if you have not done that yet, do it first. Then check that it still works:</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="fu">ieugwasr</span><span class="fu">::</span><span class="fu"><a href="https://mrcieu.github.io/ieugwasr/reference/get_opengwas_jwt.html">get_opengwas_jwt</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0</span>  <span class="co"># should be TRUE</span></span>
-<span><span class="fu">ieugwasr</span><span class="fu">::</span><span class="fu"><a href="https://mrcieu.github.io/ieugwasr/reference/user.html">user</a></span><span class="op">(</span><span class="op">)</span>                         <span class="co"># should show your OpenGWAS user details</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(ieugwasr<span class="sc">::</span><span class="fu">get_opengwas_jwt</span>()) <span class="sc">&gt;</span> <span class="dv">0</span>  <span class="co"># should be TRUE</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ieugwasr<span class="sc">::</span><span class="fu">user</span>()                         <span class="co"># should show your OpenGWAS user details</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -592,14 +611,10 @@ div.csl-indent {
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>
-<strong><code><a href="https://mrcieu.github.io/ieugwasr/reference/get_opengwas_jwt.html">get_opengwas_jwt()</a></code> returns an empty string.</strong> <code>R</code> did not find your token. Restart <code>R</code> first. Still empty? The file is probably not where <code>R</code> looks for it: always open it with <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code>, which opens the right file, and check that the line reads <code>OPENGWAS_JWT=&lt;token&gt;</code> without spaces or quotes and that the file ends with an empty line.</li>
-<li>
-<strong>Error 401 or 403, or a message that the token is missing, invalid or expired.</strong> Generate a new token at <a href="https://api.opengwas.io/profile/" target="_blank">https://api.opengwas.io/profile/</a>, replace it in <code>.Renviron</code>, and restart <code>R</code>.</li>
-<li>
-<strong>A message that your allowance or query limit is used up.</strong> Wait until it resets (the message tells you when) and do not re-run the whole chapter; keep the results of each step in an object.</li>
-<li>
-<strong>Old package versions.</strong> Old versions of <code>TwoSampleMR</code> and <code>ieugwasr</code> do not support the token: re-install them as shown below.</li>
+<li><strong><code>get_opengwas_jwt()</code> returns an empty string.</strong> <code>R</code> did not find your token. Restart <code>R</code> first. Still empty? The file is probably not where <code>R</code> looks for it: always open it with <code>usethis::edit_r_environ()</code>, which opens the right file, and check that the line reads <code>OPENGWAS_JWT=&lt;token&gt;</code> without spaces or quotes and that the file ends with an empty line.</li>
+<li><strong>Error 401 or 403, or a message that the token is missing, invalid or expired.</strong> Generate a new token at <a href="https://api.opengwas.io/profile/" target="_blank">https://api.opengwas.io/profile/</a>, replace it in <code>.Renviron</code>, and restart <code>R</code>.</li>
+<li><strong>A message that your allowance or query limit is used up.</strong> Wait until it resets (the message tells you when) and do not re-run the whole chapter; keep the results of each step in an object.</li>
+<li><strong>Old package versions.</strong> Old versions of <code>TwoSampleMR</code> and <code>ieugwasr</code> do not support the token: re-install them as shown below.</li>
 </ul>
 </div>
 </div>
@@ -617,17 +632,18 @@ div.csl-indent {
 <p>OpenGWAS limits the number of queries per user. Run the code in this chapter step by step, keep the results in objects, and do not re-run the whole chapter over and over again.</p>
 </div>
 </div>
-</section><section id="installing-and-loading-the-packages" class="level2" data-number="19.2"><h2 data-number="19.2" class="anchored" data-anchor-id="installing-and-loading-the-packages">
-<span class="header-section-number">19.2</span> Installing and loading the packages</h2>
+</section>
+<section id="installing-and-loading-the-packages" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="installing-and-loading-the-packages"><span class="header-section-number">19.2</span> Installing and loading the packages</h2>
 <p>Make sure you have up-to-date versions; old versions of <code>TwoSampleMR</code> and <code>ieugwasr</code> do not support the token. <code>TwoSampleMR</code> and <code>MRInstruments</code> are installed from the MRC IEU R-universe.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"TwoSampleMR"</span>, <span class="st">"MRInstruments"</span><span class="op">)</span>,</span>
-<span>                 repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://mrcieu.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ieugwasr"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"TwoSampleMR"</span>, <span class="st">"MRInstruments"</span>),</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://mrcieu.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ieugwasr"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Now load the packages.</p>
@@ -636,9 +652,9 @@ div.csl-indent {
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/MRCIEU/TwoSampleMR">"TwoSampleMR"</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/MRCIEU/MRInstruments">"MRInstruments"</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/MRCIEU/ieugwasr">"ieugwasr"</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"TwoSampleMR"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"MRInstruments"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ieugwasr"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -651,46 +667,45 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you cannot use OpenGWAS, the same analysis can be done fully offline: read exposure and outcome summary statistics from files with <code><a href="https://mrcieu.github.io/TwoSampleMR/reference/read_exposure_data.html">read_exposure_data()</a></code> and <code><a href="https://mrcieu.github.io/TwoSampleMR/reference/read_outcome_data.html">read_outcome_data()</a></code>, and clump locally with <code>ieugwasr::ld_clump(..., plink_bin = "plink", bfile = "&lt;1000G EUR reference&gt;")</code> instead of <code><a href="https://mrcieu.github.io/TwoSampleMR/reference/clump_data.html">clump_data()</a></code>. See the <a href="https://mrcieu.github.io/TwoSampleMR/" target="_blank"><code>TwoSampleMR</code> documentation</a>.</p>
+<p>If you cannot use OpenGWAS, the same analysis can be done fully offline: read exposure and outcome summary statistics from files with <code>read_exposure_data()</code> and <code>read_outcome_data()</code>, and clump locally with <code>ieugwasr::ld_clump(..., plink_bin = "plink", bfile = "&lt;1000G EUR reference&gt;")</code> instead of <code>clump_data()</code>. See the <a href="https://mrcieu.github.io/TwoSampleMR/" target="_blank"><code>TwoSampleMR</code> documentation</a>.</p>
 </div>
 </div>
-</section><section id="available-outcome" class="level2" data-number="19.3"><h2 data-number="19.3" class="anchored" data-anchor-id="available-outcome">
-<span class="header-section-number">19.3</span> Available outcome</h2>
+</section>
+<section id="available-outcome" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="available-outcome"><span class="header-section-number">19.3</span> Available outcome</h2>
 <p>We are ready to load in the available outcomes.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ao_twosamplemr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/available_outcomes.html">available_outcomes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ao_twosamplemr <span class="ot">&lt;-</span> <span class="fu">available_outcomes</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemravout" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemravout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemravout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_avout.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemravout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.1: Available data.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="instruments" class="level2" data-number="19.4"><h2 data-number="19.4" class="anchored" data-anchor-id="instruments">
-<span class="header-section-number">19.4</span> Instruments</h2>
+</section>
+<section id="instruments" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="instruments"><span class="header-section-number">19.4</span> Instruments</h2>
 <p>The <code>MRInstruments</code>-package, which comes with <code>TwoSampleMR</code>, includes several types of instruments:</p>
 <ul>
-<li>
-<em>gwas_catalog</em>, which includes data from GWAS collected by the GWAS Catalog</li>
-<li>
-<em>metab_qtls</em>, all known quantitative trait loci (meQTLs) associated to circulating metabolites</li>
-<li>
-<em>proteomic_qtls</em>, all known protein QTLs (pQTLs) associated to circulating protein levels</li>
-<li>
-<em>gtex_eqtl</em>, all known expression QTLs (eQTLs) associated to gene expression in 53 different tissues from GTEx Portal</li>
-<li>
-<em>aries_mqtl</em>, all known methylation QTLs (mQTLs) associated to DNA methylation in blood from ARIES</li>
+<li><em>gwas_catalog</em>, which includes data from GWAS collected by the GWAS Catalog</li>
+<li><em>metab_qtls</em>, all known quantitative trait loci (meQTLs) associated to circulating metabolites</li>
+<li><em>proteomic_qtls</em>, all known protein QTLs (pQTLs) associated to circulating protein levels</li>
+<li><em>gtex_eqtl</em>, all known expression QTLs (eQTLs) associated to gene expression in 53 different tissues from GTEx Portal</li>
+<li><em>aries_mqtl</em>, all known methylation QTLs (mQTLs) associated to DNA methylation in blood from ARIES</li>
 </ul>
 <p>Let’s select T2D associated instruments.</p>
 <div class="cell" data-layout-align="center">
@@ -698,66 +713,74 @@ Figure&nbsp;19.1: Available data.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"gwas_catalog"</span><span class="op">)</span></span>
-<span><span class="va">t2d_gwas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">gwas_catalog</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"Mahajan"</span>, <span class="va">Author</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">PubmedID</span> <span class="op">==</span> <span class="st">"24509480"</span> <span class="op">&amp;</span> <span class="va">Phenotype</span> <span class="op">==</span> <span class="st">"Type 2 diabetes"</span><span class="op">)</span></span>
-<span><span class="va">t2d_exp_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/format_data.html">format_data</a></span><span class="op">(</span><span class="va">t2d_gwas</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"gwas_catalog"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>t2d_gwas <span class="ot">&lt;-</span> <span class="fu">subset</span>(gwas_catalog, <span class="fu">grepl</span>(<span class="st">"Mahajan"</span>, Author) <span class="sc">&amp;</span> PubmedID <span class="sc">==</span> <span class="st">"24509480"</span> <span class="sc">&amp;</span> Phenotype <span class="sc">==</span> <span class="st">"Type 2 diabetes"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>t2d_exp_dat <span class="ot">&lt;-</span> <span class="fu">format_data</span>(t2d_gwas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrinstruments" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrinstruments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrinstruments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_instruments.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrinstruments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.2: Available data.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="clumping" class="level2" data-number="19.5"><h2 data-number="19.5" class="anchored" data-anchor-id="clumping">
-<span class="header-section-number">19.5</span> Clumping</h2>
+</section>
+<section id="clumping" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="clumping"><span class="header-section-number">19.5</span> Clumping</h2>
 <p>Like with identifying independent GWAS hits, it is important for TwoSampleMR to ensure that the instruments for the exposure are independent. We can use MR Base to perform clumping. The European samples from the 1000 genomes project are used to estimate LD between SNPs. You can provide a list of SNP IDs, the SNPs will be extracted from 1000 genomes data, LD calculated between them, and amongst those SNPs that have LD R-square above the specified threshold only the SNP with the lowest P-value will be retained. To do this, use the following command.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">t2d_exp_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/clump_data.html">clump_data</a></span><span class="op">(</span><span class="va">t2d_exp_dat</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>t2d_exp_dat <span class="ot">&lt;-</span> <span class="fu">clump_data</span>(t2d_exp_dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrclump" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrclump-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrclump-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_clump.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrclump-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.3: All available data.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="outcomes" class="level2" data-number="19.6"><h2 data-number="19.6" class="anchored" data-anchor-id="outcomes">
-<span class="header-section-number">19.6</span> Outcomes</h2>
+</section>
+<section id="outcomes" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="outcomes"><span class="header-section-number">19.6</span> Outcomes</h2>
 <p>Right, so now we are ready to select the proper outcome, CAD. There are multiple datasets available in MRBase, the database used by <code>TwoSampleMR</code>. Let’s review them all and select one with the largest overlap with our exposure SNPs.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ao_twosamplemr</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"heart disease"</span>, <span class="va">ao_twosamplemr</span><span class="op">$</span><span class="va">trait</span><span class="op">)</span>, <span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ao_twosamplemr[<span class="fu">grepl</span>(<span class="st">"heart disease"</span>, ao_twosamplemr<span class="sc">$</span>trait), ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrchd" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrchd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrchd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_chd.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrchd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.4: Available CHD data.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -771,14 +794,16 @@ Figure&nbsp;19.4: Available CHD data.
 <col style="width: 17%">
 <col style="width: 17%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>Code</th>
 <th>Year</th>
 <th>Author</th>
 <th>Description</th>
 <th>Ncases</th>
 <th>Ncontrols</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>ukb-d-I9_IHD</td>
@@ -799,8 +824,7 @@ Figure&nbsp;19.4: Available CHD data.
 <tr class="odd">
 <td>ieu-a-7</td>
 <td>2015</td>
-<td>Nikpay <em>et al.</em>
-</td>
+<td>Nikpay <em>et al.</em></td>
 <td>Coronary artery disease</td>
 <td>60801 123504</td>
 <td></td>
@@ -808,8 +832,7 @@ Figure&nbsp;19.4: Available CHD data.
 <tr class="even">
 <td>ieu-a-9</td>
 <td>2013</td>
-<td>Deloukas <em>et al.&nbsp;</em>
-</td>
+<td>Deloukas <em>et al.&nbsp;</em></td>
 <td>Coronary artery disease</td>
 <td>63746 130681</td>
 <td></td>
@@ -817,8 +840,7 @@ Figure&nbsp;19.4: Available CHD data.
 <tr class="odd">
 <td>ieu-a-8</td>
 <td>2011</td>
-<td>Schunkert <em>et al.</em>
-</td>
+<td>Schunkert <em>et al.</em></td>
 <td>Coronary artery disease</td>
 <td>22233</td>
 <td>64762</td>
@@ -831,50 +853,54 @@ Figure&nbsp;19.4: Available CHD data.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">chd_out_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/extract_outcome_data.html">extract_outcome_data</a></span><span class="op">(</span></span>
-<span>    snps <span class="op">=</span> <span class="va">t2d_exp_dat</span><span class="op">$</span><span class="va">SNP</span>,</span>
-<span>    <span class="co"># outcomes = "UKB-a:534" # - this one is deprecated, use the one below</span></span>
-<span>    <span class="co"># Deprecated IDs being used? Detected numeric IDs. Trying to fix, but please note the changes below for future.</span></span>
-<span>    <span class="co"># UKB-a:534  -&gt;  ukb-a-534</span></span>
-<span>    outcomes <span class="op">=</span> <span class="st">"ieu-a-7"</span></span>
-<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>chd_out_dat <span class="ot">&lt;-</span> <span class="fu">extract_outcome_data</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">snps =</span> t2d_exp_dat<span class="sc">$</span>SNP,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># outcomes = "UKB-a:534" # - this one is deprecated, use the one below</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Deprecated IDs being used? Detected numeric IDs. Trying to fix, but please note the changes below for future.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># UKB-a:534  -&gt;  ukb-a-534</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">outcomes =</span> <span class="st">"ieu-a-7"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrchdout" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrchdout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrchdout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_chdout.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrchdout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.5: Extracting available top SNPs.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<section id="harmonisation" class="level3" data-number="19.6.1"><h3 data-number="19.6.1" class="anchored" data-anchor-id="harmonisation">
-<span class="header-section-number">19.6.1</span> Harmonisation</h3>
+<section id="harmonisation" class="level3" data-number="19.6.1">
+<h3 data-number="19.6.1" class="anchored" data-anchor-id="harmonisation"><span class="header-section-number">19.6.1</span> Harmonisation</h3>
 <p>It is important to make sure that the effect allele associated to T2D of any given SNP is the same as the effect allele associated CAD. In other words, we need to harmonise the data.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/harmonise_data.html">harmonise_data</a></span><span class="op">(</span></span>
-<span>    exposure_dat <span class="op">=</span> <span class="va">t2d_exp_dat</span>,</span>
-<span>    outcome_dat <span class="op">=</span> <span class="va">chd_out_dat</span></span>
-<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">harmonise_data</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">exposure_dat =</span> t2d_exp_dat,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">outcome_dat =</span> chd_out_dat</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrharmonise" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrharmonise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrharmonise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_harmonise.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrharmonise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.6: Harmonising the instruments.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -887,28 +913,31 @@ Figure&nbsp;19.6: Harmonising the instruments.
 <!--                    method = 1, -->
 <!--                    dist.outcome = "binary") -->
 <!-- ``` -->
-</section><section id="mendelian-randomisation" class="level3" data-number="19.6.2"><h3 data-number="19.6.2" class="anchored" data-anchor-id="mendelian-randomisation">
-<span class="header-section-number">19.6.2</span> Mendelian randomisation</h3>
+</section>
+<section id="mendelian-randomisation" class="level3" data-number="19.6.2">
+<h3 data-number="19.6.2" class="anchored" data-anchor-id="mendelian-randomisation"><span class="header-section-number">19.6.2</span> Mendelian randomisation</h3>
 <p>Now that the data is harmonised, we are ready to perform a MR and test for a causal relation of T2D with CAD.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr.html">mr</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span><span class="va">res</span>, caption <span class="op">=</span> <span class="st">"MR of type 2 diabetes and coronary artery disease"</span>, rownames <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">mr</span>(dat)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(res, <span class="at">caption =</span> <span class="st">"MR of type 2 diabetes and coronary artery disease"</span>, <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemranalysis" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemranalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemranalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_analysis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemranalysis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.7: Primary MR analysis.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -928,14 +957,16 @@ Figure&nbsp;19.7: Primary MR analysis.
 <col style="width: 7%">
 <col style="width: 9%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">obj</th>
 <th style="text-align: left;">name</th>
 <th style="text-align: left;">PubmedID</th>
 <th style="text-align: left;">Description</th>
 <th style="text-align: left;">use_by_default</th>
 <th style="text-align: left;">heterogeneity_test</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">mr_wald_ratio</td>
@@ -1093,8 +1124,9 @@ Figure&nbsp;19.7: Primary MR analysis.
 </table>
 </div>
 </div>
-</section><section id="heterogeneity-pleiotropy" class="level3" data-number="19.6.3"><h3 data-number="19.6.3" class="anchored" data-anchor-id="heterogeneity-pleiotropy">
-<span class="header-section-number">19.6.3</span> Heterogeneity &amp; Pleiotropy</h3>
+</section>
+<section id="heterogeneity-pleiotropy" class="level3" data-number="19.6.3">
+<h3 data-number="19.6.3" class="anchored" data-anchor-id="heterogeneity-pleiotropy"><span class="header-section-number">19.6.3</span> Heterogeneity &amp; Pleiotropy</h3>
 <p>Many genetic variants are associated to multiple traits, thus <em>pleiotropy</em> is common and widespread in the human genome. This poses as an issue to tease apart causal relations in Mendelian randomisation. <em>Vertical pleiotropy</em> arises because a SNP influences one trait, which in turn influences another. We can use MR to estimate the causal influence between the traits. <em>Horizontal pleiotropy</em> arises due to SNPs influencing two traits through independent pathways<span class="citation" data-cites="hemani2018">(<a href="references.html#ref-hemani2018" role="doc-biblioref"><span class="nocase">Hemani G.</span> 2018</a>)</span>.</p>
 <p>Further, we should test for study heterogeneity.</p>
 <div class="cell" data-layout-align="center">
@@ -1102,18 +1134,20 @@ Figure&nbsp;19.7: Primary MR analysis.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_heterogeneity.html">mr_heterogeneity</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mr_heterogeneity</span>(dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrheterogeneity" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrheterogeneity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrheterogeneity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_heterogeneity.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrheterogeneity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.8: MR heterogeneity.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -1122,45 +1156,50 @@ Figure&nbsp;19.8: MR heterogeneity.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_pleiotropy_test.html">mr_pleiotropy_test</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mr_pleiotropy_test</span>(dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrpleiotropy" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrpleiotropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrpleiotropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_pleiotropy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrpleiotropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.9: MR pleiotropy.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
 <p>Question: What do the results of the heterogeneity and pleiotropy tests tell you?</p>
 </blockquote>
-</section><section id="leave-one-out" class="level3" data-number="19.6.4"><h3 data-number="19.6.4" class="anchored" data-anchor-id="leave-one-out">
-<span class="header-section-number">19.6.4</span> Leave-one-out</h3>
+</section>
+<section id="leave-one-out" class="level3" data-number="19.6.4">
+<h3 data-number="19.6.4" class="anchored" data-anchor-id="leave-one-out"><span class="header-section-number">19.6.4</span> Leave-one-out</h3>
 <p>It is also key to inspect the causal effects per SNP and perform a leave-one-out analysis.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_single</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_singlesnp.html">mr_singlesnp</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span><span class="va">res_single</span>, caption <span class="op">=</span> <span class="st">"Single SNP MR analysis"</span>, rownames <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>res_single <span class="ot">&lt;-</span> <span class="fu">mr_singlesnp</span>(dat)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(res_single, <span class="at">caption =</span> <span class="st">"Single SNP MR analysis"</span>, <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrsingle" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrsingle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrsingle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_singlesnp.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrsingle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.10: Single SNP analysis results.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -1169,27 +1208,30 @@ Figure&nbsp;19.10: Single SNP analysis results.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_loo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_leaveoneout.html">mr_leaveoneout</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span><span class="va">res_loo</span>, caption <span class="op">=</span> <span class="st">"Leave-one-out MR analysis"</span>, rownames <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>res_loo <span class="ot">&lt;-</span> <span class="fu">mr_leaveoneout</span>(dat)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(res_loo, <span class="at">caption =</span> <span class="st">"Leave-one-out MR analysis"</span>, <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrloo" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrloo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrloo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_loo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrloo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.11: Leave-One-Out analysis results.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
 <p>Question: What do the results of the single SNP and leave-one-out analyses tell you?</p>
 </blockquote>
-</section><section id="visualisation" class="level3" data-number="19.6.5"><h3 data-number="19.6.5" class="anchored" data-anchor-id="visualisation">
-<span class="header-section-number">19.6.5</span> Visualisation</h3>
+</section>
+<section id="visualisation" class="level3" data-number="19.6.5">
+<h3 data-number="19.6.5" class="anchored" data-anchor-id="visualisation"><span class="header-section-number">19.6.5</span> Visualisation</h3>
 <p>It is important to present the causal inference graphically.</p>
 <p><strong>Scatter plot</strong></p>
 <div class="cell" data-layout-align="center">
@@ -1197,20 +1239,22 @@ Figure&nbsp;19.11: Leave-One-Out analysis results.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr.html">mr</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_scatter_plot.html">mr_scatter_plot</a></span><span class="op">(</span><span class="va">res</span>, <span class="va">dat</span><span class="op">)</span></span>
-<span><span class="va">p1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">mr</span>(dat)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">mr_scatter_plot</span>(res, dat)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrscatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrscatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrscatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_scatter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrscatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.12: Scatter plot.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -1223,20 +1267,22 @@ Figure&nbsp;19.12: Scatter plot.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_single</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_singlesnp.html">mr_singlesnp</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_forest_plot.html">mr_forest_plot</a></span><span class="op">(</span><span class="va">res_single</span><span class="op">)</span></span>
-<span><span class="va">p2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>res_single <span class="ot">&lt;-</span> <span class="fu">mr_singlesnp</span>(dat)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">mr_forest_plot</span>(res_single)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrforest" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrforest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrforest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_forest.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrforest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.13: Single SNP plot.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -1249,20 +1295,22 @@ Figure&nbsp;19.13: Single SNP plot.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_loo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_leaveoneout.html">mr_leaveoneout</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="va">p3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_leaveoneout_plot.html">mr_leaveoneout_plot</a></span><span class="op">(</span><span class="va">res_loo</span><span class="op">)</span></span>
-<span><span class="va">p3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>res_loo <span class="ot">&lt;-</span> <span class="fu">mr_leaveoneout</span>(dat)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">mr_leaveoneout_plot</span>(res_loo)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>p3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrlooplot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrlooplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrlooplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_looplot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrlooplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.14: Leave-One-Out plot.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -1275,20 +1323,22 @@ Figure&nbsp;19.14: Leave-One-Out plot.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_single</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_singlesnp.html">mr_singlesnp</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="va">p4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mrcieu.github.io/TwoSampleMR/reference/mr_funnel_plot.html">mr_funnel_plot</a></span><span class="op">(</span><span class="va">res_single</span><span class="op">)</span></span>
-<span><span class="va">p4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>res_single <span class="ot">&lt;-</span> <span class="fu">mr_singlesnp</span>(dat)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">mr_funnel_plot</span>(res_single)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>p4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-twosamplemrfunnelplot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-twosamplemrfunnelplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-twosamplemrfunnelplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./img/twosamplemr/twosamplemr_funnelplot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-twosamplemrfunnelplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;19.15: Funnel plot.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -1315,8 +1365,10 @@ Figure&nbsp;19.15: Funnel plot.
 <blockquote class="blockquote">
 <p>Question: What are your main conclusions from the MR analysis?</p>
 </blockquote>
-</section></section><section id="the-end" class="level2" data-number="19.7"><h2 data-number="19.7" class="anchored" data-anchor-id="the-end">
-<span class="header-section-number">19.7</span> The end?</h2>
+</section>
+</section>
+<section id="the-end" class="level2" data-number="19.7">
+<h2 data-number="19.7" class="anchored" data-anchor-id="the-end"><span class="header-section-number">19.7</span> The end?</h2>
 <p>You are almost at the end. Time to return to the previous chapter on post-GWAS analyses <a href="05_1_post_gwas.html" class="quarto-xref"><span>Chapter 15</span></a>.</p>
 
 
@@ -1325,7 +1377,10 @@ Figure&nbsp;19.15: Funnel plot.
 <span class="nocase">Hemani G., et al.</span> 2018. <em>Evaluating the Potential Role of Pleiotropy in Mendelian Randomization Studies</em>. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6061876">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6061876</a>.
 </div>
 </div>
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1869,9 +1924,12 @@ Figure&nbsp;19.15: Funnel plot.
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./05_6_mendelian_randomization_mr_base.html" class="pagination-link" aria-label="MRBase">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">MRBase</span></span>
       </a>          
@@ -1883,7 +1941,8 @@ Figure&nbsp;19.15: Funnel plot.
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1895,6 +1954,8 @@ Figure&nbsp;19.15: Funnel plot.
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>8&nbsp; Per-SNP QC – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -60,6 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -82,9 +86,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +115,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -287,7 +296,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -298,9 +309,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -316,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -351,8 +366,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -389,14 +404,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -415,14 +430,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -453,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -471,8 +486,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -491,30 +506,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#snp-call-rates" id="toc-snp-call-rates" class="nav-link active" data-scroll-target="#snp-call-rates"><span class="header-section-number">8.1</span> SNP call rates</a></li>
+  <li><a href="#snp-call-rates" id="toc-snp-call-rates" class="nav-link active" data-scroll-target="#snp-call-rates"><span class="header-section-number">8.1</span> SNP call rates</a></li>
   <li><a href="#differential-snp-call-rates" id="toc-differential-snp-call-rates" class="nav-link" data-scroll-target="#differential-snp-call-rates"><span class="header-section-number">8.2</span> Differential SNP call rates</a></li>
-  <li>
-<a href="#allele-frequencies" id="toc-allele-frequencies" class="nav-link" data-scroll-target="#allele-frequencies"><span class="header-section-number">8.3</span> Allele frequencies</a>
+  <li><a href="#allele-frequencies" id="toc-allele-frequencies" class="nav-link" data-scroll-target="#allele-frequencies"><span class="header-section-number">8.3</span> Allele frequencies</a>
   <ul class="collapse">
-<li><a href="#a-note-on-allele-coding" id="toc-a-note-on-allele-coding" class="nav-link" data-scroll-target="#a-note-on-allele-coding"><span class="header-section-number">8.3.1</span> A note on allele coding</a></li>
-  </ul>
-</li>
+  <li><a href="#a-note-on-allele-coding" id="toc-a-note-on-allele-coding" class="nav-link" data-scroll-target="#a-note-on-allele-coding"><span class="header-section-number">8.3.1</span> A note on allele coding</a></li>
+  </ul></li>
   <li><a href="#hardy-weinberg-equilibrium" id="toc-hardy-weinberg-equilibrium" class="nav-link" data-scroll-target="#hardy-weinberg-equilibrium"><span class="header-section-number">8.4</span> Hardy-Weinberg Equilibrium</a></li>
   <li><a href="#final-snp-qc" id="toc-final-snp-qc" class="nav-link" data-scroll-target="#final-snp-qc"><span class="header-section-number">8.5</span> Final SNP QC</a></li>
   <li><a href="#a-milestone" id="toc-a-milestone" class="nav-link" data-scroll-target="#a-milestone"><span class="header-section-number">8.6</span> A Milestone</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_3_gwas_basics_snp_qc_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_3_gwas_basics_snp_qc_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_3_gwas_basics_snp_qc_cocalc.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Per-SNP QC</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_3_gwas_basics_snp_qc_cocalc.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Per-SNP QC</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-gwas-basics-snp-qc-cocalc" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Per-SNP QC</span></span></h1>
 </div>
 
@@ -529,9 +549,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><!-- ![](img/gwas_dummy/gwas_snp_qc.png){width=70%} --><p>Now that we removed samples, we can focus on low-quality variants.</p>
-<section id="snp-call-rates" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="snp-call-rates">
-<span class="header-section-number">8.1</span> SNP call rates</h2>
+</header>
+
+
+<!-- ![](img/gwas_dummy/gwas_snp_qc.png){width=70%} -->
+<p>Now that we removed samples, we can focus on low-quality variants.</p>
+<section id="snp-call-rates" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="snp-call-rates"><span class="header-section-number">8.1</span> SNP call rates</h2>
 <p>We start by calculating the missing genotype rate for each SNP, in other words the per-SNP call rate.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -545,10 +569,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://r-datatable.com">"data.table"</a></span><span class="op">)</span></span>
-<span><span class="va">clean_LMISS</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"dummy_project/clean_inds_data.lmiss"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">clean_LMISS</span><span class="op">$</span><span class="va">callrate</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">clean_LMISS</span><span class="op">$</span><span class="va">F_MISS</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"data.table"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>clean_LMISS <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"dummy_project/clean_inds_data.lmiss"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>clean_LMISS<span class="sc">$</span>callrate <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> clean_LMISS<span class="sc">$</span>F_MISS</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -556,34 +580,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://rpkgs.datanovia.com/ggpubr/">"ggpubr"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">clean_LMISS_plot</span> <span class="op">&lt;-</span> <span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">clean_LMISS</span>, x <span class="op">=</span> <span class="st">"callrate"</span>,</span>
-<span>                                        add <span class="op">=</span> <span class="st">"mean"</span>, add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#595A5C"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
-<span>                                        rug <span class="op">=</span> <span class="cn">TRUE</span>, bins <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                                        color <span class="op">=</span> <span class="st">"#1290D9"</span>, fill <span class="op">=</span> <span class="st">"#1290D9"</span>,</span>
-<span>                                        xlab <span class="op">=</span> <span class="st">"per SNP call rate"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0.95</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"dummy_project/gwas-qc-snp-call-rate.png"</span>, plot <span class="op">=</span> <span class="va">clean_LMISS_plot</span>, width <span class="op">=</span> <span class="fl">7</span>, height <span class="op">=</span> <span class="fl">5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span>
-<span><span class="va">clean_LMISS_plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggpubr"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>clean_LMISS_plot <span class="ot">&lt;-</span> ggpubr<span class="sc">::</span><span class="fu">gghistogram</span>(clean_LMISS, <span class="at">x =</span> <span class="st">"callrate"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">add =</span> <span class="st">"mean"</span>, <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#595A5C"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">rug =</span> <span class="cn">TRUE</span>, <span class="at">bins =</span> <span class="dv">50</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">color =</span> <span class="st">"#1290D9"</span>, <span class="at">fill =</span> <span class="st">"#1290D9"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">xlab =</span> <span class="st">"per SNP call rate"</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.95</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"dummy_project/gwas-qc-snp-call-rate.png"</span>, <span class="at">plot =</span> clean_LMISS_plot, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>clean_LMISS_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showsnpcallrate" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showsnpcallrate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showsnpcallrate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-snp-callrate.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showsnpcallrate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1: Per SNP call rate.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="differential-snp-call-rates" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="differential-snp-call-rates">
-<span class="header-section-number">8.2</span> Differential SNP call rates</h2>
+</section>
+<section id="differential-snp-call-rates" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="differential-snp-call-rates"><span class="header-section-number">8.2</span> Differential SNP call rates</h2>
 <p>There could also be differences in genotype call rates between cases and controls. It is very important to check for this because these differences could lead to spurious associations. We can test all markers for differences in call rate between cases and controls, or based on other criteria.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -598,8 +625,9 @@ Figure&nbsp;8.1: Per SNP call rate.
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> dummy_project/clean_inds_data.missing <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'$5 &lt; 0.00001'</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{ print $2 }'</span> <span class="op">&gt;</span> dummy_project/fail-diffmiss-qc.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="allele-frequencies" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="allele-frequencies">
-<span class="header-section-number">8.3</span> Allele frequencies</h2>
+</section>
+<section id="allele-frequencies" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="allele-frequencies"><span class="header-section-number">8.3</span> Allele frequencies</h2>
 <p>We should also get an idea on what the allele frequencies are in our dataset. Low frequent SNPs should probably be excluded, as these are uninformative when monomorphic (allele frequency = 0), or they may lead to spurious associations.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -613,7 +641,7 @@ Figure&nbsp;8.1: Per SNP call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">clean_FREQ</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"dummy_project/clean_inds_data.frq"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>clean_FREQ <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"dummy_project/clean_inds_data.frq"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -621,32 +649,34 @@ Figure&nbsp;8.1: Per SNP call rate.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">clean_FREQ_plot</span> <span class="op">&lt;-</span> <span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">clean_FREQ</span>, x <span class="op">=</span> <span class="st">"MAF"</span>,</span>
-<span>                                       add <span class="op">=</span> <span class="st">"mean"</span>, add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#595A5C"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
-<span>                                       rug <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>                                       color <span class="op">=</span> <span class="st">"#1290D9"</span>, fill <span class="op">=</span> <span class="st">"#1290D9"</span>,</span>
-<span>                                       xlab <span class="op">=</span> <span class="st">"minor allele frequency"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0.05</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"dummy_project/gwas-qc-snp-freq.png"</span>, plot <span class="op">=</span> <span class="va">clean_FREQ_plot</span>, width <span class="op">=</span> <span class="fl">7</span>, height <span class="op">=</span> <span class="fl">5</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span>
-<span><span class="va">clean_FREQ_plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>clean_FREQ_plot <span class="ot">&lt;-</span> ggpubr<span class="sc">::</span><span class="fu">gghistogram</span>(clean_FREQ, <span class="at">x =</span> <span class="st">"MAF"</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">add =</span> <span class="st">"mean"</span>, <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#595A5C"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">color =</span> <span class="st">"#1290D9"</span>, <span class="at">fill =</span> <span class="st">"#1290D9"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">xlab =</span> <span class="st">"minor allele frequency"</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.05</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"dummy_project/gwas-qc-snp-freq.png"</span>, <span class="at">plot =</span> clean_FREQ_plot, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>clean_FREQ_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showfreq" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showfreq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showfreq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-freq.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showfreq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.2: Minor allele frequency.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<section id="a-note-on-allele-coding" class="level3" data-number="8.3.1"><h3 data-number="8.3.1" class="anchored" data-anchor-id="a-note-on-allele-coding">
-<span class="header-section-number">8.3.1</span> A note on allele coding</h3>
+<section id="a-note-on-allele-coding" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="a-note-on-allele-coding"><span class="header-section-number">8.3.1</span> A note on allele coding</h3>
 <p>Oh, one more thing about alleles.</p>
 <p><code>PLINK</code> codes alleles as follows:</p>
 <p>A1 = minor allele, the least frequent allele A2 = major allele, the most frequent allele</p>
@@ -656,8 +686,10 @@ Figure&nbsp;8.2: Minor allele frequency.
 <p>When you use <code>SNPTEST</code> it will report the allele frequency as <code>CAF</code>, in other words the <em>coded allele frequency</em>, and the effect size (beta) is always relative to the B-allele. This means, <code>CAF</code> <em>could</em> be the <code>MAF</code>, or <em>minor allele frequency</em>, but this is <strong>not</strong> a given.</p>
 <p>In other words, always make sure what the allele-coding of a given program, be it <code>PLINK</code>, <code>SNPTEST</code>, <code>GCTA</code>, <em>et cetera</em>, is! I cannot stress this enough. Ask yourself: ‘what is the allele frequency referring to?’, ‘the effect size is relative to…?’.</p>
 <p>Right, let’s continue.</p>
-</section></section><section id="hardy-weinberg-equilibrium" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="hardy-weinberg-equilibrium">
-<span class="header-section-number">8.4</span> Hardy-Weinberg Equilibrium</h2>
+</section>
+</section>
+<section id="hardy-weinberg-equilibrium" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="hardy-weinberg-equilibrium"><span class="header-section-number">8.4</span> Hardy-Weinberg Equilibrium</h2>
 <p>Because we are performing a case-control genome-wide association study, we probably expect some differences in Hardy-Weinberg Equilibrium (HWE), but extreme deviations are probably indicative of genotyping errors. The <code>.hwe</code> file has three rows per variant, given in the <code>TEST</code> column: <code>ALL</code> (all samples), <code>AFF</code> (affected, <em>i.e.</em> cases) and <code>UNAFF</code> (unaffected, <em>i.e.</em> controls). Deviations from HWE in cases can reflect true association, which is why the HWE filter is usually applied to controls only.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -671,8 +703,8 @@ Figure&nbsp;8.2: Minor allele frequency.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">clean_HWE</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"dummy_project/clean_inds_data.hwe"</span><span class="op">)</span></span>
-<span><span class="va">clean_HWE</span><span class="op">$</span><span class="va">logP</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">clean_HWE</span><span class="op">$</span><span class="va">P</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>clean_HWE <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"dummy_project/clean_inds_data.hwe"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>clean_HWE<span class="sc">$</span>logP <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">log10</span>(clean_HWE<span class="sc">$</span>P)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -680,37 +712,40 @@ Figure&nbsp;8.2: Minor allele frequency.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">clean_HWE_plot</span> <span class="op">&lt;-</span> <span class="fu">ggpubr</span><span class="fu">::</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">clean_HWE</span>, x <span class="op">=</span> <span class="st">"logP"</span>,</span>
-<span>                                      add <span class="op">=</span> <span class="st">"mean"</span>,</span>
-<span>                                      add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#595A5C"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
-<span>                                      rug <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>                                      <span class="co"># color = "#1290D9", fill = "#1290D9",</span></span>
-<span>                                      color <span class="op">=</span> <span class="st">"TEST"</span>, fill <span class="op">=</span> <span class="st">"TEST"</span>,</span>
-<span>                                      palette <span class="op">=</span> <span class="st">"lancet"</span>,</span>
-<span>                                      facet.by <span class="op">=</span> <span class="st">"TEST"</span>,</span>
-<span>                                      bins <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                                      xlab <span class="op">=</span> <span class="st">"HWE -log10(P)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">5</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>                      color <span class="op">=</span> <span class="st">"#E55738"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"dummy_project/gwas-qc-snp-hwe.png"</span>, plot <span class="op">=</span> <span class="va">clean_HWE_plot</span>, width <span class="op">=</span> <span class="fl">7</span>, height <span class="op">=</span> <span class="fl">9</span>, units <span class="op">=</span> <span class="st">"in"</span><span class="op">)</span></span>
-<span><span class="va">clean_HWE_plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>clean_HWE_plot <span class="ot">&lt;-</span> ggpubr<span class="sc">::</span><span class="fu">gghistogram</span>(clean_HWE, <span class="at">x =</span> <span class="st">"logP"</span>,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">add =</span> <span class="st">"mean"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">add.params =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#595A5C"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="co"># color = "#1290D9", fill = "#1290D9",</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">color =</span> <span class="st">"TEST"</span>, <span class="at">fill =</span> <span class="st">"TEST"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">palette =</span> <span class="st">"lancet"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">facet.by =</span> <span class="st">"TEST"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">bins =</span> <span class="dv">50</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">xlab =</span> <span class="st">"HWE -log10(P)"</span>) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"#E55738"</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"dummy_project/gwas-qc-snp-hwe.png"</span>, <span class="at">plot =</span> clean_HWE_plot, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">9</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>clean_HWE_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-showhwe" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-showhwe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-showhwe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_dummy/show-hwe.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-showhwe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.3: Hardy-Weinberg Equilibrium p-values per stratum.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="final-snp-qc" class="level2" data-number="8.5"><h2 data-number="8.5" class="anchored" data-anchor-id="final-snp-qc">
-<span class="header-section-number">8.5</span> Final SNP QC</h2>
+</section>
+<section id="final-snp-qc" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="final-snp-qc"><span class="header-section-number">8.5</span> Final SNP QC</h2>
 <p>We are ready to perform the final QC. After inspecting the graphs we will filter on a MAF &lt; 0.01, call rate &lt; 0.05, and HWE &lt; 0.00001 (<a href="#fig-showhwe" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>), in addition those SNPs that failed the differential call rate test will be removed.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -718,12 +753,16 @@ Figure&nbsp;8.3: Hardy-Weinberg Equilibrium p-values per stratum.
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--bfile</span> dummy_project/clean_inds_data <span class="at">--exclude</span> dummy_project/fail-diffmiss-qc.txt <span class="at">--maf</span> 0.01 <span class="at">--geno</span> 0.05 <span class="at">--hwe</span> 0.00001 <span class="at">--make-bed</span> <span class="at">--out</span> dummy_project/cleandata</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="a-milestone" class="level2" data-number="8.6"><h2 data-number="8.6" class="anchored" data-anchor-id="a-milestone">
-<span class="header-section-number">8.6</span> A Milestone</h2>
+</section>
+<section id="a-milestone" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="a-milestone"><span class="header-section-number">8.6</span> A Milestone</h2>
 <p>Congratulations. You reached a very important milestone. Now that you filtered samples and SNPs, we can finally start the association analyses in <a href="03_4_gwas_basics_association_testing_cocalc.html" class="quarto-xref"><span>Chapter 9</span></a>.</p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1267,9 +1306,12 @@ Figure&nbsp;8.3: Hardy-Weinberg Equilibrium p-values per stratum.
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./03_2_gwas_basics_sample_qc_cocalc.html" class="pagination-link" aria-label="Sample QC">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sample QC</span></span>
       </a>          
@@ -1281,7 +1323,8 @@ Figure&nbsp;8.3: Hardy-Weinberg Equilibrium p-values per stratum.
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1293,6 +1336,8 @@ Figure&nbsp;8.3: Hardy-Weinberg Equilibrium p-values per stratum.
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

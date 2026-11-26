@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>6&nbsp; Steps in a Genome-Wide Association Study – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -79,6 +82,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -101,9 +105,10 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -129,10 +134,14 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -306,7 +315,9 @@ div.csl-indent {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -317,9 +328,13 @@ div.csl-indent {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -335,7 +350,7 @@ div.csl-indent {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -370,8 +385,8 @@ div.csl-indent {
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -408,14 +423,14 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -434,14 +449,14 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -472,7 +487,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -490,8 +505,8 @@ div.csl-indent {
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -510,28 +525,33 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a>
   <ul class="collapse">
-<li><a href="#setting-the-stage" id="toc-setting-the-stage" class="nav-link" data-scroll-target="#setting-the-stage"><span class="header-section-number">6.1.1</span> Setting the stage</a></li>
-  </ul>
-</li>
+  <li><a href="#setting-the-stage" id="toc-setting-the-stage" class="nav-link" data-scroll-target="#setting-the-stage"><span class="header-section-number">6.1.1</span> Setting the stage</a></li>
+  </ul></li>
   <li><a href="#converting-the-data" id="toc-converting-the-data" class="nav-link" data-scroll-target="#converting-the-data"><span class="header-section-number">6.2</span> Converting the data</a></li>
   <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control"><span class="header-section-number">6.3</span> Quality control</a></li>
   <li><a href="#lets-get-our-hands-dirty" id="toc-lets-get-our-hands-dirty" class="nav-link" data-scroll-target="#lets-get-our-hands-dirty"><span class="header-section-number">6.4</span> Let’s get our hands dirty</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_1_gwas_basics_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/03_1_gwas_basics_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html">GWAS basics</a></li><li class="breadcrumb-item"><a href="./03_1_gwas_basics_cocalc.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-gwas-basics-cocalc" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></h1>
 </div>
 
@@ -546,7 +566,10 @@ div.csl-indent {
   
 
 
-</header><p><img src="img/headers/woman_working_on_code.png" class="chapter-banner img-fluid" alt="GWAS basics"><!-- ![](img/headers/woman_working_on_code.png){width=100%} --></p>
+</header>
+
+
+<p><img src="img/headers/woman_working_on_code.png" class="chapter-banner img-fluid" alt="GWAS basics"> <!-- ![](img/headers/woman_working_on_code.png){width=100%} --></p>
 <p>Now that you understand a bit of the navigation in Unix-systems, you’re ready to start this practical primer. We will make use of a dummy dataset containing cases and controls. We will explain and execute the following steps:</p>
 <ol type="1">
 <li>convert raw data to a more memory-efficient format</li>
@@ -555,8 +578,8 @@ div.csl-indent {
 <li>perform association testing</li>
 <li>visualize association results</li>
 </ol>
-<section id="introduction" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">6.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
 <p>The format in which genotype data are returned to investigators varies among genome-wide SNP platforms and genotyping centers. Usually genotypes have been called by a genotyping center and returned in the standard <code>PED</code> and <code>MAP</code> file formats designed for <code>PLINK</code>.</p>
 <p>A <code>PED</code> file is a white space (space or tab)-delimited file in which each line represents one individual and the first six columns are mandatory and in the following order:</p>
 <ul>
@@ -569,8 +592,8 @@ div.csl-indent {
 </ul>
 <p>The subsequent columns denote genotypes that can be any character (e.g., 1, 2, 3, 4 or A, C, G, T). Zero denotes a missing genotype. Each SNP must have two alleles (i.e., both alleles are either present or absent). The order of SNPs in the PED file is given in the MAP file, in which each line denotes a single marker and the four white-space–separated columns are chromosome (1–22, X, Y or 0 for unplaced), marker name (typically an rs number), genetic distance in Morgans (this can be fixed to 0) and base-pair position (bp units).</p>
 <p>Let’s start by using <code>PLINK</code> to converting the datasets to a lighter, binary form (a <code>.bed</code>-file). This file saves data in a more memory- and time-efficient manner (in a ‘binary’-format) to facilitate the analysis of large-scale data sets <span class="citation" data-cites="purcell2007">(<a href="references.html#ref-purcell2007" role="doc-biblioref"><span class="nocase">Purcell S.</span> 2007</a>)</span>. The marker-information is stored in the <code>.bim</code>-file and the family information in the <code>.fam</code>-file. <code>PLINK</code> creates a <code>.log</code> file (named <code>raw-GWA-data.log</code>) that details (among other information) the implemented commands, the number of cases and controls in the input files, any excluded data and the genotyping rate in the remaining data. This file is very useful for checking whether the software is successfully completing commands.</p>
-<section id="setting-the-stage" class="level3" data-number="6.1.1"><h3 data-number="6.1.1" class="anchored" data-anchor-id="setting-the-stage">
-<span class="header-section-number">6.1.1</span> Setting the stage</h3>
+<section id="setting-the-stage" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="setting-the-stage"><span class="header-section-number">6.1.1</span> Setting the stage</h3>
 <p>Make sure you are in the right directory. <em>Do you remember how to get there?</em></p>
 <p>In the Terminal window you type the following:</p>
 <div class="code-with-filename">
@@ -611,8 +634,11 @@ div.csl-indent {
 <li>The <code>support</code> directory contains some additional files that are used in the practical primer.</li>
 <li>The <code>scripts</code> directory contains the scripts we will use.</li>
 <li>The <code>readme.txt</code> and <code>readme.wtccc1.txt</code> files contain some additional information.</li>
-</ul></section></section><section id="converting-the-data" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="converting-the-data">
-<span class="header-section-number">6.2</span> Converting the data</h2>
+</ul>
+</section>
+</section>
+<section id="converting-the-data" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="converting-the-data"><span class="header-section-number">6.2</span> Converting the data</h2>
 <p>Let’s convert the <code>.ped</code>/<code>.map</code> files to the binary-format. First check that both files are unpacked; <code>PLINK</code> needs <code>raw-GWA-data.ped</code> <em>and</em> <code>raw-GWA-data.map</code>.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -677,8 +703,9 @@ Tip
 <blockquote class="blockquote">
 <p>Question: Can you think off what the ‘11,440 heterozygous haploid genotypes present’ represent?</p>
 </blockquote>
-</section><section id="quality-control" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="quality-control">
-<span class="header-section-number">6.3</span> Quality control</h2>
+</section>
+<section id="quality-control" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="quality-control"><span class="header-section-number">6.3</span> Quality control</h2>
 <p>We are ready for some quality control and quality assurance, heavily inspired by Anderson <em>et al.</em> <span class="citation" data-cites="anderson2010">(<a href="references.html#ref-anderson2010" role="doc-biblioref"><span class="nocase">Anderson C. A.</span> 2010</a>)</span> and Laurie <em>et al.</em> <span class="citation" data-cites="laurie2010">(<a href="references.html#ref-laurie2010" role="doc-biblioref"><span class="nocase">Laurie C. C.</span> 2010</a>)</span>. In general, we should check out a couple of things regarding the data quality on two levels:</p>
 <ol type="1">
 <li>samples</li>
@@ -697,8 +724,9 @@ Tip
 <blockquote class="blockquote">
 <p>Question: Can you think of other scenarios in which you may want to extend the check on differential missingness beyond a check between cases and controls?</p>
 </blockquote>
-</section><section id="lets-get-our-hands-dirty" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="lets-get-our-hands-dirty">
-<span class="header-section-number">6.4</span> Let’s get our hands dirty</h2>
+</section>
+<section id="lets-get-our-hands-dirty" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="lets-get-our-hands-dirty"><span class="header-section-number">6.4</span> Let’s get our hands dirty</h2>
 <p>All clear? Let’s start the work. On to step 1 of the QC for GWAS: filter samples of poor quality in <a href="03_2_gwas_basics_sample_qc_cocalc.html" class="quarto-xref"><span>Chapter 7</span></a>.</p>
 
 
@@ -713,7 +741,10 @@ Tip
 <span class="nocase">Purcell S., et al.</span> 2007. <em>PLINK, a Tool Set for Whole-Genome Association and Population-Based Linkage Analyses.</em> <a href="https://www.ncbi.nlm.nih.gov/pubmed/17701901">https://www.ncbi.nlm.nih.gov/pubmed/17701901</a>.
 </div>
 </div>
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1257,9 +1288,12 @@ Tip
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./02_4_gettingstarted_cocalc.html" class="pagination-link" aria-label="Getting started - CoCalc">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Getting started - CoCalc</span></span>
       </a>          
@@ -1271,7 +1305,8 @@ Tip
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1283,6 +1318,8 @@ Tip
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

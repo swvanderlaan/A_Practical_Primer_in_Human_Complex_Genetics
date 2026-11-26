@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>15&nbsp; Post-GWAS Analyses – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -44,6 +47,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -66,9 +70,10 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -94,10 +99,14 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -271,7 +280,9 @@ div.csl-indent {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -282,9 +293,13 @@ div.csl-indent {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -300,7 +315,7 @@ div.csl-indent {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -335,8 +350,8 @@ div.csl-indent {
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -373,14 +388,14 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -399,14 +414,14 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -437,7 +452,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -455,8 +470,8 @@ div.csl-indent {
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -475,42 +490,45 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#clumping" id="toc-clumping" class="nav-link active" data-scroll-target="#clumping"><span class="header-section-number">15.1</span> Clumping</a></li>
+  <li><a href="#clumping" id="toc-clumping" class="nav-link active" data-scroll-target="#clumping"><span class="header-section-number">15.1</span> Clumping</a></li>
   <li><a href="#conditional-analyses" id="toc-conditional-analyses" class="nav-link" data-scroll-target="#conditional-analyses"><span class="header-section-number">15.2</span> Conditional analyses</a></li>
-  <li>
-<a href="#statistical-finemapping" id="toc-statistical-finemapping" class="nav-link" data-scroll-target="#statistical-finemapping"><span class="header-section-number">15.3</span> Statistical finemapping</a>
+  <li><a href="#statistical-finemapping" id="toc-statistical-finemapping" class="nav-link" data-scroll-target="#statistical-finemapping"><span class="header-section-number">15.3</span> Statistical finemapping</a>
   <ul class="collapse">
-<li><a href="#finemap" id="toc-finemap" class="nav-link" data-scroll-target="#finemap"><span class="header-section-number">15.3.1</span> FINEMAP</a></li>
+  <li><a href="#finemap" id="toc-finemap" class="nav-link" data-scroll-target="#finemap"><span class="header-section-number">15.3.1</span> FINEMAP</a></li>
   <li><a href="#locuszoom" id="toc-locuszoom" class="nav-link" data-scroll-target="#locuszoom"><span class="header-section-number">15.3.2</span> LocusZoom</a></li>
   <li><a href="#susie" id="toc-susie" class="nav-link" data-scroll-target="#susie"><span class="header-section-number">15.3.3</span> SuSIE</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#fuma-functional-mapping-and-annotation-of-gwas" id="toc-fuma-functional-mapping-and-annotation-of-gwas" class="nav-link" data-scroll-target="#fuma-functional-mapping-and-annotation-of-gwas"><span class="header-section-number">15.4</span> FUMA: FUnctional Mapping and Annotation of GWAS</a></li>
   <li><a href="#phenome-wide-association-study" id="toc-phenome-wide-association-study" class="nav-link" data-scroll-target="#phenome-wide-association-study"><span class="header-section-number">15.5</span> Phenome-wide association study</a></li>
   <li><a href="#colocalization" id="toc-colocalization" class="nav-link" data-scroll-target="#colocalization"><span class="header-section-number">15.6</span> Colocalization</a></li>
   <li><a href="#genetic-correlation" id="toc-genetic-correlation" class="nav-link" data-scroll-target="#genetic-correlation"><span class="header-section-number">15.7</span> Genetic correlation</a></li>
-  <li>
-<a href="#causal-inference-mendelian-randomization" id="toc-causal-inference-mendelian-randomization" class="nav-link" data-scroll-target="#causal-inference-mendelian-randomization"><span class="header-section-number">15.8</span> Causal inference: Mendelian Randomization</a>
+  <li><a href="#causal-inference-mendelian-randomization" id="toc-causal-inference-mendelian-randomization" class="nav-link" data-scroll-target="#causal-inference-mendelian-randomization"><span class="header-section-number">15.8</span> Causal inference: Mendelian Randomization</a>
   <ul class="collapse">
-<li><a href="#mrbase" id="toc-mrbase" class="nav-link" data-scroll-target="#mrbase"><span class="header-section-number">15.8.1</span> MRBase</a></li>
+  <li><a href="#mrbase" id="toc-mrbase" class="nav-link" data-scroll-target="#mrbase"><span class="header-section-number">15.8.1</span> MRBase</a></li>
   <li><a href="#twosamplemr" id="toc-twosamplemr" class="nav-link" data-scroll-target="#twosamplemr"><span class="header-section-number">15.8.2</span> TwoSampleMR</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#polygenic-scores" id="toc-polygenic-scores" class="nav-link" data-scroll-target="#polygenic-scores"><span class="header-section-number">15.9</span> Polygenic scores</a></li>
   <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">15.10</span> What comes next</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/05_1_post_gwas.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/05_1_post_gwas.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_1_post_gwas.html">Post-GWAS</a></li><li class="breadcrumb-item"><a href="./05_1_post_gwas.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_1_post_gwas.html">Post-GWAS</a></li><li class="breadcrumb-item"><a href="./05_1_post_gwas.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-post-gwas" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></h1>
 </div>
 
@@ -525,75 +543,92 @@ div.csl-indent {
   
 
 
-</header><p><img src="img/headers/banner_man_standing_dna.png" class="chapter-banner img-fluid" alt="post-GWAS"><!-- ![](img/headers/banner_man_standing_dna.png){width=100%} --></p>
+</header>
+
+
+<p><img src="img/headers/banner_man_standing_dna.png" class="chapter-banner img-fluid" alt="post-GWAS"> <!-- ![](img/headers/banner_man_standing_dna.png){width=100%} --></p>
 <p>A critical step in post-GWAS analysis is probably ‘mapping SNPs to genes’. It is critical, but it is also the most challenging. <em>How do you even map SNPs to genes?</em> What criteria to use? Should we take into account physical position? Or is it of interest that certain SNPs might influence downstream or upstream gene expression? And what of the fact that most loci discovered in GWAS are _inter_genic? What is the heritability of our trait? Are there any pleiotropic effects?</p>
 <p>In the next few sections I deal with a couple of the downstream, post-GWAS analyses. We don’t have time to go practically into a few of these steps, but I do believe it is important to provide you with some pointers where to start.</p>
-<section id="clumping" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="clumping">
-<span class="header-section-number">15.1</span> Clumping</h2>
+<section id="clumping" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="clumping"><span class="header-section-number">15.1</span> Clumping</h2>
 <p>The Manhattan plot immediately draws your attention to the peaks above the genome-wide significance threshold. <strong>Clumping</strong> is the procedure in which we identify the <em>independent hits</em>, those top variants and the variants in linkage disequilibrium (their ‘LD buddies’) in the same genomic region (<em>locus</em>). The basic steps are as follows. First define a threshold above which to identify the top variant, usually this is the genome-wide significance threshold. Next, define the maximum p-value of association a variant may have with the trait of interest. Define the strength of the correlation that is allowed between the top variant and its LD buddies. And lastly define the size of region around the top variant to assess.</p>
 <p><strong>Clumping</strong> can easily be done in PLINK. And you can too with the dummy GWAS dataset in this additional <span><a href="03_6_gwas_basics_results_regional_plot_cocalc.html" class="quarto-xref"><span>Chapter 11</span></a></span>. You don’t have to do it now. You can choose to do it when you have time.</p>
-</section><section id="conditional-analyses" class="level2" data-number="15.2"><h2 data-number="15.2" class="anchored" data-anchor-id="conditional-analyses">
-<span class="header-section-number">15.2</span> Conditional analyses</h2>
+</section>
+<section id="conditional-analyses" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="conditional-analyses"><span class="header-section-number">15.2</span> Conditional analyses</h2>
 <p>The visualization of a GWAS is very appealing and draws attention to single peaks, and the most significant variant. And with <strong>clumping</strong> you can identify the independent signals, <em>i.e.</em> the top variants and their LD buddies in the locus. We implicitly assume that the top variant captures all the variation in the region by its linkage disequilibrium with an unknown causal variant, in other words it is ‘tagging’ the (un)measured potential causal variant in the region. Intuitively it is unlikely that a single causal variant is accounting for all the LD between the unknown causal variant and the measured (genotyped or imputed) variants at the locus. So, a naive focus on only the top variant ignores the fact that multiple causal variants exist and thus the variation captured by that single top variant underestimates the total variation that could be explained by that single region (locus).</p>
 <p><strong>Conditional analysis</strong> is a tool to identify the secondary variants associated with the trait of interest. This involves conditioning the association model (<code>trait ~ Variant X + covariates</code>) on the primary variant associated in that locus. A more comprehensive and general approach would be to condition on each variant in the whole genome starting with the top variants and stepwise selecting additional variants according to their conditional p-values. This strategy could potentially result in multiple top variants in the same locus. In other words, it could uncover different haplotypes that are causing the same association with the trait of interest.</p>
 <p>This would be straightforward with super computers and full-access to individual level data. Unfortunately we often have neither.</p>
 <p>Don’t despair, a method exists that fills this gap. With the program <a href="http://cnsgenomics.com/software/gcta/#Overview" target="_blank">GCTA</a> you can execute conditional analyses on GWAS summary statistics - the kind you just produced with the dummy data and with the WTCCC1 dataset - and a proper reference. You can read more on this in <a href="https://www.nature.com/articles/ng.2213" target="_blank">the paper</a>.</p>
 <p>For now, we will skip this part. I will add a whole chapter on this at some later stage.</p>
-</section><section id="statistical-finemapping" class="level2" data-number="15.3"><h2 data-number="15.3" class="anchored" data-anchor-id="statistical-finemapping">
-<span class="header-section-number">15.3</span> Statistical finemapping</h2>
+</section>
+<section id="statistical-finemapping" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="statistical-finemapping"><span class="header-section-number">15.3</span> Statistical finemapping</h2>
 <p><strong>Statistical finemapping</strong> is closely related to <strong>conditional analysis</strong>. Where <strong>conditional analysis</strong> identifies secondary signals in a region associated to the trait of interest, <strong>statistical finemapping</strong> answers the question ‘which variants are likely causal to the trait?’. In more formal words, through <strong>statistical finemapping</strong> we identify the <em>95% credible set of causal variants</em>. There are multiple methods and tools developed to get to this answer. I list a few and I encourage you to read up on these.</p>
-<section id="finemap" class="level3" data-number="15.3.1"><h3 data-number="15.3.1" class="anchored" data-anchor-id="finemap">
-<span class="header-section-number">15.3.1</span> FINEMAP</h3>
+<section id="finemap" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="finemap"><span class="header-section-number">15.3.1</span> FINEMAP</h3>
 <p>This tool is very fast and versatile, and was developed by Christian Benner. It will identify the <em>credible sets</em> for each locus and calculates the <em>posterior probabilities</em> for each set. This is the more hands-on version of getting to <em>credible sets</em>.</p>
-</section><section id="locuszoom" class="level3" data-number="15.3.2"><h3 data-number="15.3.2" class="anchored" data-anchor-id="locuszoom">
-<span class="header-section-number">15.3.2</span> LocusZoom</h3>
+</section>
+<section id="locuszoom" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="locuszoom"><span class="header-section-number">15.3.2</span> LocusZoom</h3>
 <p>You could upload - privately or publicly - your data to <a href="https://my.locuszoom.org" target="_blank">my.locuszoom.org</a> and obtain a list of causal variants with posterior probabilities. It uses a <a href="https://statgen.github.io/gwas-credible-sets/method/locuszoom-credible-sets.pdf" target="_blank">simple procedure</a> to obtain the <em>credible sets</em> using <a href="https://github.com/statgen/gwas-credible-sets/" target="_blank">these scripts</a>. This is the more lazy version of getting a list of likely causal variants.</p>
-</section><section id="susie" class="level3" data-number="15.3.3"><h3 data-number="15.3.3" class="anchored" data-anchor-id="susie">
-<span class="header-section-number">15.3.3</span> SuSIE</h3>
+</section>
+<section id="susie" class="level3" data-number="15.3.3">
+<h3 data-number="15.3.3" class="anchored" data-anchor-id="susie"><span class="header-section-number">15.3.3</span> SuSIE</h3>
 <p>An laternate approach to <em>credible set</em> identification is through <a href="https://stephenslab.github.io/susieR/index.html" target="_blank">SuSIE</a>. Through SuSIE you can identify <em>credible sets</em> under the assumption of multiple causal variants, whereas <strong>FINEMAP</strong> assumes a single causal variant.</p>
 <p>For now, we will skip this part. I will add a whole chapter on this at some later stage.</p>
-</section></section><section id="fuma-functional-mapping-and-annotation-of-gwas" class="level2" data-number="15.4"><h2 data-number="15.4" class="anchored" data-anchor-id="fuma-functional-mapping-and-annotation-of-gwas">
-<span class="header-section-number">15.4</span> FUMA: FUnctional Mapping and Annotation of GWAS</h2>
+</section>
+</section>
+<section id="fuma-functional-mapping-and-annotation-of-gwas" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="fuma-functional-mapping-and-annotation-of-gwas"><span class="header-section-number">15.4</span> FUMA: FUnctional Mapping and Annotation of GWAS</h2>
 <p>Researchers from the VUMC in Amsterdam have created an online tool that aids in mapping genes and function to GWAS: <em>“Functional Mapping and Annotation of Genome-Wide Association Studies”</em> a.k.a. <a href="https://fuma.ctglab.nl" target="_blank">FUMA</a>. This online tool uses a variety of datasets and programs to prioritize genes and map these to associated loci.</p>
 <p>We have covered some aspects of post-GWAS analyses, and a lot are covered by FUMA. Let’s try and annotate our WTCCC1 results. The assignment in this <a href="05_4_fuma.html" class="quarto-xref"><span>Chapter 16</span></a> will be a bit more <em>Do It Yourself</em>.</p>
-</section><section id="phenome-wide-association-study" class="level2" data-number="15.5"><h2 data-number="15.5" class="anchored" data-anchor-id="phenome-wide-association-study">
-<span class="header-section-number">15.5</span> Phenome-wide association study</h2>
+</section>
+<section id="phenome-wide-association-study" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="phenome-wide-association-study"><span class="header-section-number">15.5</span> Phenome-wide association study</h2>
 <p>A <strong>phenome-wide association study</strong>, or <strong>PheWAS</strong>, deals with assessing the association of top variants identified in GWAS with other traits. Through a <strong>PheWAS</strong> you’ll to get a notion whether on any of the top variants, the independent hits in your GWAS, have pleiotropic effects. In other words, whether your independent hits have effects on other traits too. This will paint a picture as it were about the role the genetic locus you identified plays in life: is it unique to your trait or does it affect other traits as well? What does it mean when your top variant near the gene <em>FTO</em> associates not only to BMI, but also to type 2 diabetes and coronary artery disease? <strong>PheWAS</strong> will not answer that question, but they do help in inventory all the other traits to which your hits are associated.</p>
 <p>Again, we’ll get a bit hands-on and more <em>Do It Yourself</em> in the chapter that deals with this. Let’s jump over to <a href="05_5_phewas.html" class="quarto-xref"><span>Chapter 17</span></a>.</p>
-</section><section id="colocalization" class="level2" data-number="15.6"><h2 data-number="15.6" class="anchored" data-anchor-id="colocalization">
-<span class="header-section-number">15.6</span> Colocalization</h2>
+</section>
+<section id="colocalization" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="colocalization"><span class="header-section-number">15.6</span> Colocalization</h2>
 <p>From all of the above follows another intuitive question. Suppose a signal in your trait also shows association - to some extent - with other traits. Do these two signals than significantly overlap, more so than you would think based on chance? <strong>Colocalization</strong> deals with exactly this question.</p>
 <p>We are not going to deal with <strong>colocalization</strong>, but a nice starting point is <a href="https://github.com/oliviasabik/RACER" target="_blank">RACER</a> about which you can read more in <span><a href="03_6_gwas_basics_results_regional_plot_cocalc.html" class="quarto-xref"><span>Chapter 11</span></a></span>. I will add a whole chapter on this at some later stage.</p>
-</section><section id="genetic-correlation" class="level2" data-number="15.7"><h2 data-number="15.7" class="anchored" data-anchor-id="genetic-correlation">
-<span class="header-section-number">15.7</span> Genetic correlation</h2>
+</section>
+<section id="genetic-correlation" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="genetic-correlation"><span class="header-section-number">15.7</span> Genetic correlation</h2>
 <p>Because of the underlying biology or because of the way they are measured or calculated, traits can be highly correlated - phenotypically. That is to say, when the levels of HDL are high, LDL is probably low, and so when you draw a correlation plot from some data obtained in a general population you’ll see a nice pattern. Biology may also cause traits to be genetically correlated: the same genetic variants influence multiple traits. In other words, if a variant is associated with higher levels of LDL-cholesterol, it may alternatively be associated with lower HDL-cholesterol, etc. Genetic correlation will aid in further understanding the relations between traits biologically: if there is a strong <strong>genetic correlation</strong>, it is may be due to the same biological pathways and so the traits are ‘linked’ through the same processes (maybe counter-acting processes).</p>
 <blockquote class="blockquote">
 <p>Puzzle: what other phenomenom could cause a high but spurious <strong>genetic correlation</strong>?</p>
 </blockquote>
 <p>We are not going to deal with <strong>genetic correlation</strong>. I will add a whole chapter on this at some later stage.</p>
-</section><section id="causal-inference-mendelian-randomization" class="level2" data-number="15.8"><h2 data-number="15.8" class="anchored" data-anchor-id="causal-inference-mendelian-randomization">
-<span class="header-section-number">15.8</span> Causal inference: Mendelian Randomization</h2>
+</section>
+<section id="causal-inference-mendelian-randomization" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="causal-inference-mendelian-randomization"><span class="header-section-number">15.8</span> Causal inference: Mendelian Randomization</h2>
 <p>In observational studies we may find a strong association between a certain risk factor or biomarker and a disease. For instance, epidemiological studies show that high circulating cystatin C is associated with risk of cardiovascular disease (CVD), independent of creatinine-based renal function measurements<span class="citation" data-cites="vanderlaan2016">(<a href="references.html#ref-vanderlaan2016" role="doc-biblioref"><span class="nocase">Laan S. W.</span> 2016</a>)</span>. However, residual confounding and reverse causality remain alternative explanations for the strong correlation between cystatin C and CVD, both of which are difficult to tease apart from traditional observational (epidemiological) studies.</p>
 <p><strong>Mendelian Randomization (MR)</strong> harnesses the properties of the genome to enable causal inference of a biomarker. Specifically, the invariant nature of the genome and the random distribution of alleles from parents to offspring at conception mean that genetic information is not influenced by disease status (reverse causality) and should be free from confounding by traditional risk factors<span class="citation" data-cites="vanderlaan2016">(<a href="references.html#ref-vanderlaan2016" role="doc-biblioref"><span class="nocase">Laan S. W.</span> 2016</a>)</span>. So, genetic variation that modulates serum concentrations of cystatin C could serve as an instrumental variable to assess the effect of lifelong elevated concentrations of cystatin C on disease risk, independent of potential confounders<span class="citation" data-cites="vanderlaan2016">(<a href="references.html#ref-vanderlaan2016" role="doc-biblioref"><span class="nocase">Laan S. W.</span> 2016</a>)</span>.</p>
 <p>Finding the causal genes for complex disease is a primary objective of many researchers, because these genes are putative therapeutic targets. In this course we intend to find out whether Type 2 Diabetes (T2D) causes coronary artery disease and ischemic stroke.</p>
 <p>There is an easy, quick-and-dirty way and a harder way.</p>
-<section id="mrbase" class="level3" data-number="15.8.1"><h3 data-number="15.8.1" class="anchored" data-anchor-id="mrbase">
-<span class="header-section-number">15.8.1</span> MRBase</h3>
+<section id="mrbase" class="level3" data-number="15.8.1">
+<h3 data-number="15.8.1" class="anchored" data-anchor-id="mrbase"><span class="header-section-number">15.8.1</span> MRBase</h3>
 <p>The quick-and-dirty way uses <a href="http://www.mrbase.org/" target="blank">MRBase</a>. It is based on the <code>TwoSampleMR</code> package and uses the <code>MRInstruments</code> package to load in all the genetic instruments. The creators of MRBase have curated hundreds of GWAS and molecular QTL studies, and prepared the data for easy use on the website and in the R packages. In <a href="05_6_mendelian_randomization_mr_base.html" class="quarto-xref"><span>Chapter 18</span></a> you can read more about this.</p>
-</section><section id="twosamplemr" class="level3" data-number="15.8.2"><h3 data-number="15.8.2" class="anchored" data-anchor-id="twosamplemr">
-<span class="header-section-number">15.8.2</span> TwoSampleMR</h3>
+</section>
+<section id="twosamplemr" class="level3" data-number="15.8.2">
+<h3 data-number="15.8.2" class="anchored" data-anchor-id="twosamplemr"><span class="header-section-number">15.8.2</span> TwoSampleMR</h3>
 <p>The hard way means getting your hands dirty and using the <code>TwoSampleMR</code> package yourself in <code>R</code>. You’ll learn all the steps you need to take into account to get to the answer of this question. You’ll create the diagnostic graphs and calculate the statistics. Proceed to <a href="05_7_mendelian_randomization_twosamplemr.html" class="quarto-xref"><span>Chapter 19</span></a> to execute a causal analysis using public data.</p>
 <blockquote class="blockquote">
 <p>In a future version I will aim to include a partial replication of the Cystatin C paper<span class="citation" data-cites="vanderlaan2016">(<a href="references.html#ref-vanderlaan2016" role="doc-biblioref"><span class="nocase">Laan S. W.</span> 2016</a>)</span></p>
 </blockquote>
-</section></section><section id="polygenic-scores" class="level2" data-number="15.9"><h2 data-number="15.9" class="anchored" data-anchor-id="polygenic-scores">
-<span class="header-section-number">15.9</span> Polygenic scores</h2>
+</section>
+</section>
+<section id="polygenic-scores" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="polygenic-scores"><span class="header-section-number">15.9</span> Polygenic scores</h2>
 <p>Under the assumption of polygenicity, many variants with small effects contribute to the phenotypic variation in a trait or the risk to disease. Sample size and accurate phenotyping have a major impact on the power of a GWAS. It is estimated that 70% of variants that reach 10<sup>-6</sup> in an initial discovery GWAS will reach genome-wide significance with increasing sample sizes. The individual variants that do reach genome-wide significance the first or second time around do not explain <em>all</em> the phenotypic variation or residual disease risk.</p>
 <p>To capture the polygenicity of a trait beyond individual genome-wide significant hits, we can calculate a polygenic score (PGS). There are several methods to calculate PGS, but essentially it comes down to multiplying the effect size at a given variant with the number of effect alleles a given individual carries. Depending on the method you can use the ‘hard-coded’ genotyped data, or the imputed data. In case of the latter the effect sizes are multiplied by the genotype probabilities or dosages, this ensures that the PGS takes into account the uncertainty intrinsic to imputed data.</p>
 <p>Let’s consider the most intuitive PGS-method which is based on p-value thresholding, which was nicely applied in this classic <a href="https://doi.org/10.1038/nature08185" target="_blank">paper</a>. This method selects variants based on their p-value and than calculates the PGS. This can be done using increasingly liberal significance thresholds (p<sub>T</sub>), for instance starting with all variants with p &lt; 10<sup>-8</sup>, next p &lt; 10<sup>-7</sup>, p &lt; 10<sup>-6</sup>, p &lt; 10<sup>-5</sup>, p &lt; 10<sup>-4</sup>, p &lt; 10<sup>-3</sup>, p &lt; 0.05, p &lt; 0.1, p &lt; 0.2, p &lt; 0.3, p &lt; 0.4, p &lt; 0.5. Under the assumption of polygenicity we expect an increasingly stronger correlation (r<sup>2</sup>) of the PGS at a certain p<sub>T</sub> with the trait of interest. Another application of this method is provided by Van Setten<span class="citation" data-cites="vansetten2015">(<a href="references.html#ref-vansetten2015" role="doc-biblioref"><span class="nocase">Setten J.</span> 2015</a>)</span>.</p>
 <p>Lastly, there is a great explanatory <a href="http://polygenicscores.org/explained/" target="_blank">website</a> on how to calculate PGS, and it also shows one application of PGS (although much debate ensues about this particular application!).</p>
-</section><section id="what-comes-next" class="level2" data-number="15.10"><h2 data-number="15.10" class="anchored" data-anchor-id="what-comes-next">
-<span class="header-section-number">15.10</span> What comes next</h2>
+</section>
+<section id="what-comes-next" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">15.10</span> What comes next</h2>
 <p>You come to the end of this practical primer. What is left are a summary (not written yet) of what you’ve learned and should take home. And some musings in the Epilogue (<a href="07_epilogue.html" class="quarto-xref"><span>Chapter 20</span></a> on this book and what the future holds.</p>
 
 
@@ -605,7 +640,10 @@ div.csl-indent {
 <span class="nocase">Setten J., et al. van</span>. 2015. <em>Serum Lipid Levels, Body Mass Index, and Their Role in Coronary Artery Calcification: A Polygenic Analysis</em>. <a href="https://doi.org/10.1161/CIRCGENETICS.114.000496">https://doi.org/10.1161/CIRCGENETICS.114.000496</a>.
 </div>
 </div>
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1149,9 +1187,12 @@ div.csl-indent {
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./04_3_wtccc1_assoc_cocalc.html" class="pagination-link" aria-label="WTCCC1: a GWAS on coronary artery disease (CAD)">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">WTCCC1: a GWAS on coronary artery disease (CAD)</span></span>
       </a>          
@@ -1163,7 +1204,8 @@ div.csl-indent {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1175,6 +1217,8 @@ div.csl-indent {
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

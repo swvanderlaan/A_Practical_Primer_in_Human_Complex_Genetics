@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>14&nbsp; WTCCC1: a GWAS on coronary artery disease (CAD) – A Practical Primer in Human Complex Genetics for CoCalc</title>
 <style>
 /* Default styles provided by pandoc.
@@ -60,6 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -82,9 +86,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-4a3aeaaafcc20e2ccd03ddb55e5290cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3df297cc5e7c5d74465303dfc1761fba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0d3eb16094bcd82898e19e3ebc9ec646.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-554944da459c622dc457c1ed647c448c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +115,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+}</script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
+
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="quarto.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -287,7 +296,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -298,9 +309,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">A Practical Primer in Human Complex Genetics for CoCalc</a> 
         <div class="sidebar-tools-main">
@@ -316,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About this primer</span></span></a>
@@ -351,8 +366,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-1-label">GWAS basics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_1_gwas_basics_cocalc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Steps in a Genome-Wide Association Study</span></span></a>
@@ -389,14 +404,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-2-label">WTCCC1: coronary artery disease</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_1_wtccc1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Welcome Trust Case-Control Consortium</span></span></a>
@@ -415,14 +430,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-3-label">Post-GWAS</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_1_post_gwas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Post-GWAS Analyses</span></span></a>
@@ -453,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_epilogue.html" class="sidebar-item-text sidebar-link">
@@ -471,8 +486,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text" id="quarto-sidebar-section-4-label">Appendices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_Answers_to_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Answers to the questions</span></span></a>
@@ -491,22 +506,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#association-testing" id="toc-association-testing" class="nav-link active" data-scroll-target="#association-testing"><span class="header-section-number">14.1</span> Association testing</a></li>
+  <li><a href="#association-testing" id="toc-association-testing" class="nav-link active" data-scroll-target="#association-testing"><span class="header-section-number">14.1</span> Association testing</a></li>
   <li><a href="#independent-hits" id="toc-independent-hits" class="nav-link" data-scroll-target="#independent-hits"><span class="header-section-number">14.2</span> Independent hits</a></li>
   <li><a href="#replication" id="toc-replication" class="nav-link" data-scroll-target="#replication"><span class="header-section-number">14.3</span> Replication!</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/04_3_wtccc1_assoc_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics/blob/quarto/04_3_wtccc1_assoc_cocalc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_1_wtccc1_intro.html">WTCCC1: coronary artery disease</a></li><li class="breadcrumb-item"><a href="./04_3_wtccc1_assoc_cocalc.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">WTCCC1: a GWAS on coronary artery disease (CAD)</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_1_wtccc1_intro.html">WTCCC1: coronary artery disease</a></li><li class="breadcrumb-item"><a href="./04_3_wtccc1_assoc_cocalc.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">WTCCC1: a GWAS on coronary artery disease (CAD)</span></a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title"><span id="sec-wtccc1-assoc-cocalc" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">WTCCC1: a GWAS on coronary artery disease (CAD)</span></span></h1>
 </div>
 
@@ -521,7 +543,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><!-- ![](./img/_headers/interactive_plot.png){width=100%} --><p>Now that we have explored and cleaned the data, we are ready for some association testing. However, it would be great to have some PCs to correct for. We can use PLINK for that too.</p>
+</header>
+
+
+<!-- ![](./img/_headers/interactive_plot.png){width=100%} -->
+<p>Now that we have explored and cleaned the data, we are ready for some association testing. However, it would be great to have some PCs to correct for. We can use PLINK for that too.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Terminal</strong></pre>
@@ -539,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> ~/data/shared/scripts/mergeTables.pl <span class="at">--file1</span> wtccc1/wtccc1_qc.pca <span class="at">--file2</span> ~/data/shared/wtccc1/wtccc1.covar <span class="at">--index</span> IID <span class="at">--format</span> NORM <span class="op">&gt;</span> wtccc1/wtccc1_qc.covar_pca</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="association-testing" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="association-testing">
-<span class="header-section-number">14.1</span> Association testing</h2>
+<section id="association-testing" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="association-testing"><span class="header-section-number">14.1</span> Association testing</h2>
 <p>Exciting, now we are ready to perform a GWAS on CAD in WTCCC1. This may take some time (when I tested it, it took at least 5 minutes), so it’s a perfect moment to take a break, stretch your legs and get a coffee.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -554,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">wtccc1_assoc</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fread.html">fread</a></span><span class="op">(</span><span class="st">"wtccc1/wtccc1_qc_log_covar_pca.assoc.logistic"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc <span class="ot">&lt;-</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"wtccc1/wtccc1_qc_log_covar_pca.assoc.logistic"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -562,40 +588,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">wtccc1_assoc</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">wtccc1_assoc</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">9</span><span class="op">]</span></span>
-<span><span class="va">wtccc1_assoc_sub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wtccc1_assoc</span>, <span class="va">TEST</span> <span class="op">==</span> <span class="st">"ADD"</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_assoc_sub</span><span class="op">$</span><span class="va">TEST</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
-<span></span>
-<span><span class="va">temp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wtccc1_FRQ</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"NCHROBS"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">wtccc1_assoc_subfrq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">wtccc1_assoc_sub</span>, <span class="va">temp</span>, by <span class="op">=</span> <span class="st">"SNP"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">temp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wtccc1_LMISS</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"callrate"</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">wtccc1_assoc_subfrqlmiss</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">wtccc1_assoc_subfrq</span>, <span class="va">temp</span>, by <span class="op">=</span> <span class="st">"SNP"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wtccc1_assoc_subfrqlmiss</span><span class="op">)</span></span>
-<span><span class="co"># Remember:</span></span>
-<span><span class="co"># - that z = beta/se</span></span>
-<span><span class="co"># - beta = log(OR), because log is the natural log in r</span></span>
-<span></span>
-<span><span class="va">wtccc1_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">BETA</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">wtccc1_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">OR</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">SE</span> <span class="op">=</span> <span class="va">wtccc1_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">BETA</span><span class="op">/</span><span class="va">wtccc1_assoc_subfrqlmiss</span><span class="op">$</span><span class="va">STAT</span></span>
-<span></span>
-<span></span>
-<span><span class="va">wtccc1_assoc_subfrqlmiss_tib</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">wtccc1_assoc_subfrqlmiss</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">col_order</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>,</span>
-<span>               <span class="st">"A1"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"callrate"</span>, <span class="st">"NMISS"</span>, <span class="st">"NCHROBS"</span>,</span>
-<span>               <span class="st">"BETA"</span>, <span class="st">"SE"</span>, <span class="st">"OR"</span>, <span class="st">"STAT"</span>, <span class="st">"P"</span><span class="op">)</span></span>
-<span><span class="va">wtccc1_assoc_compl</span> <span class="op">&lt;-</span> <span class="va">wtccc1_assoc_subfrqlmiss_tib</span><span class="op">[</span>, <span class="va">col_order</span><span class="op">]</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">wtccc1_assoc_compl</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wtccc1_assoc_compl</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">wtccc1_assoc_complsub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wtccc1_assoc_compl</span>, select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>, <span class="st">"P"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(wtccc1_assoc)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_sub <span class="ot">&lt;-</span> <span class="fu">subset</span>(wtccc1_assoc, TEST <span class="sc">==</span> <span class="st">"ADD"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_sub<span class="sc">$</span>TEST <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">subset</span>(wtccc1_FRQ, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"NCHROBS"</span>))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_subfrq <span class="ot">&lt;-</span> <span class="fu">merge</span>(wtccc1_assoc_sub, temp, <span class="at">by =</span> <span class="st">"SNP"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">subset</span>(wtccc1_LMISS, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"callrate"</span>))</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_subfrqlmiss <span class="ot">&lt;-</span> <span class="fu">merge</span>(wtccc1_assoc_subfrq, temp, <span class="at">by =</span> <span class="st">"SNP"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wtccc1_assoc_subfrqlmiss)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Remember:</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># - that z = beta/se</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># - beta = log(OR), because log is the natural log in r</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_subfrqlmiss<span class="sc">$</span>BETA <span class="ot">=</span> <span class="fu">log</span>(wtccc1_assoc_subfrqlmiss<span class="sc">$</span>OR)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_subfrqlmiss<span class="sc">$</span>SE <span class="ot">=</span> wtccc1_assoc_subfrqlmiss<span class="sc">$</span>BETA<span class="sc">/</span>wtccc1_assoc_subfrqlmiss<span class="sc">$</span>STAT</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_subfrqlmiss_tib <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">as_tibble</span>(wtccc1_assoc_subfrqlmiss)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>               <span class="st">"A1"</span>, <span class="st">"A2"</span>, <span class="st">"MAF"</span>, <span class="st">"callrate"</span>, <span class="st">"NMISS"</span>, <span class="st">"NCHROBS"</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>               <span class="st">"BETA"</span>, <span class="st">"SE"</span>, <span class="st">"OR"</span>, <span class="st">"STAT"</span>, <span class="st">"P"</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_compl <span class="ot">&lt;-</span> wtccc1_assoc_subfrqlmiss_tib[, col_order]</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(wtccc1_assoc_compl)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wtccc1_assoc_compl)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>wtccc1_assoc_complsub <span class="ot">&lt;-</span> <span class="fu">subset</span>(wtccc1_assoc_compl, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"SNP"</span>, <span class="st">"CHR"</span>, <span class="st">"BP"</span>, <span class="st">"P"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>You could visualize these results with the code below.</p>
@@ -604,69 +630,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/YinLiLin/CMplot">"CMplot"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/CMplot/man/CMplot-package.html">CMplot</a></span><span class="op">(</span><span class="va">wtccc1_assoc_complsub</span>,</span>
-<span>       plot.type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"d"</span>, <span class="st">"c"</span>, <span class="st">"m"</span>, <span class="st">"q"</span><span class="op">)</span>, LOG10 <span class="op">=</span> <span class="cn">TRUE</span>, ylim <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>       threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1e-6</span>,<span class="fl">1e-4</span><span class="op">)</span>, threshold.lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, threshold.lwd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, threshold.col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"grey"</span><span class="op">)</span>,</span>
-<span>       amplify <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>       bin.size <span class="op">=</span> <span class="fl">1e6</span>, chr.den.col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"darkgreen"</span>, <span class="st">"yellow"</span>, <span class="st">"red"</span><span class="op">)</span>,</span>
-<span>       signal.col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"green"</span><span class="op">)</span>, signal.cex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, signal.pch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">19</span>,<span class="fl">19</span><span class="op">)</span>,</span>
-<span>       file.output <span class="op">=</span> <span class="cn">FALSE</span>, file <span class="op">=</span> <span class="st">"png"</span>, </span>
-<span>       main <span class="op">=</span> <span class="st">""</span>, dpi <span class="op">=</span> <span class="fl">300</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"CMplot"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">CMplot</span>(wtccc1_assoc_complsub,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot.type =</span> <span class="fu">c</span>(<span class="st">"d"</span>, <span class="st">"c"</span>, <span class="st">"m"</span>, <span class="st">"q"</span>), <span class="at">LOG10 =</span> <span class="cn">TRUE</span>, <span class="at">ylim =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">threshold =</span> <span class="fu">c</span>(<span class="fl">1e-6</span>,<span class="fl">1e-4</span>), <span class="at">threshold.lty =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">threshold.lwd =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">threshold.col =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"grey"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">amplify =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">bin.size =</span> <span class="fl">1e6</span>, <span class="at">chr.den.col =</span> <span class="fu">c</span>(<span class="st">"darkgreen"</span>, <span class="st">"yellow"</span>, <span class="st">"red"</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">signal.col =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>), <span class="at">signal.cex =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">signal.pch =</span> <span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">19</span>),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">file.output =</span> <span class="cn">FALSE</span>, <span class="at">file =</span> <span class="st">"png"</span>, </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">""</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This would lead to the following graphs.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-graphs-density" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-graphs-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-graphs-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1ResultsManhattan-density.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-graphs-density-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14.1: SNP density of the association results.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-graphs-qq" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-graphs-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-graphs-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1ResultsManhattan-qq.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-graphs-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14.2: A QQ plot including a 95% confidence interval (blue area) and genome-wide significant hits (red).
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-graphs-manhattan" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-graphs-manhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-graphs-manhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1ResultsManhattan-manhattan.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-graphs-manhattan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14.3: A regular manhattan plot. Colored by chromosome, suggestive hits are green, genome-wide hits are red. The bottom graph shows the per-chromosome SNP density.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-show-wtccc1-graphs-circular" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-show-wtccc1-graphs-circular-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-show-wtccc1-graphs-circular-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/gwas_wtccc/WTCCC1ResultsManhattan-circular.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-show-wtccc1-graphs-circular-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14.4: A circular manhattan.
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section><section id="independent-hits" class="level2" data-number="14.2"><h2 data-number="14.2" class="anchored" data-anchor-id="independent-hits">
-<span class="header-section-number">14.2</span> Independent hits</h2>
+</section>
+<section id="independent-hits" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="independent-hits"><span class="header-section-number">14.2</span> Independent hits</h2>
 <p>How many peaks do you see in the Manhattan? As you learned earlier, an important step after a GWAS is to identify the independent hits by <em>“clumping”</em> the results. We will just use the defaults, but please take a note of all the options here <a href="https://www.cog-genomics.org/plink/1.9/postproc#clump" target="_blank">https://www.cog-genomics.org/plink/1.9/postproc#clump</a>.</p>
 <p>First, you want to save this new concatenated and filtered resulst file.</p>
 <div class="cell" data-layout-align="center">
@@ -674,13 +709,13 @@ Figure&nbsp;14.4: A circular manhattan.
 <div class="code-with-filename-file">
 <pre><strong>R</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/fwrite.html">fwrite</a></span><span class="op">(</span><span class="va">wtccc1_assoc_compl</span>,</span>
-<span>                   file <span class="op">=</span> <span class="st">"wtccc1/wtccc1_assoc_compl.txt.gz"</span>,</span>
-<span>                   sep <span class="op">=</span> <span class="st">" "</span>,</span>
-<span>                   na <span class="op">=</span> <span class="st">"NA"</span>,</span>
-<span>                   row.names <span class="op">=</span> <span class="cn">FALSE</span>, col.names <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>                   quote <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                   showProgress <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.table<span class="sc">::</span><span class="fu">fwrite</span>(wtccc1_assoc_compl,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">file =</span> <span class="st">"wtccc1/wtccc1_assoc_compl.txt.gz"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sep =</span> <span class="st">" "</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">na =</span> <span class="st">"NA"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">col.names =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">quote =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">showProgress =</span> <span class="cn">TRUE</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Next, you can run this command to <em>clump</em> the results. Note that <code>PLINK</code> can handle <code>.gz</code> files.</p>
@@ -700,15 +735,19 @@ Figure&nbsp;14.4: A circular manhattan.
 <blockquote class="blockquote">
 <p>Question: How many independent hits did you find?</p>
 </blockquote>
-</section><section id="replication" class="level2" data-number="14.3"><h2 data-number="14.3" class="anchored" data-anchor-id="replication">
-<span class="header-section-number">14.3</span> Replication!</h2>
+</section>
+<section id="replication" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="replication"><span class="header-section-number">14.3</span> Replication!</h2>
 <p>You reached an important milestone.</p>
 <p><strong>You recreated the work by the whole WTCCC1-team that took them years in just one afternoon!</strong></p>
 <p>Wow. Take a pause. And realize what you’ve done.</p>
 <p>Back then there wasn’t much on analyses <em>after</em> a GWAS, nowadays there are many post-GWAS analyses methods. We will cover them in the next <a href="05_1_post_gwas.html" class="quarto-xref"><span>Chapter 15</span></a>.</p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1252,9 +1291,12 @@ Figure&nbsp;14.4: A circular manhattan.
       }
     }
   });
-  </script><script type="application/javascript">
+  </script>
+  <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
-  </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
       <a href="./04_2_wtccc1_cocalc.html" class="pagination-link" aria-label="WTCCC1: quality control">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WTCCC1: quality control</span></span>
       </a>          
@@ -1266,7 +1308,8 @@ Figure&nbsp;14.4: A circular manhattan.
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 1979-2026. <a href="https://vanderlaanand.science">Sander W. van der Laan</a>. Version 3.0.0</p>
 </div>   
@@ -1278,6 +1321,8 @@ Figure&nbsp;14.4: A circular manhattan.
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
