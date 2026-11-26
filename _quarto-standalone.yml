@@ -1,4 +1,7 @@
 # Standalone version (own laptop / server)
+# Built into its own folder, so it never ends up in the published CoCalc site (_book/)
+project:
+  output-dir: _book_standalone
 book:
   title: "A Practical Primer in Human Complex Genetics"
   chapters:

@@ -87,3 +87,4 @@ render*.log
 !/data/readme.wtccc1.txt
 # Local leftovers of test runs
 /dummy_project/
+/_book_standalone/
