@@ -3,3 +3,7 @@
 /* make the Terminal / R code-block headers stand out */
 .code-with-filename .code-with-filename-file { font-weight: 600; }
 .code-with-filename .code-with-filename-file pre { margin: 0; }
+
+/* Book cover on the start page: larger, with a soft shadow */
+.quarto-cover-image { max-width: 340px; width: 45%; margin: 0 0 1.5rem 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+@media (max-width: 767px) { .quarto-cover-image { float: none; display: block; width: 70%; margin: 0 auto 1.5rem auto; } }
