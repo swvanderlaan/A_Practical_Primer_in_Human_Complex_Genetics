@@ -5,6 +5,8 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - apple-touch-icon.png   # Safari/iOS look for this file at the site root
 
 profile:
   default: cocalc
@@ -20,8 +22,8 @@ book:
   date-format: "D MMMM YYYY"
   cover-image: img/cover/cover_2024.png
   favicon: img/cover/iconified/favicon.ico
-  site-url: https://swvanderlaan.github.io/A_Practical_Primer_in_Human_Complex_Genetics_CoCalc/
-  repo-url: https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics_CoCalc
+  site-url: https://swvanderlaan.github.io/A_Practical_Primer_in_Human_Complex_Genetics/
+  repo-url: https://github.com/swvanderlaan/A_Practical_Primer_in_Human_Complex_Genetics
   repo-branch: quarto
   repo-actions: [issue, source]
   page-navigation: true
@@ -57,6 +59,9 @@ format:
     fig-align: center
     out-width: "85%"
     link-external-newwindow: true
+    include-in-header:
+      text: |
+        <link rel="apple-touch-icon" sizes="180x180" href="img/cover/iconified/apple-touch-icon-180x180.png">
 
 crossref:
   chapters: true

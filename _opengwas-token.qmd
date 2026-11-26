@@ -1,0 +1,74 @@
+## Your OpenGWAS token {#sec-opengwas-token}
+
+Later in this primer, in @sec-mr-twosamplemr, you will use `TwoSampleMR` to perform a Mendelian randomisation. This package retrieves data from the [IEU OpenGWAS database](https://opengwas.io){target="_blank"}, which requires a free personal _token_: a long string of characters that works like a password. Getting one takes a few minutes, so let's do that now.
+
+1. Log in at <https://api.opengwas.io/profile/>{target="_blank"}, for example with your GitHub, Google or Microsoft account.
+2. Click to generate a new token and copy it.
+3. Open your `.Renviron` file from `R`. This file stores settings that `R` reads every time it starts.
+
+```{r, eval = FALSE}
+#| label: open-renviron
+#| filename: "R"
+install.packages("usethis") # only if you do not have it yet
+usethis::edit_r_environ()
+```
+
+4. Add a line with `OPENGWAS_JWT=` followed directly by your token. If the file already contains other lines, keep them. It should look something like this:
+
+```{.default filename=".Renviron"}
+R_LIBS_USER=~/Library/R/%v/library
+OPENGWAS_JWT=eyJhbGciOiJSUzI1NiIsImtpZCI6...the-rest-of-your-token...
+```
+
+::: {.callout-important}
+## Getting `.Renviron` right
+- Put the token directly after the `=`: no spaces, no quotes.
+- The token is one long line; make sure it is not split over several lines.
+- End the file with an empty line (press Enter after the token), otherwise `R` may skip the last line.
+- Save the file and **restart `R`** (in RStudio: _Session > Restart R_). `R` only reads `.Renviron` when it starts.
+:::
+
+5. Check that it works:
+
+```{r, eval = FALSE}
+#| label: check-opengwas-token
+#| filename: "R"
+nchar(ieugwasr::get_opengwas_jwt()) > 0  # should be TRUE
+ieugwasr::user()                         # should show your OpenGWAS user details
+```
+
+::: {.callout-warning}
+## Your token is personal
+Treat your token like a password. Never put it in a notebook, script or report that you hand in or share, and never paste it in a chat or forum. `.Renviron` is the right place for it, because it stays in your own home directory. If you think someone else has seen your token, generate a new one on the OpenGWAS website; the old one then stops working.
+:::
+
+::: {.content-visible when-profile="cocalc"}
+::: {.callout-note}
+## On CoCalc
+Every student needs their own token, in their own CoCalc project: do not share tokens between projects or with other students. `usethis::edit_r_environ()` works in CoCalc too; run it in an `R` notebook and the file opens in a new tab.
+:::
+:::
+
+
+## Your LDlink token {#sec-ldlink-token}
+
+For the regional association plots later in this book we use [LDlink](https://ldlink.nih.gov){target="_blank"} to look up the linkage disequilibrium (LD) between variants. LDlink also needs a free personal token.
+
+1. Request a token at <https://ldlink.nih.gov/apiaccess>{target="_blank"} with your name, e-mail address and institution. The token is sent to you by e-mail.
+2. Add it to the same `.Renviron` file, on its own line:
+
+```{.default filename=".Renviron"}
+R_LIBS_USER=~/Library/R/%v/library
+OPENGWAS_JWT=eyJhbGciOiJSUzI1NiIsImtpZCI6...the-rest-of-your-token...
+LDLINK_TOKEN=abcdef123456
+```
+
+3. Save, restart `R`, and check:
+
+```{r, eval = FALSE}
+#| label: check-ldlink-token
+#| filename: "R"
+nchar(Sys.getenv("LDLINK_TOKEN")) > 0  # should be TRUE
+```
+
+The same rules apply as for your OpenGWAS token: one line, no spaces or quotes, keep it to yourself.

@@ -53,10 +53,6 @@ _gsdata_/
 # _bookdown_files
 # rsconnect
 # Data and results
-data/rawdata
-data/ref_1kg_phase1_all
-data/gwas
-data/wtccc1
 _data
 _data_practical
 _archived
@@ -78,3 +74,16 @@ claude/
 *_annotated.sh
 *_annotated.R
 *_extract_student_code.log
+
+**/*.quarto_ipynb
+# Local test folder for the student exercises (TESTING.md, section 6)
+/primer_test/
+render*.log
+# Course data: kept outside git (Google Drive). Only the small, shareable support files stay tracked.
+/data/*
+!/data/scripts/
+!/data/support/
+!/data/readme.txt
+!/data/readme.wtccc1.txt
+# Local leftovers of test runs
+/dummy_project/

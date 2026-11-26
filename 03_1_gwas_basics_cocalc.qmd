@@ -1,7 +1,7 @@
 # Steps in a Genome-Wide Association Study {#sec-gwas-basics-cocalc}
 
 ![](img/headers/woman_working_on_code.png){.chapter-banner fig-alt="GWAS basics"}
-<!-- ![](./img/_headers/woman_working_on_code.png){width=100%} -->
+<!-- ![](img/headers/woman_working_on_code.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -70,7 +70,7 @@ You know that you're 'home' when you type `pwd` and see path with a lot of numbe
 Start by creating a project directory. 
 
 ```{.bash filename="Terminal"}
-mkdir -v dummy_project
+mkdir -p -v dummy_project
 ```
 
 As I mentioned, all the data is stored in the `~/data/shared` directory. So, if you do the following:
@@ -81,7 +81,7 @@ ls ~/data/shared
 
 You will see this:
 
-```{.bash filename="Terminal"}
+```{.default filename="Output"}
 dummy_project  gwas  rawdata  readme.txt  readme.wtccc1.txt  ref_1kg_phase1_all  scripts  support  wtccc1
 ```
 

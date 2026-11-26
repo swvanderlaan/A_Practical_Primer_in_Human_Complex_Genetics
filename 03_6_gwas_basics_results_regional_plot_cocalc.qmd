@@ -1,7 +1,7 @@
 # Regional association plots {#sec-regional-plot-cocalc}
 
 ![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt="Statistical finemapping"}
-<!-- ![](./img/_headers/banner_man_standing_dna.png){width=100%} -->
+<!-- ![](img/headers/banner_man_standing_dna.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -31,13 +31,13 @@ opts_chunk$set(echo = TRUE,
 Now that you have created a cleaned GWAS result, and created a diagnostic QQ plot and a traditional Manhattan, we should want to inspect the top hits a bit more closer. To do this, we needneed to find the independent hits by _clumping_ the results. We will just use the defaults, but please take a note of all the options here [https://www.cog-genomics.org/plink/1.9/postproc#clump](https://www.cog-genomics.org/plink/1.9/postproc#clump){target="_blank"}.
 
 ```{.bash filename="Terminal"}
-plink --bfile ~/data/shared/gwas/gwa --clump dummy_project/data.assoc.logistic --clump-p1 5e-8 --clump-p2 0.05 --clump-kb 500 --clump-r2 0.05 --clump-verbose --out dummy_project/data.assoc.logistic
+plink --bfile ~/data/shared/gwas/gwa --clump dummy_project/gwas_results/data.assoc.logistic --clump-p1 5e-8 --clump-p2 0.05 --clump-kb 500 --clump-r2 0.05 --clump-verbose --out dummy_project/gwas_results/data.assoc.logistic
 ```
 
 Now you will have a list of all the _independent_ SNPs, _i.e._ the genetic loci, that are associated to the trait.
 
 ```{.bash filename="Terminal"}
-cat dummy_project/data.assoc.logistic.clumped
+cat dummy_project/gwas_results/data.assoc.logistic.clumped
 ```
 
 ```{bash, eval = TRUE, echo = FALSE}
@@ -55,9 +55,9 @@ Now you are ready to visualize regions of interest using a package like [LocusZo
 First, let's get what we need (`SNP` and `P`) and gzip the results.
 
 ```{.bash filename="Terminal"}
-printf "SNP\tP\n" > dummy_project/data.assoc.logistic.locuszoom
-cat dummy_project/data.assoc.logistic | awk 'BEGIN { OFS = "\t" } $5=="ADD" { print $2, $9 }' >> dummy_project/data.assoc.logistic.locuszoom
-gzip -v dummy_project/data.assoc.logistic.locuszoom
+printf "SNP\tP\n" > dummy_project/gwas_results/data.assoc.logistic.locuszoom
+cat dummy_project/gwas_results/data.assoc.logistic | awk 'BEGIN { OFS = "\t" } $5=="ADD" { print $2, $9 }' >> dummy_project/gwas_results/data.assoc.logistic.locuszoom
+gzip -f -v dummy_project/gwas_results/data.assoc.logistic.locuszoom
 ```
 
 You can to upload this `data.assoc.logistic.locuszoom.gz` Try to visualize each locus using the information above and by following the instructions. Choose HapMap 2, hg18, CEU as the LD-reference.
@@ -109,7 +109,7 @@ We can now take the filtered and prepared GWAS summary statistics, _i.e._ `gwas_
 
 This file should contain the following:
 
-```{.bash filename="Terminal"}
+```{.default filename="Output"}
 tibble [306,102 × 14] (S3: tbl_df/tbl/data.frame)
  $ SNP     : chr [1:306102] "rs10000010" "rs10000023" "rs10000030" "rs1000007" ...
  $ CHR     : int [1:306102] 4 4 4 2 4 4 16 4 2 4 ...
@@ -130,6 +130,12 @@ tibble [306,102 × 14] (S3: tbl_df/tbl/data.frame)
 ```
 
 We could limit ourselves by limiting the region to plot by the clump-size (see above), but generally it's fine to just 'take the top variant ± 500kb'.
+
+To colour the variants by their LD with the lead variant, `RACER` asks the [LDlink](https://ldlink.nih.gov){target="_blank"} web service, which needs your personal LDlink token. If you have not set it up yet, do that first (@sec-ldlink-token); check it with `nchar(Sys.getenv("LDLINK_TOKEN")) > 0`, which should return `TRUE`.
+
+::: {.callout-warning}
+While it runs, `RACER` prints the web address it uses for LDlink, and that address contains your LDlink token (`...&token=...`). Do not share this output, for example in a screenshot or a notebook you hand in. If you did, request a new token.
+:::
 
 ```{r, eval = FALSE}
 #| label: plot-racer
@@ -155,7 +161,10 @@ for(VARIANT in variants_of_interest){
   temp_f = RACER::formatRACER(assoc_data = temp, chr_col = 2, pos_col = 3, p_col = 14)
 
   cat("\nGetting LD data.\n")
-  temp_f_ld = RACER::ldRACER(assoc_data = temp_f, rs_col = 1, pops = "EUR", lead_snp = VARIANT)
+  # LD with the lead variant comes from LDlink (1000G EUR) and needs your LDlink token (see @sec-ldlink-token)
+  temp_f_ld = RACER::ldRACER(assoc_data = temp_f, rs_col = 1, pops = "EUR", lead_snp = VARIANT,
+                             token = Sys.getenv("LDLINK_TOKEN"),
+                             window = 500000, genome_build = "grch37")
   
   cat(paste0("\nPlotting region surrounding ", VARIANT," on ",tempCHR,":",tempSTART,"-",tempEND,".\n"))
   # source(paste0(PROJECT_loc, "/scripts/functions.R"))
@@ -166,9 +175,9 @@ for(VARIANT in variants_of_interest){
   
   print(p1)
   cat(paste0("Saving image for ", VARIANT,".\n"))
-  ggsave(filename = paste0(COURSE_loc, "/dummy_project/", tempVARIANTnr, ".",VARIANT,".regional_assoc.png"), plot = p1)
-  # ggsave(filename = paste0(COURSE_loc, "/dummy_project/", tempVARIANTnr, ".",VARIANT,".regional_assoc.pdf"), plot = p1)
-  # ggsave(filename = paste0(COURSE_loc, "/dummy_project/", tempVARIANTnr, ".",VARIANT,".regional_assoc.eps"), plot = p1)
+  ggplot2::ggsave(filename = paste0("dummy_project/gwas_results/", tempVARIANTnr, ".",VARIANT,".regional_assoc.png"), plot = p1, width = 9, height = 6, units = "in")
+  # ggplot2::ggsave(filename = paste0("dummy_project/gwas_results/", tempVARIANTnr, ".",VARIANT,".regional_assoc.pdf"), plot = p1)
+  # ggplot2::ggsave(filename = paste0("dummy_project/gwas_results/", tempVARIANTnr, ".",VARIANT,".regional_assoc.eps"), plot = p1)
   
   rm(temp, p1,
      temp_f, temp_f_ld,

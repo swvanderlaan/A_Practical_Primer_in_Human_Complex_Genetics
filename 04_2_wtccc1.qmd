@@ -78,7 +78,7 @@ ggpubr::gghistogram(wtccc1_HWE, x = "logP",
                     xlab = "HWE -log10(P)") +
   ggplot2::geom_vline(xintercept = 5, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("wtccc1/wtccc1-hwe.png"), plot = last_plot())
+ggplot2::ggsave("wtccc1/wtccc1-hwe.png", width = 7, height = 9, units = "in"), plot = ggplot2::last_plot())
 ```
 
 This will result in @fig-show-wtccc1-hwe.
@@ -100,7 +100,7 @@ ggpubr::gghistogram(wtccc1_FRQ, x = "MAF",
                     xlab = "minor allele frequency") +
   ggplot2::geom_vline(xintercept = 0.05, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave(paste0(COURSE_loc, "/wtccc1/wtccc1-freq.png"), plot = last_plot())
+ggplot2::ggsave(paste0(COURSE_loc, "/wtccc1/wtccc1-freq.png"), plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 This will result in @fig-show-wtccc1-freq.
@@ -124,7 +124,7 @@ ggpubr::gghistogram(wtccc1_IMISS, x = "callrate",
                     xlab = "per sample call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave(paste0(COURSE_loc, "/wtccc1/wtccc1-sample-call-rate.png"), plot = last_plot())
+ggplot2::ggsave(paste0(COURSE_loc, "/wtccc1/wtccc1-sample-call-rate.png"), plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 This will result in @fig-show-wtccc1-callratesample.
@@ -149,7 +149,7 @@ ggpubr::gghistogram(wtccc1_LMISS, x = "callrate",
                     xlab = "per SNP call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave(paste0(COURSE_loc, "/wtccc1/wtccc1-hwe.png"), plot = last_plot())
+ggplot2::ggsave(paste0(COURSE_loc, "/wtccc1/wtccc1-snp-call-rate.png"), plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 This will result in @fig-show-wtccc1-callratesnp.
@@ -325,7 +325,7 @@ We expect most individuals from the WTCCC to be 100% British, but a substantial 
 ```{r, fig.align = 'center', fig.show = TRUE, echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE}
 #| label: fig-showwtccc1pca
 #| fig-cap: "PCA - WTCCC1 vs. 1000G"
-knitr::include_graphics(rep("img/_gwas_wtccc/WTCCC1-pca-1000g.png"))
+knitr::include_graphics(rep("img/gwas_wtccc/wtccc1-qc-pca-1000g.png"))
 ```
 
 ### Removing samples
@@ -435,25 +435,25 @@ This would lead to the following graphs.
 ```{r, fig.align = 'center', fig.show = TRUE, echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE}
 #| label: fig-show-wtccc1-graphs-density
 #| fig-cap: "SNP density of the association results."
-knitr::include_graphics(rep("img/_gwas_wtccc/WTCCC1ResultsManhattan-density.png"))
+knitr::include_graphics(rep("img/gwas_wtccc/WTCCC1ResultsManhattan-density.png"))
 ```
 
 ```{r, fig.align = 'center', fig.show = TRUE, echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE}
 #| label: fig-show-wtccc1-graphs-qq
 #| fig-cap: "A QQ plot including a 95% confidence interval (blue area) and genome-wide significant hits (red)."
-knitr::include_graphics(rep("img/_gwas_wtccc/WTCCC1ResultsManhattan-qq.png"))
+knitr::include_graphics(rep("img/gwas_wtccc/WTCCC1ResultsManhattan-qq.png"))
 ```
 
 ```{r, fig.align = 'center', fig.show = TRUE, echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE}
 #| label: fig-show-wtccc1-graphs-manhattan
 #| fig-cap: "A regular manhattan plot. Colored by chromosome, suggestive hits are green, genome-wide hits are red. The bottom graph shows the per-chromosome SNP density."
-knitr::include_graphics(rep("img/_gwas_wtccc/WTCCC1ResultsManhattan-manhattan.png"))
+knitr::include_graphics(rep("img/gwas_wtccc/WTCCC1ResultsManhattan-manhattan.png"))
 ```
 
 ```{r, fig.align = 'center', fig.show = TRUE, echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE}
 #| label: fig-show-wtccc1-graphs-circular
 #| fig-cap: "A circular manhattan."
-knitr::include_graphics(rep("img/_gwas_wtccc/WTCCC1ResultsManhattan-circular.png"))
+knitr::include_graphics(rep("img/gwas_wtccc/WTCCC1ResultsManhattan-circular.png"))
 ```
 
 ## Replication! 

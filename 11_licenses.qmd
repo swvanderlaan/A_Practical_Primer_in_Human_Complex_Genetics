@@ -1,7 +1,7 @@
 # Licenses and disclaimers {#sec-license}
 
 ![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt="Licenses"}
-<!-- ![](img/_headers/licenses.png){width=100%} -->
+<!-- ![](img/headers/licenses.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -42,6 +42,9 @@ These are the images from **Unsplash** listed here in no particular order.
 ## Disclaimer
 
 The content contained herein is provided only for educational and informational purposes or as required by Dutch law. The author attempted to ensure that content is accurate and obtained from reliable sources, but does not represent it to be error-free. The author may add, amend or repeal any text, procedure or regulation, and failure to timely post such changes to this book shall not be construed as a waiver of enforcement. The author does not warrant that any functions on this website or the contents and references herein will be uninterrupted, that defects will be corrected, or that this website or the contents and references will be free from viruses or other harmful components. Any links to third party information on the author’s website are provided as a courtesy and do not constitute an endorsement of those materials or the third party providing them.
+
+## Use of AI tools
+For version 3.0.0 of this book, Claude Opus 5.5 (Anthropic) was used to review the code, fix errors, and check the syntax.
 
 ## Copyright
 This book and all its material ("content") is protected by copyright under Dutch Copyright laws and is the property of the author or the party credited as the provider of the content. You may not copy, reproduce, distribute, publish, display, perform, modify, create derivative works, transmit, or in any way exploit any such content, nor may you distribute any part of this content over any network, including a local area network, sell or offer it for sale, or use such content to construct any kind of database. You may not alter or remove any copyright or other notice from copies of the content on this website. Copying or storing any content except as provided above is expressly prohibited without prior written permission of the author or the copyright holder identified in the individual content's copyright notice. For permission to use this content, please contact the author.

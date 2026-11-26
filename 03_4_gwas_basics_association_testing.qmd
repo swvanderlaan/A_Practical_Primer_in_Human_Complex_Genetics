@@ -1,5 +1,5 @@
 # Genome-Wide Association Study {#sec-gwas-testing}
-<!-- ![](./img/_gwas/interactive_plot.png){width=70%} -->
+<!-- ![](img/gwas/interactive_plot.png){width=70%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -50,12 +50,30 @@ Let's visualize the results. First we should load in all the results.
 
 > Question: Load the data using R. [Hint: use and adapt the examples from the previous chapters.]
 
-```{r, eval = TRUE}
+```{r, eval = FALSE}
 #| label: load-data-gwas
 #| filename: "R"
 library("data.table")
 
 COURSE_loc = "~/Desktop/practical" # getwd()
+
+gwas_HWE <- data.table::fread(paste0(COURSE_loc, "/dummy_project/gwa.hwe"))
+gwas_FRQ <- data.table::fread(paste0(COURSE_loc, "/dummy_project/gwa.frq"))
+gwas_IMISS <- data.table::fread(paste0(COURSE_loc, "/dummy_project/gwa.imiss"))
+gwas_LMISS <- data.table::fread(paste0(COURSE_loc, "/dummy_project/gwa.lmiss"))
+
+gwas_HWE$logP <- -log10(gwas_HWE$P)
+
+gwas_IMISS$callrate <- 1 - gwas_IMISS$F_MISS
+
+gwas_LMISS$callrate <- 1 - gwas_LMISS$F_MISS
+```
+
+```{r, echo = FALSE, eval = TRUE}
+#| label: load-data-gwas-book
+COURSE_loc <- "data"  # book build: the course data in this repository
+library("data.table")
+
 
 gwas_HWE <- data.table::fread(paste0(COURSE_loc, "/dummy_project/gwa.hwe"))
 gwas_FRQ <- data.table::fread(paste0(COURSE_loc, "/dummy_project/gwa.frq"))
@@ -90,13 +108,13 @@ ggpubr::gghistogram(gwas_HWE, x = "logP",
   ggplot2::geom_vline(xintercept = 5, linetype = "dashed",
                       color = "#E55738", size = 1)
 ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-hwe.png"),
-       plot = last_plot())
+       plot = ggplot2::last_plot(), width = 7, height = 9, units = "in")
 ```
 
 ```{r, fig.id = 'showhwegwas', fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| fig-cap: "Per stratum HWE p-values."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-hwe-gwas.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-hwe-gwas.png")
 ```
 
 We will want to see what the distribution of allele frequencies looks like. 
@@ -114,13 +132,13 @@ ggpubr::gghistogram(gwas_FRQ, x = "MAF",
   ggplot2::geom_vline(xintercept = 0.05, linetype = "dashed",
                       color = "#E55738", size = 1)
 ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-freq.png"),
-       plot = last_plot())
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 ```{r, fig.id = 'showfreqgwas', fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| fig-cap: "Minor allele frequencies."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-freq-gwas.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-freq-gwas.png")
 ```
 
 We will want to identify samples that have poor call rates.
@@ -138,13 +156,13 @@ ggpubr::gghistogram(gwas_IMISS, x = "callrate",
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
 ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-sample-call-rate.png"),
-       plot = last_plot())
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 ```{r, fig.id = 'showsamplecallrategwas', fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| fig-cap: "Per sample call rates."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-sample-callrate-gwas.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-sample-callrate-gwas.png")
 ```
 
 We also need to know what the per SNP call rates are.
@@ -162,13 +180,13 @@ ggpubr::gghistogram(gwas_LMISS, x = "callrate",
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
 ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-snp-call-rate.png"),
-       plot = last_plot())
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 ```{r, fig.id = 'showsnpcallrategwas', fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| fig-cap: "Per SNP call rates."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-snp-callrate-gwas.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-snp-callrate-gwas.png")
 ```
 
 
@@ -231,9 +249,15 @@ plink --bfile gwas/gwa --logistic sex --covar gwas/gwa.covar --out gwas/data
 ```
 
 Let's examine the results.
-```{r, eval = TRUE}
+```{r, eval = FALSE}
 #| label: load-gwas-assoc
 #| filename: "R"
+gwas_assoc <- data.table::fread(paste0(COURSE_loc, "/dummy_project/data.assoc.logistic"))
+```
+
+```{r, echo = FALSE, eval = TRUE}
+#| label: load-gwas-assoc-book
+COURSE_loc <- "data"  # book build: the course data in this repository
 gwas_assoc <- data.table::fread(paste0(COURSE_loc, "/dummy_project/data.assoc.logistic"))
 ```
 

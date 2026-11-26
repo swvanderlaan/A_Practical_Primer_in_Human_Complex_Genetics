@@ -1,0 +1,15 @@
+{
+  "hash": "30cb57845677d86b97fded9cf043de79",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# EIGENSOFT {#sec-eigensoft}\n\n![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt=\"Eigensoft\"}\n<!-- ![](./img/_gwas_dummy/banner_man_standing_dna.png){width=70%} -->\n\n\n\n\n\nThere used to be a time that the preferred software **[`EIGENSOFT`](https://github.com/DReichLab/EIG){targe=\"_blank\"}** for Principal Component Analysis (PCA) was **`EIGENSOFT`** For many, it still is. However, **`EIGENSOFT`** is a bit challenging to make it work to say the least. You need to install some programs, and this is not always straightforward.\n\nSo, here's the deal.\n\nI will share the how-to for a macOS environment below in [EIGENSOFT] - this should work in a Linux environment too as macOS is UNIX-based. You can choose to try and make it work on your system (be it UNIX or macOS based) at home (or in the office).\n\nHowever, I recommend that you use the `--pca` function which is present in `PLINK` v1.9 and up (I describe this in the Chapter 'Sample QC'.\n\n## Install homebrew\n\nYou need to install `brew`, the missing package-manager and accompanying packages that Apple didn't provide.\n\n```{.bash filename=\"Terminal\"}\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n```\n\nNext, check that everything is in order.\n\n```{.bash filename=\"Terminal\"}\nbrew doctor\n```\n\n## Install missing packages\n\nRight, now that you've done that, you're ready to install `gsl` and `openblas`.\n\n```{.bash filename=\"Terminal\"}\nbrew install gsl\nbrew install openblas\n```\n\nYou may also require `llvm` for **`EIGENSOFT`** to work.\n\n```{.bash filename=\"Terminal\"}\nbrew install llvm\n```\n\n\n## Installing EIGENSOFT\n\nI am still sharing the code you'll need - you could try this on your system.\n\n```{.bash filename=\"Terminal\"}\nmkdir -v $HOME/git\ncd $HOME/git\ngit clone https://github.com/DReichLab/EIG.git\n```\n\nYou do not need to run `make` or `make install`: those build the command-line versions of the programs. In this primer we call the `perl` wrapper scripts in the cloned `EIG` directory directly.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

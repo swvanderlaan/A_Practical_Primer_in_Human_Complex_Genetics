@@ -1,7 +1,7 @@
 # Two Sample Mendelian Randomisation {#sec-mr-twosamplemr}
 
 ![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt="TwoSample Mendelian Randomization"}
-<!-- ![](./img/_headers/banner_man_standing_dna.png){width=100%} -->
+<!-- ![](img/headers/banner_man_standing_dna.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -39,31 +39,24 @@ Briefly, the workflow of a Two-Sample MR is as follows (see also diagram below):
 
 ![](img/twosamplemr.png)
 
-## Setting up access to OpenGWAS
+## Checking your OpenGWAS token
 
-`TwoSampleMR` retrieves instruments, outcome data and LD information from the [IEU OpenGWAS database](https://opengwas.io){target="_blank"} through the `ieugwasr` package. Since May 2024, every request to OpenGWAS must be authenticated with a personal token, and each user has a limited query allowance. Older versions of this primer said no authentication was needed; that is no longer true, and without a token the code below fails.
-
-You only need to do this once.
-
-1. Log in at <https://api.opengwas.io/profile/>{target="_blank"} (e.g. with a GitHub, Google or Microsoft account).
-2. Generate a new token. Treat it like a password: never share it or put it in code you share.
-3. Add the token to your `.Renviron` file (in your home directory). The easiest way is from `R`:
-
-```{r, eval = FALSE}
-#| label: edit-renviron
-#| filename: "R"
-# opens ~/.Renviron; add a line OPENGWAS_JWT=<your token>, save, and restart R
-usethis::edit_r_environ()
-```
-
-4. Restart `R` and check that the token is found and works:
+`TwoSampleMR` retrieves instruments, outcome data and LD information from the [IEU OpenGWAS database](https://opengwas.io){target="_blank"} through the `ieugwasr` package. Since May 2024 every request must be authenticated with a personal token, and each user has a limited number of queries. You set up your token in @sec-opengwas-token; if you have not done that yet, do it first. Then check that it still works:
 
 ```{r, eval = FALSE}
 #| label: check-token
 #| filename: "R"
-ieugwasr::get_opengwas_jwt()  # should print a long random string
-ieugwasr::user()              # should return your user information, not an error
+nchar(ieugwasr::get_opengwas_jwt()) > 0  # should be TRUE
+ieugwasr::user()                         # should show your OpenGWAS user details
 ```
+
+::: {.callout-tip collapse="true"}
+## Troubleshooting
+- **`get_opengwas_jwt()` returns an empty string.** `R` did not find your token. Restart `R` first. Still empty? The file is probably not where `R` looks for it: always open it with `usethis::edit_r_environ()`, which opens the right file, and check that the line reads `OPENGWAS_JWT=<token>` without spaces or quotes and that the file ends with an empty line.
+- **Error 401 or 403, or a message that the token is missing, invalid or expired.** Generate a new token at <https://api.opengwas.io/profile/>{target="_blank"}, replace it in `.Renviron`, and restart `R`.
+- **A message that your allowance or query limit is used up.** Wait until it resets (the message tells you when) and do not re-run the whole chapter; keep the results of each step in an object.
+- **Old package versions.** Old versions of `TwoSampleMR` and `ieugwasr` do not support the token: re-install them as shown below.
+:::
 
 ::: {.callout-warning}
 ## Rate limits

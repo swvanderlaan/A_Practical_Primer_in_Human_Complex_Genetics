@@ -1,7 +1,7 @@
 # Getting started - programs {#sec-getting-started-programs}
 
 ![](img/headers/women_behind_macbook.png){.chapter-banner fig-alt="Getting started"}
-<!-- ![](./img/_headers/women_behind_macbook.png){width=100%} -->
+<!-- ![](img/headers/women_behind_macbook.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 # source("scripts/functions.R")
@@ -85,7 +85,7 @@ All genetic analyses can be done in PLINK, even on your laptop, but with large d
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-plinkprogram
 #| fig-cap: "The PLINK v1.9 website."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("./img/plink.png")
 ```
 
@@ -94,8 +94,9 @@ knitr::include_graphics("./img/plink.png")
 Instead of downloading the zip file from the website, you can install `PLINK` from the Terminal with a package manager:
 
 ```{.bash filename="Terminal"}
-# macOS with Homebrew
-brew install plink
+# macOS with Homebrew: PLINK 1.9 (command `plink`) and PLINK 2 (command `plink2`)
+brew install plink1
+brew install plink2
 # or, on macOS/Linux with conda (bioconda channel)
 conda install -c bioconda plink plink2
 ```

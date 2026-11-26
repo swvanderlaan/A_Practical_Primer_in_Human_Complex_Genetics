@@ -1,7 +1,7 @@
 # Some background reading  {#sec-somebackgroundreading}
 
 ![](img/headers/papers_on_wall.png){.chapter-banner fig-alt="Some background reading"}
-<!-- ![](./img/_headers/papers_on_wall.png){width=100%} -->
+<!-- ![](img/headers/papers_on_wall.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")

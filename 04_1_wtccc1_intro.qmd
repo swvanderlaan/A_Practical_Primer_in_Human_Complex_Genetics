@@ -56,5 +56,5 @@ Your assignment in the next chapter is to do the following:
 
 ## There you go
 
-As I wrote, you are ready for the real stuff in @sec-wtccc1-qc-cocalc. 
+As I wrote, you are ready for the real stuff in [@sec-wtccc1-qc-cocalc]{.content-visible when-profile="cocalc"}[@sec-wtccc1]{.content-visible when-profile="standalone"}. 
 

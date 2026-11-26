@@ -1,7 +1,7 @@
 # Things to do {#sec-todo}
 
 ![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt="To-do"}
-<!-- ![](./img/_headers/banner_man_standing_dna.png){width=100%} -->
+<!-- ![](img/headers/banner_man_standing_dna.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -101,7 +101,7 @@ But it causes an issue, described [here](https://www.mobileread.com/forums/showt
 ```{.bash filename="Terminal"}
 \```{js, echo = FALSE}
 title=document.getElementById('header');
-title.innerHTML = '<img src="img/_headers/banner_man_standing_dna.png" alt="A Practical Primer in Human Complex Genetics">' + title.innerHTML
+title.innerHTML = '<img src="img/headers/banner_man_standing_dna.png" alt="A Practical Primer in Human Complex Genetics">' + title.innerHTML
 \```
 ```
 

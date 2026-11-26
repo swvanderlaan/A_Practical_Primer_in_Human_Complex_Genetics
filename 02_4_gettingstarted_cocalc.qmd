@@ -1,7 +1,7 @@
 # Getting started - CoCalc {#sec-getting-started-cocalc}
 
 ![](img/headers/women_behind_macbook.png){.chapter-banner fig-alt="Getting started"}
-<!-- ![](./img/_headers/women_behind_macbook.png){width=100%} -->
+<!-- ![](img/headers/women_behind_macbook.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -41,7 +41,7 @@ Once logged in you should see a screen similar to the one below.
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcstart
 #| fig-cap: "CoCalc after logging in."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_start.png")
 ```
 
@@ -50,7 +50,7 @@ Navigate to the Course by clicking on the blue _Your UBC CoCalc 1 projects..._-b
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcprojects
 #| fig-cap: "CoCalc projects."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_projects.png")
 ```
 
@@ -59,7 +59,7 @@ Once you are in the course, you will see a screen like this one below.
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcstudentmain
 #| fig-cap: "CoCalc student page."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_student_main.png")
 ```
 
@@ -117,6 +117,8 @@ CoCalc has both kernels installed, so you could run both `bash` and `R` code in 
 
 > This means you have to create a new notebook for the `R` code. And a new Terminal for the `bash` code. In the next section we explain how you can do this.
 
+Throughout this book, the label above each code block tells you where to run it: _Terminal_ means the CoCalc Terminal, _R_ means your Jupyter Notebook with the `R` kernel, and _Output_ shows what you should see on your screen (do not type that).
+
 ## Beginning your own Jupyter Notebook with a `R` kernel
 
 For the course we need to create a Jupyter Notebook with a `R` kernel to create all the plots. To start your own notebook, you can do so by clicking on the _New_ button and selecting _Jupyter Notebook_.
@@ -124,7 +126,7 @@ For the course we need to create a Jupyter Notebook with a `R` kernel to create 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalc-notebook
 #| fig-cap: "CoCalc new notebook."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_notebook.png")
 ```
 
@@ -133,7 +135,7 @@ You will probably get a screen asking you to select a kernel. You should choose 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcnotbookkernel
 #| fig-cap: "CoCalc kernel selection."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_notebook_kernel.png")
 ```
 
@@ -142,7 +144,7 @@ Now you are ready to start your own `R` Notebook - like below. You can create a 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcnotebookrmarkdown
 #| fig-cap: "CoCalc starting your notebook."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_notebook_r_markdown.png")
 ```
 
@@ -151,7 +153,7 @@ You could get your working directory by typing `getwd()` in a cell and pressing 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcnotebookgetwd
 #| fig-cap: "CoCalc get working directory."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_notebook_getwd.png")
 ```
 
@@ -160,7 +162,7 @@ Or you could list the contents of the working directory by typing `list.files()`
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcnotebooklistfiles
 #| fig-cap: "CoCalc list files."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_notebook_listfiles.png")
 ```
 
@@ -186,7 +188,7 @@ title(main="Autos", col.main="red", font.main=4)
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcnotebookplot
 #| fig-cap: "CoCalc plot."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_notebook_plot.png")
 ```
 
@@ -197,7 +199,7 @@ For the course we need to create a Terminal to run `bash` code. To start your ow
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcterminalselect
 #| fig-cap: "CoCalc new terminal."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_terminal_select.png")
 ```
 
@@ -206,7 +208,7 @@ Type in 'My Terminal' and hit the _Create_ button.
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcterminalcreate
 #| fig-cap: "CoCalc new terminal creation."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_terminal.png")
 ```
 
@@ -215,7 +217,7 @@ A new tab will open with a Terminal.
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcterminalkernel
 #| fig-cap: "CoCalc terminal window."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_terminal_window.png")
 ```
 
@@ -224,7 +226,7 @@ Now you can start typing your `bash` commands. Let's see what we have in the dir
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcterminalwindowls
 #| fig-cap: "CoCalc listing the contents of the directory."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_terminal_window_ls.png")
 ```
 Let's review what we see here. First of all there are two colors, blue and black. The blue ones are directories, the black ones are files. The directories are:
@@ -242,7 +244,7 @@ We can also list the contents of the data directory by typing `ls ~/data/shared/
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcterminalwindowdata
 #| fig-cap: "CoCalc terminal window."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_terminal_window_data.png")
 ```
 
@@ -255,7 +257,7 @@ cat ~/data/shared/readme.txt
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcterminalwindowreadme
 #| fig-cap: "CoCalc readme file."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_terminal_window_readme.png")
 ```
 
@@ -264,7 +266,7 @@ As I wrote, we installed `plink` for you, but just to be sure, let's check if it
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-cocalcterminalwindowplink
 #| fig-cap: "CoCalc plink."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/cocalc/cocalc_terminal_window_plink.png")
 ```
 
@@ -273,6 +275,8 @@ knitr::include_graphics("img/cocalc/cocalc_terminal_window_plink.png")
 This book is designed to be used in conjunction with `bash` and `R` and it was tested on macOS and Linux. Since you're working in CoCalc you always start in 'home', that is `~` - you can navigate there with `cd ~`. All the data are relative to 'home', so they are here: `~/data/shared`. 
 
 This means that all the commands in this book are relative to 'home' too. Throughout the book you will find `plink` commands that you can run in the Terminal. You can copy these commands and paste them in the Terminal you just created. And the `R` commands work in the Jupyter Notebook you just created.
+
+{{< include _opengwas-token.qmd >}}
 
 ## Are you ready?
 

@@ -1,5 +1,5 @@
 # Sample QC {#sec-gwas-basics-sample-qc}
-<!-- ![](./img/_gwas_dummy/gwas_sample_qc.png){width=70%} -->
+<!-- ![](img/gwas_dummy/gwas_sample_qc.png){width=70%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 # source("scripts/functions.R")
@@ -68,12 +68,22 @@ Let's have a look at the results.
 cat dummy_project/rawdata.sexprobs.txt
 ```
 
-```{r}
+```{r, eval = FALSE}
 #| label: load-sex-issues
 #| filename: "R"
 library("data.table")
 
 COURSE_loc = "~/Desktop/practical" # getwd()
+
+sexissues <- data.table::fread(paste0(COURSE_loc,"/dummy_project/rawdata.sexprobs.txt"))
+
+```
+
+```{r, echo = FALSE, eval = TRUE}
+#| label: load-sex-issues-book
+COURSE_loc <- "data"  # book build: the course data in this repository
+library("data.table")
+
 
 sexissues <- data.table::fread(paste0(COURSE_loc,"/dummy_project/rawdata.sexprobs.txt"))
 
@@ -145,7 +155,7 @@ ggpubr::gghistogram(raw_IMISS, x = "callrate",
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                 color = "#E55738", size = 1)
 ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-sample-call-rate.png"),
-       plot = last_plot())
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 The grey dashed line in @fig-showsamplecallrate indicates the mean call rate, while the red dashed line indicates the threshold we had determined above.
@@ -153,8 +163,8 @@ The grey dashed line in @fig-showsamplecallrate indicates the mean call rate, wh
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-showsamplecallrate
 #| fig-cap: "Per sample call rate."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/gwas-qc-sample-callrate.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/gwas-qc-sample-callrate.png")
 ```
 
 
@@ -184,7 +194,7 @@ First, get a list of A/T and C/G SNPs. Remember, the list of markers for this GW
 
 ```{.bash filename="Terminal"}
 cat dummy_project/rawdata.bim | \
-awk '($5 == "A" && $6 == "T") || ($5 == "T" && $6 == "A") || ($5 == "C" && $6 == "G") || ($5 == "G" && $6 == "C")' | awk '{ print $2, $1, $4, $3, $5, $6 }' \
+awk '($5 == "A" && $6 == "T") || ($5 == "T" && $6 == "A") || ($5 == "C" && $6 == "G") || ($5 == "G" && $6 == "C") { print $2 }' \
 > dummy_project/all.atcg.variants.txt
 ```
 
@@ -297,8 +307,8 @@ ggplot2::ggplot(raw_IMISSHET, ggplot2::aes(x = logF_MISS, y = meanHet, color = d
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-showheterozygosity
 #| fig-cap: "Heterozygosity as a function of SNP call rate."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-heterozygosity.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-heterozygosity.png")
 ```
 
 Examine the plot (@fig-showheterozygosity) to decide reasonable thresholds at which to exclude individuals based on elevated missing or extreme heterozygosity. We chose to exclude all individuals with a genotype failure rate >= 0.03 (vertical dashed line) and/or a heterozygosity rate ± 3 s.d. from the mean (horizontal dashed lines). Add the FID and IID of the samples failing this QC to the file named `fail-imisshet-qc.txt`.
@@ -411,9 +421,15 @@ Go back one directory.
 cd ..
 ```
 
-```{r}
+```{r, eval = FALSE}
 #| label: load-ibdcallissues
 #| filename: "R"
+ibdcallissues <- data.table::fread(paste0(COURSE_loc,"/dummy_project/fail-IBD-QC.txt"))
+```
+
+```{r, echo = FALSE, eval = TRUE}
+#| label: load-ibdcallissues-book
+COURSE_loc <- "data"  # book build: the course data in this repository
 ibdcallissues <- data.table::fread(paste0(COURSE_loc,"/dummy_project/fail-IBD-QC.txt"))
 ```
 
@@ -461,10 +477,10 @@ First, we will merge our data with 1000G. The alleles at each marker must be ali
 
 #### Filter the 1000G data
 
-First, we should get a list of relevant variants from our `rawdata`-dataset. We don't need the other variants present in the 1000G dataset, right?
+First, we should get a list of relevant variants from our `rawdata`-dataset: the SNP IDs (column 2 of the `.bim` file) that start with `rs`. We don't need the other variants present in the 1000G dataset, right?
 
 ```{.bash filename="Terminal"}
-cat dummy_project/rawdata.bim | grep "rs" > dummy_project/all.variants.txt
+awk '$2 ~ /^rs/ { print $2 }' dummy_project/rawdata.bim > dummy_project/all.variants.txt
 ```
 
 Extract those from the 1000G phase 1 data.
@@ -479,17 +495,41 @@ As explained, the A/T and C/G SNPs are problematic, we want to exclude these too
 
 ```{.bash filename="Terminal"}
 cat ref_1kg_phase1_all/1kg_phase1_raw.bim | \
-awk '($5 == "A" && $6 == "T") || ($5 == "T" && $6 == "A") || ($5 == "C" && $6 == "G") || ($5 == "G" && $6 == "C")' | awk '{ print $2, $1, $4, $3, $5, $6 }' \
+awk '($5 == "A" && $6 == "T") || ($5 == "T" && $6 == "A") || ($5 == "C" && $6 == "G") || ($5 == "G" && $6 == "C") { print $2 }' \
 > ref_1kg_phase1_all/all.1kg.atcg.variants.txt
 ```
 
-Exclude those A/T and C/G variants in both datasets and at the same time filter to only retain high-quality data and exclude non-autosomal variants. 
+#### Filter variants that map to a different chromosome
+
+Our `rawdata` and the 1000G phase 1 data were not mapped to the same version of the human reference genome ('genome build'): `rawdata` is on hg18 (also known as NCBI build 36), while 1000G phase 1 is on hg19 (GRCh37). Because of that, many SNPs have a slightly different base-pair position in the two datasets, and a few even map to a different chromosome. When merging, `PLINK` keeps the positions of the first dataset and warns about every difference (`Warning: Multiple positions seen for variant ...`). For the PCA this is mostly harmless, because it only uses the SNP IDs, but SNPs that map to a different chromosome (`Warning: Multiple chromosomes seen for variant ...`) cannot be trusted and should go.
+
+Let's find the SNPs that are on a different chromosome in the two datasets:
 
 ```{.bash filename="Terminal"}
-plink --bfile ref_1kg_phase1_all/1kg_phase1_raw --exclude ref_1kg_phase1_all/all.1kg.atcg.variants.txt -make-bed --out ref_1kg_phase1_all/1kg_phase1_raw_no_atcg
-
-plink --bfile dummy_project/rawdata --exclude ref_1kg_phase1_all/all.1kg.atcg.variants.txt --make-bed --out dummy_project/rawdata_1kg_phase1_raw_no_atcg
+awk 'NR == FNR { chr[$2] = $1; next } ($2 in chr) && chr[$2] != $1 { print $2 }' \
+dummy_project/rawdata.bim ref_1kg_phase1_all/1kg_phase1_raw.bim > ref_1kg_phase1_all/all.1kg.chr-mismatch.variants.txt
+wc -l ref_1kg_phase1_all/all.1kg.chr-mismatch.variants.txt
 ```
+
+and combine them with the A/T and C/G SNPs into one list of variants to exclude:
+
+```{.bash filename="Terminal"}
+cat ref_1kg_phase1_all/all.1kg.atcg.variants.txt ref_1kg_phase1_all/all.1kg.chr-mismatch.variants.txt | sort -u > ref_1kg_phase1_all/all.1kg.exclude.variants.txt
+```
+
+::: {.callout-note}
+The proper solution is to first convert ('lift over') `rawdata` to the same genome build as the reference, for example with [`liftOver`](https://genome.ucsc.edu/cgi-bin/hgLiftOver){target="_blank"}. We will add this to a future version of this primer.
+:::
+
+Exclude all of these variants in both datasets and at the same time filter to only retain high-quality data and exclude non-autosomal variants. 
+
+```{.bash filename="Terminal"}
+plink --bfile ref_1kg_phase1_all/1kg_phase1_raw --exclude ref_1kg_phase1_all/all.1kg.exclude.variants.txt --make-bed --out ref_1kg_phase1_all/1kg_phase1_raw_no_atcg
+
+plink --bfile dummy_project/rawdata --exclude ref_1kg_phase1_all/all.1kg.exclude.variants.txt --make-bed --out dummy_project/rawdata_1kg_phase1_raw_no_atcg
+```
+
+You may see `Warning: ... het. haploid genotypes present`. These are heterozygous calls on the X chromosome in males, who have only one X chromosome, and `PLINK` treats them as missing. You can ignore this warning here, because we will keep only the autosomes (`--autosome`) when we merge.
 
 #### Merging datasets
 
@@ -501,7 +541,7 @@ plink --bfile dummy_project/rawdata_1kg_phase1_raw_no_atcg --bmerge ref_1kg_phas
 
 There probably is an error ...
 
-```{.bash filename="Terminal"}
+```{.default filename="Output"}
 Error: 72 variants with 3+ alleles present.
 * If you believe this is due to strand inconsistency, try --flip with
   dummy_project/rawdata.1kg_phase1-merge.missnp.
@@ -518,7 +558,7 @@ See https://www.cog-genomics.org/plink/1.9/data#merge3 for more discussion.
 So let's flip some variants.
 
 ```{.bash filename="Terminal"}
-plink --bfile dummy_project/rawdata --exclude ref_1kg_phase1_all/all.1kg.atcg.variants.txt --flip dummy_project/rawdata.1kg_phase1-merge.missnp --make-bed --out dummy_project/rawdata_1kg_phase1_raw_no_atcg
+plink --bfile dummy_project/rawdata --exclude ref_1kg_phase1_all/all.1kg.exclude.variants.txt --flip dummy_project/rawdata.1kg_phase1-merge.missnp --make-bed --out dummy_project/rawdata_1kg_phase1_raw_no_atcg
 ```
 
 Let's try again and merge the data.
@@ -529,7 +569,7 @@ plink --bfile dummy_project/rawdata_1kg_phase1_raw_no_atcg --bmerge ref_1kg_phas
 
 There still is an error -- there are a few multi-allelic variants present which `PLINK` can't handle. 
 
-```{.bash filename="Terminal"}
+```{.default filename="Output"}
 Error: 14 variants with 3+ alleles present.
 * If you believe this is due to strand inconsistency, try --flip with
   dummy_project/rawdata.1kg_phase1-merge.missnp.
@@ -794,7 +834,7 @@ p2 <-  ggpubr::ggpar(PCA_1kGplot,
                      title = "Principal Component Analysis",
                      subtitle = "Reference population: 1000 G, phase 1",
                      legend.title = "Populations", legend = "right")
-ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-pca-1000g.png"), plot = p2)
+ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-pca-1000g.png"), plot = p2, width = 9, height = 6, units = "in")
 p2
 rm(p2)
 ```
@@ -814,8 +854,8 @@ Choosing which thresholds to apply (and thus which individuals to remove) is not
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-showpca1kg
 #| fig-cap: "PCA - Your data vs. 1000g."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/gwas-qc-pca-1000g.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/gwas-qc-pca-1000g.png")
 ```
 
 

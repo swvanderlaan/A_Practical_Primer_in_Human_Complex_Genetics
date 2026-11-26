@@ -95,7 +95,7 @@ ggpubr::gghistogram(wtccc1_HWE, x = "logP",
                     xlab = "HWE -log10(P)") +
   ggplot2::geom_vline(xintercept = 5, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("wtccc1/wtccc1-hwe.png", plot = last_plot())
+ggplot2::ggsave("wtccc1/wtccc1-hwe.png", plot = ggplot2::last_plot(), width = 7, height = 9, units = "in")
 ```
 
 This will result in @fig-show-wtccc1-hwe.
@@ -117,7 +117,7 @@ ggpubr::gghistogram(wtccc1_FRQ, x = "MAF",
                     xlab = "minor allele frequency") +
   ggplot2::geom_vline(xintercept = 0.05, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("wtccc1/wtccc1-freq.png", plot = last_plot())
+ggplot2::ggsave("wtccc1/wtccc1-freq.png", plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 This will result in @fig-show-wtccc1-freq.
@@ -139,7 +139,7 @@ ggpubr::gghistogram(wtccc1_IMISS, x = "callrate",
                     xlab = "per sample call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("wtccc1/wtccc1-sample-call-rate.png", plot = last_plot())
+ggplot2::ggsave("wtccc1/wtccc1-sample-call-rate.png", plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 This will result in @fig-show-wtccc1-callratesample.
@@ -164,7 +164,7 @@ ggpubr::gghistogram(wtccc1_LMISS, x = "callrate",
                     xlab = "per SNP call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("wtccc1/wtccc1-hwe.png", plot = last_plot())
+ggplot2::ggsave("wtccc1/wtccc1-snp-call-rate.png", plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 This will result in @fig-show-wtccc1-callratesnp.
@@ -384,7 +384,7 @@ p2 <-  ggpubr::ggpar(PCA_1kGplot,
                      title = "Principal Component Analysis",
                      subtitle = "Reference population: 1000 G, phase 1",
                      legend.title = "Populations", legend = "right")
-ggplot2::ggsave("wtccc1/wtccc1-qc-pca-1000g.png", plot = p2)
+ggplot2::ggsave("wtccc1/wtccc1-qc-pca-1000g.png", plot = p2, width = 9, height = 6, units = "in")
 p2
 rm(p2)
 ```

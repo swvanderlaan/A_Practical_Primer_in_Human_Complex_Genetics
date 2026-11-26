@@ -1,7 +1,7 @@
 # Getting started - Standalone {#sec-getting-started-standalone}
 
 ![](img/headers/women_behind_macbook.png){.chapter-banner fig-alt="Getting started"}
-<!-- ![](./img/_headers/women_behind_macbook.png){width=100%} -->
+<!-- ![](img/headers/women_behind_macbook.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 # source("scripts/functions.R")
@@ -67,7 +67,7 @@ For all the programs we use, except **RStudio**, you will need the **Terminal**.
 
 Open the **Terminal**, it should be on the left in the toolbar as a little black computer-monitor-like icon. Mac users can type `command + space` and type `terminal`, a **Terminal** screen should open.
 
-> From now on we will use little code blocks like the example to indicate a code you should type/copy-paste and hit enter. If a code is followed by a comment, it is indicated by a # - you don't need to copy-paste and execute this.
+> From now on we will use little code blocks like the example to indicate a code you should type/copy-paste and hit enter. The label above each block tells you where: _Terminal_ for the Terminal, _R_ for `R`/RStudio, and _Output_ for what you should see (do not type that). If a code is followed by a comment, it is indicated by a # - you don't need to copy-paste and execute this.
 
 ```{.bash filename="Terminal"}
 CODE BLOCK
@@ -151,7 +151,7 @@ This will take you to a manual of the program with an extensive description of e
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-lsmanual
 #| fig-cap: "Partial output from the ls manual."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/ls_manual.png")
 ```
 
@@ -205,7 +205,7 @@ Open your fresh installation of **RStudio** by double clicking the icon. You sho
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-rstudioscreenshot
 #| fig-cap: "RStudio screenshot."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/rstudio-screenshot.png")
 ```
 
@@ -215,7 +215,7 @@ In the top right, you see a little green-white plus-sign, click this and select 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-rstudioscreenshotcreatenotebook
 #| fig-cap: "RStudio screenshot."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/rstudio-screenshot-create-notebook.png")
 ```
 
@@ -224,7 +224,7 @@ You will create an untitled (`Untitled1`) `R` notebook: you can combine text des
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-rstudioscreenshotnotebook
 #| fig-cap: "RStudio screenshot."
-#| filename: "R"
+#| echo: false
 knitr::include_graphics("img/rstudio-screenshot-notebook.png")
 ```
 
@@ -288,6 +288,8 @@ library("geneplotter")
 
 All in all this may take some time, good moment to relax, review your notes, stretch your legs, or take a coffee.
 
+
+{{< include _opengwas-token.qmd >}}
 
 ## Are you ready?
 

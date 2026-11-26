@@ -2,6 +2,20 @@
 #                                PACKAGES TO LOAD                              #
 ################################################################################
 
+# Check all packages up front, so a build reports every missing package at once
+# instead of stopping at the first one (v3.0.0).
+.primer_pkgs <- c("rmarkdown", "flextable", "knitr", "kableExtra", "webshot", "webshot2",
+                  "formatR", "tinytex", "openxlsx", "data.table", "tibble", "tidyverse",
+                  "dplyr", "plotly", "DT", "xml2", "ggplot2", "devtools", "ggpubr", "ggsci",
+                  "ggthemes", "qqman", "CMplot", "RACER", "remotes", "TwoSampleMR",
+                  "MRInstruments", "ieugwasr", "geneplotter")
+.primer_missing <- setdiff(.primer_pkgs, rownames(installed.packages()))
+if (length(.primer_missing) > 0) {
+  stop("Missing R packages: ", paste(.primer_missing, collapse = ", "),
+       ". See TESTING.md, section 3, for how to install them.", call. = FALSE)
+}
+rm(.primer_pkgs, .primer_missing)
+
 # cat("\nPackages to install for this book and its contents to automagically work.\n")
 
 # cat("\n* Bookdown and rmarkdown packages...\n")
@@ -114,4 +128,4 @@ library("geneplotter")
 # https://datascienceplus.com/blood-lipid-levels-accross-age-and-gender-nhanes/
 # http://wwww.silentspring.org/RNHANES/index.html
 # devtools::install_github("silentspringinstitute/RNHANES")
-library("RNHANES")
+# library("RNHANES") # only used in 08_2_add_chapter_other_things, which is not part of the book (v3.0.0)

@@ -27,6 +27,8 @@ opts_chunk$set(echo = TRUE,
                fig.align = "center", 
                tidy = FALSE)
 ```
+This book was made possible by the kind help of Caspar J. van Lissa, who wrote an excellent instruction through an [example GitBook](https://cjvanlissa.github.io/gitbook-demo/){target="_blank"}.
+
 The 2022 and 2024 editions of this book were produced in RStudio with the `bookdown` package; from the 2026 edition (version 3.0.0) the book is produced with [Quarto](https://quarto.org){target="_blank"}. Below a listing of installed programs and libraries, the operating system, and their specific versions.
 
 ```{r, eval = TRUE}

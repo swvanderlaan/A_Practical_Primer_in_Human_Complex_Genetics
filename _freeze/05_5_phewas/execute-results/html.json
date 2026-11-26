@@ -1,0 +1,15 @@
+{
+  "hash": "b8491f365186f1d7b48675038be995fe",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Phenome-Wide Association Study {#sec-phewas}\n\n![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt=\"Phenome-Wide Association Study\"}\n<!-- ![](./img/_gwas/banner_man_standing_dna.png){width=70%} -->\n\n\n\n\n\nGiven the large biobanks available nowadays that have also genotyped the participants and collected a vast-array of information on them, it is possible to perform a **Phe**nome-**W**ide **A**ssociation **S**tudy.\n\nThere are several options in (@tbl-tab-phewas).\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n\n::: {#tbl-tab-phewas .cell layout-align=\"center\"}\n::: {.cell-output-display}\n\n\nTable: PheWAS Resources.\n\n|Site                                   |Description                              |\n|:--------------------------------------|:----------------------------------------|\n|https://atlas.ctglab.nl                |4,155 GWAS based on UK Biobank release 2 |\n|https://biobankengine.stanford.edu     |UK Biobank based                         |\n|http://pheweb.sph.umich.edu            |University of Michigan EHR-based PheWAS  |\n|http://pheweb.sph.umich.edu/SAIGE-UKB/ |1,403 GWAS UK Biobank based              |\n|http://phewas.mrbase.org               |UK Biobank based                         |\n\n\n:::\n:::\n\n\n\n> *Assignment*\n> \n> 1. Perform a PheWAS with a few of the resources and your favorite SNP from this tutorial. \n> 2. Compare the different websites. What do you notice?\n> 3. How is a PheWAS informative?\n\n\n## What's next?\n\nYou now know to what other traits, risk factors and diseases our trait of interest (coronary artery disease) is correlated. An obvious next question would be: is this a causal correlation? We will cover this aspect in the next Chapters with MRBase (@sec-mr-mrbase) and TwoSampleMR (@sec-mr-twosamplemr). To return to the previous Chapter on post-GWAS analyses click [here](@sec-post-gwas).\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

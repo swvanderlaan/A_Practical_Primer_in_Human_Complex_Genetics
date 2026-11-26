@@ -1,7 +1,7 @@
 # Steps in a Genome-Wide Association Study {#sec-gwas-basics}
 
 ![](img/headers/woman_working_on_code.png){.chapter-banner fig-alt="GWAS basics"}
-<!-- ![](./img/_headers/woman_working_on_code.png){width=100%} -->
+<!-- ![](img/headers/woman_working_on_code.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -69,14 +69,14 @@ cd ~/Desktop/practical
 Next, we'll make a project directory.
 
 ```{.bash filename="Terminal"}
-mkdir -v ~/Desktop/practical/dummy_project
+mkdir -p -v ~/Desktop/practical/dummy_project
 ```
 
 **CoCalc**</br>
 When you are using the **CoCalc** for the course, you don't need to go to a directory, you simply create a new `dummy_project` directory in your current directory, which is `$HOME` (also known as `~`).
 
 ```{.bash filename="Terminal"}
-mkdir -v dummy_project
+mkdir -p -v dummy_project
 ```
 
 In **CoCalc** all the data is stored in the `data/shared` directory. So, if you do the following:
@@ -87,7 +87,7 @@ ls ~/data/shared
 
 You will see this:
 
-```{.bash filename="Terminal"}
+```{.default filename="Output"}
 dummy_project  gwas  rawdata  readme.txt  readme.wtccc1.txt  ref_1kg_phase1_all  scripts  support  wtccc1
 ```
 

@@ -37,11 +37,11 @@ First, we will add the standard error, call rate, A2, and allele frequencies.
 #| label: prep-qq
 #| filename: "R"
 library("data.table")
-gwas_FRQ <- data.table::fread("dummy_project/gwa.frq")
+gwas_FRQ <- data.table::fread("dummy_project/gwas_results/gwa.frq")
 
-gwas_LMISS <- data.table::fread("dummy_project/gwa.lmiss")
+gwas_LMISS <- data.table::fread("dummy_project/gwas_results/gwa.lmiss")
 
-gwas_assoc <- data.table::fread("dummy_project/data.assoc.logistic")
+gwas_assoc <- data.table::fread("dummy_project/gwas_results/data.assoc.logistic")
 
 gwas_LMISS$callrate <- 1 - gwas_LMISS$F_MISS
 
@@ -75,7 +75,7 @@ dim(gwas_assoc_compl)
 
 head(gwas_assoc_compl)
 
-data.table::fwrite(gwas_assoc_compl, "dummy_project/gwas_assoc_compl.txt",
+data.table::fwrite(gwas_assoc_compl, "dummy_project/gwas_results/gwas_assoc_compl.txt",
                    sep = "\t", quote = FALSE, row.names = FALSE)
 ```
 
@@ -179,7 +179,7 @@ library("qqman")
 gwas_threshold = -log10(5e-8)
 
 # you could save the image, or just display it
-# png("dummy_project/gwas-qq.png")
+# png("dummy_project/gwas_results/gwas-qq.png")
 qqman::qq(gwas_assoc_compl$P, main = "QQ plot of GWAS",
           xlim = c(0, 7),
           ylim = c(0, 12),

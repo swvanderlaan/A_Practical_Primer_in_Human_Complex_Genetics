@@ -1,5 +1,5 @@
 # Genome-Wide Association Study {#sec-gwas-testing-cocalc}
-<!-- ![](./img/_gwas/interactive_plot.png){width=70%} -->
+<!-- ![](img/gwas/interactive_plot.png){width=70%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -33,38 +33,43 @@ Now that you have learned how to perform QC, you can easily run a GWAS and execu
 
 Even though someone says that the QC was done, it is still wise and good practice to run some of the commands above to get a 'feeling' about the data. So let's do this.
 
-First, we'll clean up what we did before - we don't need it anyways.
+From here on we work with a new, already cleaned dataset (`~/data/shared/gwas/gwa`). To keep these results apart from your QC work in the previous chapters, we put them in their own folder. Your QC results stay where they are, so you can always go back to them.
 
 ```{.bash filename="Terminal"}
 clear
-rm -v dummy_project/*
+mkdir -p -v dummy_project/gwas_results
 ```
 
-With the command `clear` you create a blank Terminal screen. With `rm -v` you remove all files in the `dummy_project` directory, where the `-v`-flag means that you get a verbose output of what is removed.
+With the command `clear` you create a blank Terminal screen. With `mkdir -p -v` you create the folder `dummy_project/gwas_results`; `-p` makes sure you get no error if it already exists, and `-v` tells you what was created.
 
 ```{.bash filename="Terminal"}
-plink --bfile ~/data/shared/gwas/gwa --freq --out dummy_project/gwa
-```
-
-```{.bash filename="Terminal"}
-plink --bfile ~/data/shared/gwas/gwa --missing --out dummy_project/gwa
+plink --bfile ~/data/shared/gwas/gwa --freq --out dummy_project/gwas_results/gwa
 ```
 
 ```{.bash filename="Terminal"}
-plink --bfile ~/data/shared/gwas/gwa --hardy --out dummy_project/gwa
+plink --bfile ~/data/shared/gwas/gwa --missing --out dummy_project/gwas_results/gwa
+```
+
+```{.bash filename="Terminal"}
+plink --bfile ~/data/shared/gwas/gwa --hardy --out dummy_project/gwas_results/gwa
 ```
 
 Let's visualize the results. First we should load in all the results.
 
 > Question: Load the data using R. [Hint: use and adapt the examples from the previous chapters.]
 
-```{r, eval = FALSE, echo = TRUE, include = FALSE}
+::: {.callout-tip collapse="true"}
+## Stuck? Show the answer
+You need these objects for the plots below.
+
+```{r, eval = FALSE}
 #| label: load-data-gwas
+#| filename: "R"
 library("data.table")
-gwas_HWE <- data.table::fread("dummy_project/gwa.hwe")
-gwas_FRQ <- data.table::fread("dummy_project/gwa.frq")
-gwas_IMISS <- data.table::fread("dummy_project/gwa.imiss")
-gwas_LMISS <- data.table::fread("dummy_project/gwa.lmiss")
+gwas_HWE <- data.table::fread("dummy_project/gwas_results/gwa.hwe")
+gwas_FRQ <- data.table::fread("dummy_project/gwas_results/gwa.frq")
+gwas_IMISS <- data.table::fread("dummy_project/gwas_results/gwa.imiss")
+gwas_LMISS <- data.table::fread("dummy_project/gwas_results/gwa.lmiss")
 
 # you'll need to calculate the -log10(P) for the HWE p-values
 gwas_HWE$logP <- -log10(gwas_HWE$P)
@@ -75,6 +80,7 @@ gwas_IMISS$callrate <- 1 - gwas_IMISS$F_MISS
 # you'll need to calculate the SNP call rate
 gwas_LMISS$callrate <- 1 - gwas_LMISS$F_MISS
 ```
+:::
 
 ```{r, eval = FALSE, echo = FALSE, include = FALSE}
 #| label: load-data-gwas-book
@@ -111,8 +117,8 @@ ggpubr::gghistogram(gwas_HWE, x = "logP",
                     xlab = "HWE -log10(P)") +
   ggplot2::geom_vline(xintercept = 5, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("data/dummy_project/gwas-hwe.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-hwe.png",
+       plot = ggplot2::last_plot(), width = 7, height = 9, units = "in")
 ```
 
 ```{r, fig.id = 'showhwegwas', fig.align = 'center', fig.show = TRUE, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
@@ -134,8 +140,8 @@ ggpubr::gghistogram(gwas_FRQ, x = "MAF",
                     xlab = "minor allele frequency") +
   ggplot2::geom_vline(xintercept = 0.05, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("data/dummy_project/gwas-freq.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-freq.png",
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 ```{r, fig.id = 'showfreqgwas', fig.align = 'center', fig.show = TRUE, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
@@ -157,8 +163,8 @@ ggpubr::gghistogram(gwas_IMISS, x = "callrate",
                     xlab = "per sample call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("data/dummy_project/gwas-sample-call-rate.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-sample-call-rate.png",
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 ```{r, fig.id = 'showsamplecallrategwas', fig.align = 'center', fig.show = TRUE, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
@@ -180,8 +186,8 @@ ggpubr::gghistogram(gwas_LMISS, x = "callrate",
                     xlab = "per SNP call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("data/dummy_project/gwas-snp-call-rate.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-snp-call-rate.png",
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 ```{r, fig.id = 'showsnpcallrategwas', fig.align = 'center', fig.show = TRUE, eval = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
@@ -194,7 +200,7 @@ knitr::include_graphics("img/gwas_dummy/show-snp-callrate-gwas.png")
 A simple chi-square test of association can be done.
 
 ```{.bash filename="Terminal"}
-plink --bfile ~/data/shared/gwas/gwa --model --out dummy_project/data
+plink --bfile ~/data/shared/gwas/gwa --model --out dummy_project/gwas_results/data
 ```
 
 _Genotypic_, _dominant_ and _recessive_ tests will not be conducted if any one of the cells in the table of case-control by genotype counts contains less than five observations. This is because the chi-square approximation may not be reliable when cell counts are small. For SNPs with MAFs < 5%, a sample of more than 2,000 cases and controls would be required to meet this threshold and more than 50,000 would be required for SNPs with MAF < 1%.
@@ -202,7 +208,7 @@ _Genotypic_, _dominant_ and _recessive_ tests will not be conducted if any one o
 You can change this default behaviour by adding the flag `--cell`, _e.g._, we could lower the threshold to 3.
 
 ```{.bash filename="Terminal"}
-plink --bfile ~/data/shared/gwas/gwa --model --cell 3 --out dummy_project/data
+plink --bfile ~/data/shared/gwas/gwa --model --cell 3 --out dummy_project/gwas_results/data
 ```
 
 Let's review the contents of the results.
@@ -210,7 +216,7 @@ Let's review the contents of the results.
 ```{r, eval = FALSE}
 #| label: load-gwas-model
 #| filename: "R"
-gwas_model <- data.table::fread("dummy_project/data.model")
+gwas_model <- data.table::fread("dummy_project/gwas_results/data.model")
 
 dim(gwas_model)
 
@@ -257,14 +263,14 @@ We can also perform a test of association using logistic regression. In this cas
 When running a regression analysis, be it linear or logistic, PLINK assumes a multiplicative model. By default, when at least one male and one female is present, sex (male = 1, female = 0) is automatically added as a covariate on X chromosome SNPs, and nowhere else. The `sex` flag causes it to be added everywhere, while `no-x-sex` excludes it.
 
 ```{.bash filename="Terminal"}
-plink --bfile ~/data/shared/gwas/gwa --logistic sex --covar ~/data/shared/gwas/gwa.covar --out dummy_project/data
+plink --bfile ~/data/shared/gwas/gwa --logistic sex --covar ~/data/shared/gwas/gwa.covar --out dummy_project/gwas_results/data
 ```
 
 Let's examine the results.
 ```{r, eval = FALSE}
 #| label: load-gwas-assoc
 #| filename: "R"
-gwas_assoc <- data.table::fread("dummy_project/data.assoc.logistic")
+gwas_assoc <- data.table::fread("dummy_project/gwas_results/data.assoc.logistic")
 ```
 
 ```{r, eval = TRUE, echo = FALSE, include = FALSE}

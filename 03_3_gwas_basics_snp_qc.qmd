@@ -1,5 +1,5 @@
 # Per-SNP QC {#sec-gwas-basics-snp-qc}
-<!-- ![](./img/_gwas_dummy/gwas_snp_qc.png){width=70%} -->
+<!-- ![](img/gwas_dummy/gwas_snp_qc.png){width=70%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 # source("scripts/functions.R")
@@ -74,15 +74,15 @@ clean_LMISS_plot <- ggpubr::gghistogram(clean_LMISS, x = "callrate",
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
 
-ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-snp-call-rate.png"), plot = clean_LMISS_plot)
+ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-snp-call-rate.png"), plot = clean_LMISS_plot, width = 7, height = 5, units = "in")
 clean_LMISS_plot
 ```
 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-showsnpcallrate
 #| fig-cap: "Per SNP call rate."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-snp-callrate.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-snp-callrate.png")
 ```
 
 ## Differential SNP call rates
@@ -126,15 +126,15 @@ clean_FREQ_plot <- ggpubr::gghistogram(clean_FREQ, x = "MAF",
   ggplot2::geom_vline(xintercept = 0.05, linetype = "dashed",
                       color = "#E55738", size = 1)
 
-ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-snp-freq.png"), plot = clean_FREQ_plot)
+ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-snp-freq.png"), plot = clean_FREQ_plot, width = 7, height = 5, units = "in")
 clean_FREQ_plot
 ```
 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-showfreq
 #| fig-cap: "Minor allele frequency."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-freq.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-freq.png")
 ```
 
 ### A note on allele coding
@@ -193,15 +193,15 @@ clean_HWE_plot <- ggpubr::gghistogram(clean_HWE, x = "logP",
   ggplot2::geom_vline(xintercept = 5, linetype = "dashed",
                       color = "#E55738", size = 1)
 
-ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-snp-hwe.png"), plot = clean_HWE_plot)
+ggplot2::ggsave(paste0(COURSE_loc, "/dummy_project/gwas-qc-snp-hwe.png"), plot = clean_HWE_plot, width = 7, height = 9, units = "in")
 clean_HWE_plot
 ```
 
 ```{r, fig.align = 'center', fig.show = TRUE, eval = TRUE}
 #| label: fig-showhwe
 #| fig-cap: "Hardy-Weinberg Equilibrium p-values per stratum."
-#| filename: "R"
-knitr::include_graphics("img/_gwas_dummy/show-hwe.png")
+#| echo: false
+knitr::include_graphics("img/gwas_dummy/show-hwe.png")
 ```
 
 ## Final SNP QC

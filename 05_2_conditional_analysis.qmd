@@ -1,7 +1,7 @@
 # Conditional analysis {#sec-conditional-analysis}
 
 ![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt="Conditional analysis"}
-<!-- ![](./img/_headers/banner_man_standing_dna.png){width=100%} -->
+<!-- ![](img/headers/banner_man_standing_dna.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")

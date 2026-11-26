@@ -1,7 +1,7 @@
 # Answers to the questions {#sec-answers}
 
 ![](img/headers/banner_man_standing_dna.png){.chapter-banner fig-alt="Answers to questions"}
-<!-- ![](./img/_headers/banner_man_standing_dna.png){width=100%} -->
+<!-- ![](img/headers/banner_man_standing_dna.png){width=100%} -->
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE, include = FALSE}
 #| label: load-functions-packages
 source("scripts/functions.R")
@@ -44,12 +44,14 @@ For instance 'genotyping platform', or 'hospital of inclusion', if you think thi
 
 > Question: Load the data using R. [Hint: use and adapt the examples from the previous chapters.]
 
+The paths below are those of the CoCalc edition (`dummy_project/gwas_results/`); in the Standalone edition the files are in `dummy_project/`.
+
 ```{.r filename="R"}
 library("data.table")
-gwas_HWE <- data.table::fread("dummy_project/gwa.hwe")
-gwas_FRQ <- data.table::fread("dummy_project/gwa.frq")
-gwas_IMISS <- data.table::fread("dummy_project/gwa.imiss")
-gwas_LMISS <- data.table::fread("dummy_project/gwa.lmiss")
+gwas_HWE <- data.table::fread("dummy_project/gwas_results/gwa.hwe")
+gwas_FRQ <- data.table::fread("dummy_project/gwas_results/gwa.frq")
+gwas_IMISS <- data.table::fread("dummy_project/gwas_results/gwa.imiss")
+gwas_LMISS <- data.table::fread("dummy_project/gwas_results/gwa.lmiss")
 
 # you'll need to calculate the -log10(P) for the HWE p-values
 gwas_HWE$logP <- -log10(gwas_HWE$P)
@@ -77,13 +79,13 @@ ggpubr::gghistogram(gwas_HWE, x = "logP",
                     xlab = "HWE -log10(P)") +
   ggplot2::geom_vline(xintercept = 5, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("dummy_project/gwas-hwe.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-hwe.png",
+       plot = ggplot2::last_plot(), width = 7, height = 9, units = "in")
 ```
 
 > Question: Plot the allele frequencies using R. [Hint: use and adapt the examples from the previous chapters.]
 
-```{.bash filename="Terminal"}
+```{.r filename="R"}
 ggpubr::gghistogram(gwas_FRQ, x = "MAF",
                     add = "mean", add.params = list(color = "#595A5C", linetype = "dashed", size = 1),
                     rug = TRUE,
@@ -91,14 +93,14 @@ ggpubr::gghistogram(gwas_FRQ, x = "MAF",
                     xlab = "minor allele frequency") +
   ggplot2::geom_vline(xintercept = 0.05, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("dummy_project/gwas-freq.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-freq.png",
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 
 > Question: Plot the per-sample call rates using R. [Hint: use and adapt the examples from the previous chapters.]
 
-```{.bash filename="Terminal"}
+```{.r filename="R"}
 ggpubr::gghistogram(gwas_IMISS, x = "callrate",
                     add = "mean", add.params = list(color = "#595A5C", linetype = "dashed", size = 1),
                     rug = TRUE, bins = 50,
@@ -106,13 +108,13 @@ ggpubr::gghistogram(gwas_IMISS, x = "callrate",
                     xlab = "per sample call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("data/dummy_project/gwas-sample-call-rate.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-sample-call-rate.png",
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 > Question: Plot the per-SNP call rates using R. [Hint: use and adapt the examples from the previous chapters.]
 
-```{.bash filename="Terminal"}
+```{.r filename="R"}
 ggpubr::gghistogram(gwas_LMISS, x = "callrate",
                     add = "mean", add.params = list(color = "#595A5C", linetype = "dashed", size = 1),
                     rug = TRUE, bins = 50,
@@ -120,8 +122,8 @@ ggpubr::gghistogram(gwas_LMISS, x = "callrate",
                     xlab = "per SNP call rate") +
   ggplot2::geom_vline(xintercept = 0.95, linetype = "dashed",
                       color = "#E55738", size = 1)
-ggplot2::ggsave("data/dummy_project/gwas-snp-call-rate.png",
-       plot = last_plot())
+ggplot2::ggsave("dummy_project/gwas_results/gwas-snp-call-rate.png",
+       plot = ggplot2::last_plot(), width = 7, height = 5, units = "in")
 ```
 
 > Question: Do you know which model, _i.e._ `TEST` is most commonly used and reported? And why is that, do think?

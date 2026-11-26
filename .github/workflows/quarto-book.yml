@@ -1,33 +1,33 @@
-# Build the Quarto book on every push to the quarto branch.
+# Build the Quarto book (CoCalc edition) and publish it to GitHub Pages.
+# - Every push to quarto or master builds the book (a check that nothing is broken).
+# - Only pushes to master publish it, to the gh-pages branch.
 # Code results come from the committed _freeze/ folder (rendered locally with the
-# course data), so CI needs neither R packages nor the 18 GB data folder.
-# Publishing is OFF while the live bookdown site is still served from master/docs.
-# When ready: uncomment the publish step and set Settings > Pages > Source to "gh-pages".
+# course data), so CI needs neither R packages nor the course data.
 name: Quarto book
 
 on:
   push:
-    branches: [quarto]
+    branches: [master, quarto]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: quarto-dev/quarto-actions/setup@v2
-      - name: Render (CoCalc profile)
+      - name: Render (CoCalc edition)
         run: quarto render --profile cocalc
       - uses: actions/upload-artifact@v4
         with:
           name: primer-cocalc-html
           path: _book
-      # - name: Publish to GitHub Pages
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: gh-pages
-      #     render: false
-      #     path: _book
+      - name: Publish to GitHub Pages (master only)
+        if: github.ref == 'refs/heads/master'
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          render: false
